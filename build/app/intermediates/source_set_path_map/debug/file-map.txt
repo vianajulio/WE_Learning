@@ -1,0 +1,12 @@
+com.example.e_learning_dev.app-jetified-window-java-1.0.0-beta04-0 C:\Users\julio\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.e_learning_dev.app-core-1.6.0-1 C:\Users\julio\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+com.example.e_learning_dev.app-jetified-annotation-experimental-1.1.0-2 C:\Users\julio\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.e_learning_dev.app-jetified-window-1.0.0-beta04-3 C:\Users\julio\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+com.example.e_learning_dev.app-debug-4 D:\Projetos\Senai\e_learnig\e_learning_dev\android\app\src\debug\res
+com.example.e_learning_dev.app-main-5 D:\Projetos\Senai\e_learnig\e_learning_dev\android\app\src\main\res
+com.example.e_learning_dev.app-pngs-6 D:\Projetos\Senai\e_learnig\e_learning_dev\build\app\generated\res\pngs\debug
+com.example.e_learning_dev.app-resValues-7 D:\Projetos\Senai\e_learnig\e_learning_dev\build\app\generated\res\resValues\debug
+com.example.e_learning_dev.app-rs-8 D:\Projetos\Senai\e_learnig\e_learning_dev\build\app\generated\res\rs\debug
+com.example.e_learning_dev.app-mergeDebugResources-9 D:\Projetos\Senai\e_learnig\e_learning_dev\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.e_learning_dev.app-mergeDebugResources-10 D:\Projetos\Senai\e_learnig\e_learning_dev\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.e_learning_dev.app-merged_res-11 D:\Projetos\Senai\e_learnig\e_learning_dev\build\app\intermediates\merged_res\debug

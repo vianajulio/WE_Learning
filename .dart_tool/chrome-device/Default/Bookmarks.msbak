@@ -1,0 +1,130 @@
+{
+   "checksum": "0a381ada08725757ec6dcce1c53dc6b2",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13232484450984293",
+            "date_last_used": "0",
+            "guid": "638097b9-64dc-4f90-bccb-52d756cabf98",
+            "id": "14",
+            "name": "YouTube",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13232669744693464",
+            "date_last_used": "0",
+            "guid": "a71eef5c-6b2e-456e-b614-e6ff7e87d5c2",
+            "id": "15",
+            "name": "Buy CS:GO Stickers | DMarket",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://dmarket.com/ingame-items/item-list/csgo-skins/misc/sticker?price-to=1"
+         }, {
+            "date_added": "13232670203394167",
+            "date_last_used": "0",
+            "guid": "7d718454-58e2-4549-a8c2-ce98b2ec5444",
+            "id": "16",
+            "name": "Buy CS:GO SSG-08 Skins | DMarket",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://dmarket.com/ingame-items/item-list/csgo-skins/sniper%20rifle/ssg%2008?exterior=field-tested,minimal%20wear,battle-scarred,well-worn,factory%20new&price-to=1"
+         }, {
+            "date_added": "13318088550622390",
+            "date_last_used": "13322235440315723",
+            "guid": "e30ecd69-4e75-4f66-99c6-5eb128e4328b",
+            "id": "17",
+            "name": "OCOMON IMA",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://ocomon.ima.sp.gov.br/"
+         }, {
+            "date_added": "13322856821452327",
+            "date_last_used": "0",
+            "guid": "4a0a0125-be74-453f-8286-419085cb02e4",
+            "id": "7",
+            "name": "Amazon",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://s3.amazonaws.com/amundsen/redirect/19q2/amazon.html?utm_source=win32&utm_medium=favorite"
+         }, {
+            "date_added": "13322856821452056",
+            "date_last_used": "0",
+            "guid": "e9cb52b4-05dd-4e65-8256-cc0d7d8807d4",
+            "id": "6",
+            "name": "Booking.com",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://s3.amazonaws.com/amundsen/redirect/19q2/booking.html?utm_source=win32&utm_medium=favorite"
+         }, {
+            "date_added": "13322856821449019",
+            "date_last_used": "0",
+            "guid": "5e3b0cb6-f642-430d-b0e6-8b3d4690c688",
+            "id": "5",
+            "name": "Facebook",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://s3.amazonaws.com/amundsen/redirect/20q2/facebook.html?utm_source=win32&utm_medium=favorite"
+         }, {
+            "children": [ {
+               "date_added": "13311205454161268",
+               "date_last_used": "0",
+               "guid": "706045d8-3937-4971-9337-4accf66b2378",
+               "id": "9",
+               "name": "Acer",
+               "show_icon": false,
+               "source": "import_fre",
+               "type": "url",
+               "url": "http://www.acer.com/"
+            } ],
+            "date_added": "13322856826350157",
+            "date_last_used": "0",
+            "date_modified": "0",
+            "guid": "59208dae-3830-4fe1-9e15-afac30ea58b0",
+            "id": "8",
+            "name": "Acer",
+            "source": "import_fre",
+            "type": "folder"
+         } ],
+         "date_added": "13322856821028039",
+         "date_last_used": "0",
+         "date_modified": "13322958973907161",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barra de favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13322856821028046",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Outros favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13322856821028049",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoritos do celular",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCIxi2syGAQAAEgAgASoYaElQT21PeG9rWEpLVEpOWlhsNkFQQT09oAYMEokBCAMShAEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SJDE2ZjNjOWQ4LTIwYjctNWJiNC05YzVmLTA0ZTU1MzEwNjliYhgAIAAoADC0suvlmy44huijju0vQIboo47tL0oceXpOQjAxY241NEE3Y1JVMHVUKy9QZ21UdFVvPVoAZQAAAAASpwEIDhKiAQocZlhzTERReGhJVGdkcTFlNVNQQytoUHNTMkhJPRIkNzQ5NjBkOGItZmM0My00MWQ5LWI4NmYtOWE3Y2Y5ODYwYjM2GAAgAigCMLHdvsXsMDiD6aOO7S9AscG+xewwShxUU25tUk4ra29zaWlzRGNtV3NqV3loV3dvMkk9Wh4iHDlmeko0M3g0aGh6Z21QdCsrL08vdE5Xakt5OD1lOPk5MxKJAQgCEoQBChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EiRiYzI5ZjcwMi1mYzY2LTUwNDYtODhhOC04ODg5MDM1NmJkMTMYACAAKAAwsLLr5ZsuOMjno47tL0DI56OO7S9KHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1aAGUAAAAAEokBCAEShAEKHHl4Si82ZnZrZWNyN2twNUVRekI0dFdMcGRiRT0SJDVhZWFmZDQ4LWY3NTUtNTE5NC1iYzAwLTNmN2NhMjM5ZTI4ZRgAIAAoADCvsuvlmy44uOejju0vQLjno47tL0ocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPVoAZQAAAAASpwEIDxKiAQocZUdZVHRFL0pSVDdFNmVWNUFKa1hENnkza3Q4PRIkNGFlOWQ5MGEtYmQyZi00ODNlLTlhMGQtNDllYTM4ZDFiMGY4GAAgAigCMLLdvsXsMDj766OO7S9AscG+xewwShxteUtmc29nV1prVjhWai9vako5UDMrR3UxMDQ9Wh4iHEo4c00wSHZ3TmlLaUpDWVpQdlBTaFNRbGtwRT1lbZpAbhKnAQgQEqIBChxkaENldW54SFZoMG9OOWo1bUNqVnRvZFJrN1k9EiRlNTJkYzUyYy0yODAxLTQyMDItYWNmZS00M2NiM2JiYjI2NmEYACACKAIws92+xewwOIvso47tL0Cywb7F7DBKHEhDdkMrVnZjN1Y2TG5BVnVUNHBwekRIOWZ1az1aHiIcYStJdWtBelliMGc5OXZ5NWQweS85Qk5WWkdRPWVtmkBuEqgBCAgSowEKHG1rOHZJLytmc0RsNkZTN1RFajdKaElnSm9POD0SJDU5MjA4ZGFlLTM4MzAtNGZlMS05ZTE1LWFmYWMzMGVhNThiMBgAIAEoATC03b7F7DA4sMG+xewwQLDBvsXsMEocSytVUzVtY1ZuUDR2TGx4WVErNHAyQXo4S09jPVofIh3YRUNXSCtWajdVN1hHRnRmT2hzRnZsSVJBN0djPWUAAAAAEqgBCBESowEKHHpoTlpZUGpDU1dQWldidjljSjVRNWl2cklxVT0SJGUzMGVjZDY5LTRlNzUtNGY2Ni05OWM2LTVlYjEyOGU0MzI4YhgAIAAoADDN/JqT6jA45/6ak+owQOf+mpPqMEocQ25qWTA5bEkweDV2SE9mdWYxbEZoc1dRWVBrPVofIh2wR20wTzhmdHVRSkZhWmcxTFM4a3BkYTZrajBvPWUAAAAAEqcBCAkSogEKHG9GdnVkQ1d0RGEyK1hXOTFvS0Y1Nm42bURpYz0SJDcwNjA0NWQ4LTM5MzctNDk3MS05MzM3LTRhY2NmNjZiMjM3OBgAIAEoATC13b7F7DA4sMG+xewwQLDBvsXsMEocVmxzTGtjd2JqN3Q4MCtReERWYXdUMGxVWlU0PVoeIhxrN1FEZ01SVDZhOFh5R24xVzVDUzVKdlJPelU9ZQAAAAAwADgA",
+   "version": 1
+}
