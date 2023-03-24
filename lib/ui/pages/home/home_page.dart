@@ -9,25 +9,45 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> lista = [
-      Container(
-        color: Colors.red,
-        margin: EdgeInsets.symmetric(horizontal: 24.0),
+      InkWell(
+        child: Container(
+          color: Colors.red,
+          margin: EdgeInsets.symmetric(horizontal: 24.0),
+        ),
+        onTap: () => Navigator.pushNamed(context, "/videoaula"),
+        hoverColor: Colors.transparent,
       ),
-      Container(
-        color: Colors.blue,
-        margin: EdgeInsets.symmetric(horizontal: 24.0),
+      InkWell(
+        child: Container(
+          color: Colors.blue,
+          margin: EdgeInsets.symmetric(horizontal: 24.0),
+        ),
+        onTap: () => Navigator.pushNamed(context, "/forum"),
+        hoverColor: Colors.transparent,
       ),
-      Container(
-        color: Colors.green,
-        margin: EdgeInsets.symmetric(horizontal: 24.0),
+      InkWell(
+        child: Container(
+          color: Colors.green,
+          margin: EdgeInsets.symmetric(horizontal: 24.0),
+        ),
+        onTap: () => Navigator.pushNamed(context, "/videoaula"),
+        hoverColor: Colors.transparent,
       ),
-      Container(
-        color: Colors.pink,
-        margin: EdgeInsets.symmetric(horizontal: 24.0),
+      InkWell(
+        child: Container(
+          color: Colors.pink,
+          margin: EdgeInsets.symmetric(horizontal: 24.0),
+        ),
+        onTap: () => Navigator.pushNamed(context, "/forum"),
+        hoverColor: Colors.transparent,
       ),
-      Container(
-        color: Colors.orange,
-        margin: EdgeInsets.symmetric(horizontal: 24.0),
+      InkWell(
+        child: Container(
+          color: Colors.orange,
+          margin: EdgeInsets.symmetric(horizontal: 24.0),
+        ),
+        onTap: () => Navigator.pushNamed(context, "/videoaula"),
+        hoverColor: Colors.transparent,
       ),
     ];
 
@@ -65,6 +85,9 @@ class HomePage extends StatelessWidget {
                   width: constraints.maxWidth * 0.8,
                   height: constraints.maxWidth * 0.2,
                   viewPortFraction: 0.4,
+                  initialPage: 0,
+                  enableInfiniteScroll: false,
+                  padEnds: false,
                 ),
                 const SizedBox(height: 32),
                 InkWell(

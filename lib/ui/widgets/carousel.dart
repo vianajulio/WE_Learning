@@ -9,6 +9,9 @@ class CustomCarosel extends StatefulWidget {
   double viewPortFraction;
   bool autoPlay;
   Duration autoPlayInterval;
+  int initialPage;
+  bool enableInfiniteScroll;
+  bool padEnds;
 
   CustomCarosel({
     super.key,
@@ -19,6 +22,9 @@ class CustomCarosel extends StatefulWidget {
     this.viewPortFraction = 1,
     this.autoPlay = false,
     this.autoPlayInterval = const Duration(seconds: 5),
+    this.initialPage = 0,
+    this.enableInfiniteScroll = true,
+    this.padEnds = false,
   });
 
   @override
@@ -36,6 +42,7 @@ class _CustomCaroselState extends State<CustomCarosel> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -66,6 +73,9 @@ class _CustomCaroselState extends State<CustomCarosel> {
               autoPlay: widget.autoPlay,
               //Duração do intervalo da troca de widget
               autoPlayInterval: widget.autoPlayInterval,
+              initialPage: widget.initialPage,
+              enableInfiniteScroll: widget.enableInfiniteScroll,
+              padEnds: widget.padEnds,
             ),
             //Controller é responsável pelas interações com o carrossel
             carouselController: _controller,
