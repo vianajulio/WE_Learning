@@ -158,13 +158,13 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "e_learning_dev",
+      "name": "we_learning_dev",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-04-17T21:50:41.241504Z",
+  "generated": "2023-04-17T22:20:11.368607Z",
   "generator": "pub",
   "generatorVersion": "2.19.5"
 }

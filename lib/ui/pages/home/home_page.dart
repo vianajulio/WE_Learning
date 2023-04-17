@@ -1,7 +1,7 @@
-import 'package:e_learning_dev/ui/responsive/responsive.dart';
-import 'package:e_learning_dev/ui/widgets/scaffold_basic.dart';
-import 'package:e_learning_dev/ui/widgets/search_bar.dart';
-import 'package:e_learning_dev/ui/widgets/carousel.dart';
+import 'package:we_learning_dev/ui/responsive/responsive.dart';
+import 'package:we_learning_dev/ui/widgets/scaffold_basic.dart';
+import 'package:we_learning_dev/ui/widgets/search_bar.dart';
+import 'package:we_learning_dev/ui/widgets/carousel.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

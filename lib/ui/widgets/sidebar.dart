@@ -1,5 +1,5 @@
-import 'package:e_learning_dev/ui/widgets/menu_item.dart';
-import 'package:e_learning_dev/ui/widgets/menu_item_notification.dart';
+import 'package:we_learning_dev/ui/widgets/menu_item.dart';
+import 'package:we_learning_dev/ui/widgets/menu_item_notification.dart';
 import 'package:flutter/material.dart';
 
 class SideBar extends StatelessWidget {

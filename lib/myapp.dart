@@ -1,7 +1,7 @@
-import 'package:e_learning_dev/ui/pages/forum/forum_page.dart';
+import 'package:we_learning_dev/ui/pages/forum/forum_page.dart';
 import 'package:flutter/material.dart';
-import 'package:e_learning_dev/ui/pages/home/home_page.dart';
-import 'package:e_learning_dev/ui/pages/videoaula/videoaula_page.dart';
+import 'package:we_learning_dev/ui/pages/home/home_page.dart';
+import 'package:we_learning_dev/ui/pages/videoaula/videoaula_page.dart';
 
 //classe responsável por definir padrões de estilo para o projeto, como as cores
 //mas também sendo possivel passar rotas de navegação

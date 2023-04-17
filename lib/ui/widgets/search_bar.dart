@@ -1,4 +1,4 @@
-import 'package:e_learning_dev/ui/pages/home/home_page.dart';
+import 'package:we_learning_dev/ui/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatefulWidget {

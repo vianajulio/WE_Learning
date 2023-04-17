@@ -1,5 +1,5 @@
-import 'package:e_learning_dev/ui/responsive/responsive.dart';
-import 'package:e_learning_dev/ui/widgets/scaffold_basic.dart';
+import 'package:we_learning_dev/ui/responsive/responsive.dart';
+import 'package:we_learning_dev/ui/widgets/scaffold_basic.dart';
 import 'package:flutter/material.dart';
 
 class VideoAulaPage extends StatefulWidget {
