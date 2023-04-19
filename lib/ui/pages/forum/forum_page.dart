@@ -12,23 +12,21 @@ class ForumPage extends StatefulWidget {
 class _ForumPageState extends State<ForumPage> {
   @override
   Widget build(BuildContext context) {
-    return ScaffoldBasic(
-      body: LayoutBuilder(
-        builder: (context, constraints) => ListView(
-          children: [
-            SizedBox(
-              height: constraints.maxHeight,
-              child: Center(
-                child: responsiveLayout(
-                  constraints,
-                  Text("Desktop"),
-                  Text("Tablet"),
-                  Text("Mobile"),
-                ),
+    return LayoutBuilder(
+      builder: (context, constraints) => ListView(
+        children: [
+          SizedBox(
+            height: constraints.maxHeight,
+            child: Center(
+              child: responsiveLayout(
+                constraints,
+                Text("Desktop"),
+                Text("Tablet"),
+                Text("Mobile"),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
