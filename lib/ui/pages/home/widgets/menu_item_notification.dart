@@ -6,11 +6,13 @@ import 'package:we_learning_dev/models/navigationModel.dart';
 class MenuItemNotification extends StatefulWidget {
   String text;
   String notificationText;
+  VoidCallback onClick;
 
   MenuItemNotification({
     super.key,
     required this.text,
     required this.notificationText,
+    required this.onClick,
   });
 
   @override
@@ -25,12 +27,10 @@ class _MenuItemNotificationState extends State<MenuItemNotification> {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: TextButton(
-            onPressed: () {
-              model.openNotification();
-            },
+            onPressed: widget.onClick,
             style: ButtonStyle(
                 alignment: Alignment.centerLeft,
-                padding: MaterialStateProperty.all(EdgeInsets.all(0))),
+                padding: MaterialStateProperty.all(const EdgeInsets.all(0))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

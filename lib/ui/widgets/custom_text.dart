@@ -7,6 +7,7 @@ class CustomText extends StatelessWidget {
   double fontSize;
   FontWeight fontWeight;
   int maxLines;
+  TextAlign? textAlign;
   CustomText({
     super.key,
     required this.text,
@@ -14,6 +15,7 @@ class CustomText extends StatelessWidget {
     this.fontSize = 16.0,
     this.fontWeight = FontWeight.normal,
     this.maxLines = 1,
+    this.textAlign,
   });
 
   @override
@@ -27,6 +29,7 @@ class CustomText extends StatelessWidget {
       ),
       softWrap: true,
       maxLines: maxLines,
+      textAlign: textAlign,
     );
   }
 }

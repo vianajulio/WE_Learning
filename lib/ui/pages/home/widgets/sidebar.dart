@@ -1,10 +1,8 @@
 import 'package:scoped_model/scoped_model.dart';
 import 'package:we_learning_dev/models/navigationModel.dart';
-import 'package:we_learning_dev/ui/color/colors.dart';
-import 'package:we_learning_dev/ui/pages/home/widgets/item_notificacao.dart';
 import 'package:we_learning_dev/ui/pages/home/widgets/menu_item.dart';
 import 'package:we_learning_dev/ui/pages/home/widgets/menu_item_notification.dart';
-import 'package:we_learning_dev/ui/widgets/custom_text.dart';
+import 'package:we_learning_dev/ui/pages/home/widgets/notification_bar.dart';
 import 'package:flutter/material.dart';
 
 class SideBar extends StatefulWidget {
@@ -34,24 +32,24 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
     ),
   ];
 
-  late final AnimationController _animmarionController;
+  late final AnimationController _animationController;
   late Animation<double> animation;
 
   @override
   void initState() {
-    _animmarionController =
-        AnimationController(duration: const Duration(seconds: 3), vsync: this)
-          ..addListener(() {
-            setState(() {});
-          });
-    animation = Tween<double>(begin: 0, end: -1).animate(CurvedAnimation(
-        parent: _animmarionController, curve: Curves.easeInOut));
+    _animationController = AnimationController(
+        duration: const Duration(milliseconds: 800), vsync: this)
+      ..addListener(() {
+        setState(() {});
+      });
+    animation = Tween<double>(begin: -1, end: 0).animate(
+        CurvedAnimation(parent: _animationController, curve: Curves.easeInOut));
     super.initState();
   }
 
   @override
   void dispose() {
-    _animmarionController.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -103,52 +101,16 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
                   MenuItemNotification(
                     text: "Notificações",
                     notificationText: "4",
+                    onClick: () {
+                      navigationModel.openNotification(_animationController);
+                    },
                   ),
                 ],
               ),
-              AnimatedBuilder(
-                animation: _animmarionController,
-                builder: (context, child) {
-                  return Transform.translate(
-                    offset: Offset(
-                      navigationModel.drawerNotification
-                          ? animation.value
-                          : 320,
-                      0,
-                    ),
-                    child: Container(
-                      color: primaryWhite,
-                      child: Column(
-                        children: [
-                          Container(
-                            alignment: Alignment.centerRight,
-                            child: IconButton(
-                                onPressed: () {
-                                  navigationModel.drawerNotification =
-                                      !navigationModel.drawerNotification;
-
-                                  if (navigationModel.drawerNotification) {
-                                    _animmarionController.forward();
-                                  } else {
-                                    _animmarionController.reverse();
-                                  }
-                                  navigationModel.setState();
-                                },
-                                icon: Icon(Icons.close_rounded)),
-                          ),
-                          Center(
-                              child: CustomText(
-                            text: 'Notificações',
-                            fontWeight: FontWeight.w600,
-                          )),
-                          Divider(thickness: 2),
-                          Expanded(child: ItemNotificacao()),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
+              NotificationBar(
+                      animationController: _animationController,
+                      animation: animation)
+                  .onHidenNotificationBar(navigationModel),
             ],
           );
         },

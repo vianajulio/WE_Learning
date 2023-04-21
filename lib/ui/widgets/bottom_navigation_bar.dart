@@ -4,7 +4,6 @@ import 'package:we_learning_dev/models/navigationModel.dart';
 import 'package:we_learning_dev/ui/color/colors.dart';
 
 class CustomBottomNavigatiomBar extends StatefulWidget {
-
   @override
   State<CustomBottomNavigatiomBar> createState() =>
       _CustomBottomNavigatiomBarState();
@@ -12,7 +11,6 @@ class CustomBottomNavigatiomBar extends StatefulWidget {
 
 class _CustomBottomNavigatiomBarState extends State<CustomBottomNavigatiomBar>
     with TickerProviderStateMixin {
-
   int _currentIndex = 0;
 
   List<BottomNavigationBarItem> bottomItens = const [
@@ -26,23 +24,23 @@ class _CustomBottomNavigatiomBarState extends State<CustomBottomNavigatiomBar>
   @override
   Widget build(BuildContext context) {
     return ScopedModelDescendant<NavigationModel>(
-        builder: (context, child, navigationModel) {
-      return BottomNavigationBar(
-        backgroundColor: primaryRed,
-        currentIndex: navigationModel.indexNavigation,
-        landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
-        selectedItemColor: primaryRed,
-        selectedLabelStyle: const TextStyle(
-          color: primaryRed,
-          fontWeight: FontWeight.bold,
-        ),
-        unselectedIconTheme: const IconThemeData(color: tertiaryBlack),
-        unselectedLabelStyle: const TextStyle(color: tertiaryBlack),
-        items: bottomItens,
-        onTap: (newIndex) {
-          navigationModel.newIndex(newIndex);
-        },
-      );
-    });
+      builder: (context, child, navigationModel) {
+        return BottomNavigationBar(
+          currentIndex: navigationModel.indexNavigation,
+          landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
+          selectedItemColor: primaryRed,
+          selectedLabelStyle: const TextStyle(
+            color: primaryRed,
+            fontWeight: FontWeight.bold,
+          ),
+          unselectedIconTheme: const IconThemeData(color: tertiaryBlack),
+          unselectedLabelStyle: const TextStyle(color: tertiaryBlack),
+          items: bottomItens,
+          onTap: (newIndex) {
+            navigationModel.newIndex(newIndex);
+          },
+        );
+      },
+    );
   }
 }

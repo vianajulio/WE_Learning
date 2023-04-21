@@ -12,8 +12,6 @@ import 'package:flutter/material.dart';
 
 //classe responsável por definir um padrão de scaffold para o projeto
 class ScaffoldBasic extends StatelessWidget {
-  // ScaffoldBasic();
-
   List<Widget> tab = const [
     HomePage(),
     ForumPage(),
