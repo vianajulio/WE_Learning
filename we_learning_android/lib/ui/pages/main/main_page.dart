@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_page.dart';
 import 'package:we_learning_android/ui/pages/forum/forum_dart.dart';
 import 'package:we_learning_android/ui/pages/home/home_page.dart';

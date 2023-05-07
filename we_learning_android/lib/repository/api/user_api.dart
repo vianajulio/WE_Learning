@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:get/get.dart';
 import 'package:we_learning_android/entities/user.dart';
@@ -8,12 +9,9 @@ class UserApi {
   static final UserApi instance = UserApi._();
   UserApi._();
 
-  Future<User?> getUser(int idValue) async {
+  Future<User?> login(String email, String password) async {
     try {
-      var encodeString = {
-        "email": "julio.viana@gmail.com",
-        "password": "Julio@1234"
-      };
+      var encodeString = {"email": email, "password": password};
 
       var encode = json.encode(encodeString);
 

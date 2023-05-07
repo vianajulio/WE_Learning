@@ -7,15 +7,15 @@ import 'package:we_learning_android/repository/local/user_local.dart';
 class UserModel extends GetxController {
   User? user;
 
-  void login(int idValue, {VoidCallback? onSucess, VoidCallback? onFail}) async {
-    user = await UserApi.instance.getUser(idValue);
-    update();
+  void login(String email, String password,
+      {VoidCallback? onSucess, VoidCallback? onFail}) async {
+    user = await UserApi.instance.login(email, password);
     if (user != null) {
-      // onSucess();
+      print(user!.name);
+      onSucess!();
       await UserLocal.instance.saveUser(user!);
     } else {
-      // onFail();
+      onFail!();
     }
-    // return '';
   }
 }

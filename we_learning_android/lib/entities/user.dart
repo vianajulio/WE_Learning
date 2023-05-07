@@ -18,11 +18,11 @@ class User {
   });
 
   User.fromJson(Map<String, dynamic> json) {
-    id = (json['id'] as num).toInt();
+    id = (json['id']);
     name = json['name'];
     email = json['email'];
     password = json['password'];
-    userType = (json['userType'] as num).toInt();
+    userType = (json['userType']);
     registerDate = (json['registerDate']);
     pierSitReg = json['pierSitReg'];
   }
