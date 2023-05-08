@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CustomYoutubePlayer extends StatefulWidget {
-  // final String? youtubeURL;
-  const CustomYoutubePlayer({super.key});
+  final String youtubeURL;
+  const CustomYoutubePlayer({super.key, required this.youtubeURL});
 
   @override
   State<CustomYoutubePlayer> createState() => _CustomYoutubePlayerState();
@@ -22,7 +22,7 @@ class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
         showControls: true,
       ),
     );
-    _controller.cueVideoById(videoId: 'Rhd8TOxzv6s');
+    _controller.loadVideo(widget.youtubeURL);
     super.initState();
   }
 

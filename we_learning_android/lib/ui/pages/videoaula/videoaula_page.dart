@@ -13,7 +13,9 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        body: CustomYoutubePlayer(),
+        body: CustomYoutubePlayer(
+          youtubeURL: 'https://www.youtube.com/watch?v=P5vn5EsAuOs',
+        ),
       ),
     );
   }
