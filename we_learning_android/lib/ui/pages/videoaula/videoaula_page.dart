@@ -16,7 +16,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
         body: CustomYoutubePlayer(
           youtubeURL: 'https://www.youtube.com/watch?v=P5vn5EsAuOs',
           showControls: true,
-          showFullScreenButton: true,
+          showFullScreenButton: true,       
         ),
       ),
     );
