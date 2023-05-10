@@ -9,8 +9,13 @@ class CustomCarosel extends StatefulWidget {
   double viewPortFraction;
   bool autoPlay;
   Duration autoPlayInterval;
+<<<<<<< HEAD:we_learning/lib/ui/widgets/carousel.dart
   int initialPage;
   bool enableInfiniteScroll;
+=======
+  bool enableInfiniteScroll;
+  int initialPage;
+>>>>>>> julio:lib/ui/widgets/carousel.dart
   bool padEnds;
 
   CustomCarosel({
@@ -22,9 +27,15 @@ class CustomCarosel extends StatefulWidget {
     this.viewPortFraction = 1,
     this.autoPlay = false,
     this.autoPlayInterval = const Duration(seconds: 5),
+<<<<<<< HEAD:we_learning/lib/ui/widgets/carousel.dart
     this.initialPage = 0,
     this.enableInfiniteScroll = true,
     this.padEnds = false,
+=======
+    this.enableInfiniteScroll = true,
+    this.initialPage = 1,
+    this.padEnds = true,
+>>>>>>> julio:lib/ui/widgets/carousel.dart
   });
 
   @override
@@ -73,8 +84,14 @@ class _CustomCaroselState extends State<CustomCarosel> {
               autoPlay: widget.autoPlay,
               //Duração do intervalo da troca de widget
               autoPlayInterval: widget.autoPlayInterval,
+<<<<<<< HEAD:we_learning/lib/ui/widgets/carousel.dart
               initialPage: widget.initialPage,
               enableInfiniteScroll: widget.enableInfiniteScroll,
+=======
+              enableInfiniteScroll: widget.enableInfiniteScroll,
+              initialPage: widget.initialPage,
+              //adiciona um padding no final do scroll, para o widget ficar no centro
+>>>>>>> julio:lib/ui/widgets/carousel.dart
               padEnds: widget.padEnds,
             ),
             //Controller é responsável pelas interações com o carrossel

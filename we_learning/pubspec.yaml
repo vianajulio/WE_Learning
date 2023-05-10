@@ -1,5 +1,5 @@
-name: e_learning_dev
-description: A new Flutter project.
+name: we_learning_dev
+description: Projeto em flutter para conclusão de curso no Senai Zerbini.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -33,7 +33,13 @@ dependencies:
 
   carousel_slider: ^4.2.1
   badges: ^3.0.2
+<<<<<<< HEAD:we_learning/pubspec.yaml
   youtube_player_iframe: ^4.0.4
+=======
+  footer: ^0.0.4
+  google_fonts: ^4.0.3
+  scoped_model: ^2.0.0
+>>>>>>> julio:pubspec.yaml
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

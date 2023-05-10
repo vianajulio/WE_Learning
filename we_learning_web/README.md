@@ -1,4 +1,8 @@
+<<<<<<< HEAD:we_learning_web/README.md
 # we_learning_web
+=======
+# we_learning_dev
+>>>>>>> julio:README.md
 
 A new Flutter project.
 

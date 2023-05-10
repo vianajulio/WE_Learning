@@ -13,6 +13,12 @@ const Color primaryRed = Color.fromARGB(255, 226, 5, 13);
 const Color secondaryRed = Color.fromARGB(255, 200, 5, 10);
 const Color tertiaryRed = Color.fromARGB(255, 180, 5, 8);
 
+<<<<<<< HEAD:we_learning/lib/ui/color/colors.dart
 const Color primaryBlue = Color.fromRGBO(48, 160, 216, 1);
 const Color secondaryBlue = Color.fromRGBO(28, 133, 180, 1);
 const Color tertiaryBlue = Color.fromRGBO(22, 113, 152, 1);
+=======
+const Color primaryBlue = Color.fromARGB(255, 46, 180, 216);
+const Color secondaryBlue = Color.fromARGB(255, 28, 133, 180);
+const Color tertiaryBlue = Color.fromARGB(255, 22, 112, 152);
+>>>>>>> julio:lib/ui/color/colors.dart
