@@ -3,7 +3,7 @@
     <!-- Acesso a internet da VM -->
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
    <application
-        android:label="we_learning_android"
+        android:label="We Learn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

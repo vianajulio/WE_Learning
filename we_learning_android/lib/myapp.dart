@@ -13,8 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
       debugShowCheckedModeBanner: false,
-      // home: LoginPage(),
-      home: MainPage(),
+      home: LoginPage(),
     );
   }
 }

@@ -1,7 +1,5 @@
 import 'dart:convert';
-import 'dart:math';
 
-import 'package:get/get.dart';
 import 'package:we_learning_android/entities/user.dart';
 import 'package:http/http.dart' as http;
 
@@ -11,11 +9,15 @@ class UserApi {
 
   Future<User?> login(String email, String password) async {
     try {
-      var encodeString = {"email": email, "password": password};
+      Map<String, dynamic> encodeString = {
+        "email": email,
+        "password": password,
+      };
 
       var encode = json.encode(encodeString);
 
-      var url = Uri.https('weleaningapi.azurewebsites.net', '/api/User/login');
+      var url =
+          Uri.https('weleaningapi.azurewebsites.net', '/api/usuario/login');
 
       var response = await http.post(
         url,
@@ -29,7 +31,6 @@ class UserApi {
         User user = User.fromJson(responseData);
         return user;
       } else {
-        print('n deu certo');
         return null;
       }
     } catch (e) {

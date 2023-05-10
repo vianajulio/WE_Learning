@@ -6,8 +6,6 @@ class CriarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(child: CustomText(text: 'Criar'),),
-    );
+    return Center(child: CustomText(text: 'Criar'),);
   }
 }

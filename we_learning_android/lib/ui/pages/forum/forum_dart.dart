@@ -6,10 +6,8 @@ class ForumPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: CustomText(text: 'Forum'),
-      ),
+    return Center(
+      child: CustomText(text: 'Forum'),
     );
   }
 }

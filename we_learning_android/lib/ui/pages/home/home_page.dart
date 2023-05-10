@@ -11,10 +11,8 @@ class HomePage extends StatelessWidget {
     return GetBuilder<UserModel>(
       init: UserModel(),
       builder: (controller) {
-        return Container(
-          child: Center(
-            child: CustomText(text: ''),
-          ),
+        return Center(
+          child: CustomText(text: ''),
         );
       },
     );

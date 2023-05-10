@@ -3,7 +3,20 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CustomYoutubePlayer extends StatefulWidget {
   final String youtubeURL;
-  const CustomYoutubePlayer({super.key, required this.youtubeURL});
+  bool loop;
+  bool mute;
+  bool showFullScreenButton;
+  bool showControls;
+  bool autoInit;
+  CustomYoutubePlayer({
+    super.key,
+    required this.youtubeURL,
+    this.loop = false,
+    this.mute = false,
+    this.showFullScreenButton = false,
+    this.showControls = false,
+    this.autoInit = false,
+  });
 
   @override
   State<CustomYoutubePlayer> createState() => _CustomYoutubePlayerState();
@@ -15,14 +28,19 @@ class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
   @override
   void initState() {
     _controller = YoutubePlayerController(
-      params: const YoutubePlayerParams(
-        loop: true,
-        mute: false,
-        showFullscreenButton: true,
-        showControls: true,
+      params: YoutubePlayerParams(
+        loop: widget.loop,
+        mute: widget.mute,
+        showFullscreenButton: widget.showFullScreenButton,
+        showControls: widget.showControls,
+        enableJavaScript: false,
       ),
     );
+
     _controller.loadVideo(widget.youtubeURL);
+
+
+
     super.initState();
   }
 

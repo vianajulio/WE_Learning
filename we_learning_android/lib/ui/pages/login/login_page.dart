@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:we_learning_android/model/user_model.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
@@ -79,7 +80,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                       ),
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   ElevatedButton(
                     onPressed: () {
                       _loginOnPress(context);
@@ -113,11 +114,13 @@ class LoginPage extends StatelessWidget with LoginValidator {
           context: context,
           message: 'Usuário logado com sucesso.',
           onPop: (_) {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                builder: (context) {
-                  return const MainPage();
-                },
+            Future.delayed(const Duration(milliseconds: 500)).then(
+              (value) => Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const MainPage();
+                  },
+                ),
               ),
             );
           },

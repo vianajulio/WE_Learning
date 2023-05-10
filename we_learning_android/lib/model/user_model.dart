@@ -11,7 +11,6 @@ class UserModel extends GetxController {
       {VoidCallback? onSucess, VoidCallback? onFail}) async {
     user = await UserApi.instance.login(email, password);
     if (user != null) {
-      print(user!.name);
       onSucess!();
       await UserLocal.instance.saveUser(user!);
     } else {
