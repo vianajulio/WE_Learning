@@ -25,7 +25,6 @@ class Materia extends StatelessWidget {
               return CustomTextCheckBox(text: 'LMA');
             },
           ),
-          // CustomTextCheckBox(text: 'LMA')
         ],
         onExpansionChanged: (bool value) {
           _icon = value;
