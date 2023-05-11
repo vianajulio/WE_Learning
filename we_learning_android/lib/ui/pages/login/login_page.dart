@@ -7,6 +7,7 @@ import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
 import 'package:we_learning_android/ui/pages/main/main_page.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 import 'package:we_learning_android/ui/validator/login_page_validator.dart';
+import 'package:we_learning_android/model/loginpage_controller.dart';
 
 class LoginPage extends StatelessWidget with LoginValidator {
   LoginPage({super.key});
@@ -81,18 +82,24 @@ class LoginPage extends StatelessWidget with LoginValidator {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: () {
-                      _loginOnPress(context);
+                  GetBuilder<LoginPageController>(
+                    init: LoginPageController(),
+                    builder: (controller) {
+                      return ElevatedButton(
+                        onPressed: () async {
+                          await _loginOnPress(context);
+                        },
+                        style: const ButtonStyle(
+                            backgroundColor:
+                                MaterialStatePropertyAll(primaryRed)),
+                        child: CustomText(
+                          text: 'Login',
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: primaryWhite,
+                        ),
+                      );
                     },
-                    style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(primaryRed)),
-                    child: CustomText(
-                      text: 'Login',
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: primaryWhite,
-                    ),
                   )
                 ],
               ),
@@ -103,8 +110,17 @@ class LoginPage extends StatelessWidget with LoginValidator {
     );
   }
 
-  void _loginOnPress(BuildContext context) {
+  _loginOnPress(BuildContext context) {
     FocusScope.of(context).unfocus();
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
 
     UserModel().login(
       _emailController.text,
@@ -127,6 +143,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
         );
       },
       onFail: () {
+        Navigator.of(context).pop();
         Message.onFail(
           context: context,
           message: 'Não foi possível realizar login.',

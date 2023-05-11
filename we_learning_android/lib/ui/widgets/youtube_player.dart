@@ -37,9 +37,10 @@ class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
       ),
     );
 
-    _controller.loadVideo(widget.youtubeURL);
-
-
+    _controller.load(
+      params: YoutubePlayerParams(),
+      baseUrl: widget.youtubeURL,
+    );
 
     super.initState();
   }
@@ -49,9 +50,9 @@ class _CustomYoutubePlayerState extends State<CustomYoutubePlayer> {
     return AspectRatio(
       //Proporção da tela
       aspectRatio: 16 / 9,
-      child: YoutubePlayerControllerProvider(
+      child: YoutubePlayer(
         controller: _controller,
-        child: YoutubePlayer(controller: _controller),
+        enableFullScreenOnVerticalDrag: true,
       ),
     );
   }

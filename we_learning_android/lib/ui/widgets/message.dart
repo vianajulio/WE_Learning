@@ -14,6 +14,7 @@ class Message extends StatelessWidget {
       required String message,
       int duration = 3,
       Function(dynamic)? onPop}) async {
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -24,6 +25,7 @@ class Message extends StatelessWidget {
         backgroundColor: primaryBlue,
       ),
     );
+
     if (onPop != null) {
       Future.delayed(
         Duration(seconds: duration),
@@ -31,6 +33,7 @@ class Message extends StatelessWidget {
         onPop,
       );
     }
+    Navigator.of(context).pop();
   }
 
   static void onFail(
@@ -38,6 +41,14 @@ class Message extends StatelessWidget {
       required String message,
       int duration = 3,
       Function(dynamic)? onPop}) async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
@@ -52,6 +63,7 @@ class Message extends StatelessWidget {
         onPop,
       );
     }
+    Navigator.of(context).pop();
   }
 
   static Widget loading(BuildContext context,
