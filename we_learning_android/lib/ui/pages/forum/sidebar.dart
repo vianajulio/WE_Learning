@@ -32,10 +32,6 @@ class _SidebarState extends State<Sidebar> {
                       : ListView(
                           children: [
                             SizedBox(height: 140),
-                            Materia(textCheckBox: [""],),
-                            Materia(textCheckBox: [""],),
-                            Materia(textCheckBox: [""],),
-                            Materia(textCheckBox: [""],),
                           ],
                         ),
                 ),

@@ -1,14 +1,19 @@
 import 'package:get/get.dart';
 
 class MateriaController extends GetxController {
-  var expansionChanged = false.obs;
+  var expansionChanged = true.obs;
 
-  onExpansionChanged() {
+  bool  onExpansionChanged(bool value) {
     expansionChanged.value = !expansionChanged.value;
+    value = expansionChanged.value;
     update();
-    return expansionChanged;
+    return value;
   }
 
+  filterList(List<String> list) {
 
+
+
+  }
 
 }

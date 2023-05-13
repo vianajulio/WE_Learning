@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 
-class Topico extends StatelessWidget {
-  int index;
-  double width;
-  Topico({required this.width, required this.index});
+class TopicoWidget extends StatelessWidget {
+  late final Topico topico;
+  TopicoWidget({required this.topico});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
         children: [
           Container(
             padding: const EdgeInsets.only(left: 16, top: 16),
-            width: width,
+            width: 300,
             height: 100,
             color: tertiaryBlue,
             child: Column(
@@ -33,11 +33,11 @@ class Topico extends StatelessWidget {
                     Column(
                       children: [
                         CustomText(
-                          text: 'Titulo',
+                          text: topico.assunto ?? '',
                           color: primaryWhite,
                         ),
                         CustomText(
-                          text: 'Autor $index',
+                          text: topico.autor,
                           color: secondaryWhite,
                         )
                       ],
@@ -52,7 +52,7 @@ class Topico extends StatelessWidget {
             ),
           ),
           Container(
-            width: width,
+            width: 300,
             height: 60,
             color: secondaryBlue,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

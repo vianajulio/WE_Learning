@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/pages/forum/forum_dart.dart';
-import 'package:we_learning_android/ui/pages/login/login_page.dart';
-import 'package:we_learning_android/ui/pages/main/main_page.dart';
+import 'package:we_learning_android/ui/pages/forum/forum_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
