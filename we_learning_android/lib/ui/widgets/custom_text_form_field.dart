@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 
 class CustomTexteFormField extends StatelessWidget {
-  TextEditingController? textController;
-  String? hintText;
-  CustomTexteFormField({super.key, this.textController, this.hintText = ''});
+  final TextEditingController? textController;
+  final String? hintText;
+  const CustomTexteFormField(
+      {super.key, this.textController, this.hintText = ''});
 
   @override
   Widget build(BuildContext context) {

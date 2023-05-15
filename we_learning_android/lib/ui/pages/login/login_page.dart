@@ -22,27 +22,27 @@ class LoginPage extends StatelessWidget {
                   scale: 2,
                 ),
                 const SizedBox(height: 32),
-                CustomText(
+                const CustomText(
                   text: 'Bem vindo!',
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   textAlign: TextAlign.center,
                 ),
-                CustomText(
+                const CustomText(
                   text: 'Plataforma de videocurso do senai',
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 32),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     CustomText(
                       text: 'Usuário',
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                     CustomTexteFormField(hintText: 'senaizerbini@senai.edu.br'),
-                    const SizedBox(height: 32),
+                    SizedBox(height: 32),
                     CustomText(
                       text: 'Senha',
                       fontWeight: FontWeight.bold,
@@ -55,13 +55,13 @@ class LoginPage extends StatelessWidget {
                   alignment: AlignmentDirectional.centerEnd,
                   child: TextButton(
                     onPressed: () {},
-                    child: CustomText(
+                    child: const CustomText(
                       text: 'Esqueceu a senha?',
                       color: secondaryBlue,
                     ),
                   ),
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
                   },
                   style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(primaryRed)),
-                  child: CustomText(
+                  child: const CustomText(
                     text: 'Login',
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
