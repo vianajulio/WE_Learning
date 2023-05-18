@@ -19,10 +19,10 @@ class MainPage extends StatelessWidget {
         //physics: const   BouncingScrollPhysics(),
         controller: controller.pageController,
         children:  [
-          HomePage(),
+          const HomePage(),
           ForumPage(),
-          VideoaulasPage(),
-          CriarPage(),
+          const VideoaulasPage(),
+          const CriarPage(),
         ],
         onPageChanged: (value) {
           controller.goToTab2(value);

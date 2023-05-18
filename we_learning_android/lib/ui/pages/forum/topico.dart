@@ -15,7 +15,7 @@ class TopicoWidget extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.only(left: 16, top: 16),
-            width: 300,
+            width: 350,
             height: 100,
             color: tertiaryBlue,
             child: Column(
@@ -52,7 +52,7 @@ class TopicoWidget extends StatelessWidget {
             ),
           ),
           Container(
-            width: 300,
+            width: 350,
             height: 60,
             color: secondaryBlue,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
