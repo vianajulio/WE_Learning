@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:we_learning_android/controller/navigation_controller.dart';
 //import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_page.dart';
-import 'package:we_learning_android/ui/pages/forum/forum_dart.dart';
+import 'package:we_learning_android/ui/pages/forum/forum_page.dart';
 import 'package:we_learning_android/ui/pages/home/home_page.dart';
 import 'package:we_learning_android/ui/pages/main/bottomnavigationbar.dart';
 import 'package:we_learning_android/ui/pages/videoaula/videoaulas_page.dart';
@@ -18,7 +18,7 @@ class MainPage extends StatelessWidget {
       body: PageView(
         //physics: const   BouncingScrollPhysics(),
         controller: controller.pageController,
-        children: const [
+        children:  [
           HomePage(),
           ForumPage(),
           VideoaulasPage(),

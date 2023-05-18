@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:we_learning_android/repository/aulas_repository.dart';
 import 'package:we_learning_android/repository/comentario_repository.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/youtube_player.dart';
 
-class VideoAulaPage extends StatelessWidget {
-  const VideoAulaPage({super.key});
+class VideoaulaPage extends StatefulWidget {
+  const VideoaulaPage({super.key});
 
+  @override
+  State<VideoaulaPage> createState() => _VideoaulaPageState();
+}
+
+class _VideoaulaPageState extends State<VideoaulaPage> {
   @override
   Widget build(BuildContext context) {
     final comentarios = ComentariosRepository.comentarios;

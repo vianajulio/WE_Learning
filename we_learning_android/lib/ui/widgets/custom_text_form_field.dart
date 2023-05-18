@@ -2,18 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 
 class CustomTexteFormField extends StatelessWidget {
-  final TextEditingController? textController;
-  final String? hintText;
-  const CustomTexteFormField(
-      {super.key, this.textController, this.hintText = ''});
+  TextEditingController? textController;
+  String? hintText;
+  FormFieldValidator<String>? validator;
+  CustomTexteFormField({
+    super.key,
+    this.textController,
+    this.hintText = '',
+    this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextField(
+        TextFormField(
           controller: textController,
+          validator: validator,
           decoration: InputDecoration(
             fillColor: primaryWhite,
             filled: true,

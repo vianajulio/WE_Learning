@@ -13,7 +13,7 @@ class VideoaulasPage extends StatelessWidget {
           child: const Text('data'),
           onPressed: () {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const VideoAulaPage()));
+                MaterialPageRoute(builder: (context) => const VideoaulaPage()));
           },
         ),
       ),
