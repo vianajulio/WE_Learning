@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/topicoapp.dart';
+import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/model/pages/forumpage_controller.dart';
-import 'package:we_learning_android/ui/pages/forum/widgets/topicowidget.dart';
+import 'package:we_learning_android/ui/pages/forum/widgets/topic_widget.dart';
 
 class SelectedTopics extends StatelessWidget {
-  SelectedTopics({super.key});
+  const SelectedTopics({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class SelectedTopics extends StatelessWidget {
             : ListView.builder(
                 itemCount: controller.selectedTopicos?.length ?? 0,
                 itemBuilder: (context, index) {
-                  return TopicoWidget(
-                    topicoApp:
-                        controller.selectedTopicos?[index] ?? TopicoApp(),
+                  return TopicWidget(
+                    topico:
+                        controller.selectedTopicos?[index] ?? Topico(),
                   );
                 },
               ),

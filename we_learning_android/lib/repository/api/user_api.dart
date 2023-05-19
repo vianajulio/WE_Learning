@@ -32,7 +32,7 @@ class UserApi {
         return null;
       }
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 }

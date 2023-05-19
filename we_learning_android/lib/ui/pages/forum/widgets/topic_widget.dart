@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/entities/topicoapp.dart';
+import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 
-class TopicoWidget extends StatelessWidget {
- final TopicoApp topicoApp;
-  TopicoWidget({required this.topicoApp});
+class TopicWidget extends StatelessWidget {
+ final Topico topico;
+  TopicWidget({required this.topico});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class TopicoWidget extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.only(left: 16, top: 16),
-            width: 300,
+            width: 340,
             height: 100,
             color: tertiaryBlue,
             child: Column(
@@ -31,13 +31,15 @@ class TopicoWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
-                          text: topicoApp.assunto_topico ?? '',
+                          text: topico.assuntoTopico ?? '',
                           color: primaryWhite,
                         ),
+                        const SizedBox(height: 4),
                         CustomText(
-                          text: topicoApp.nome_usuario ?? '',
+                          text: topico.nomeUsuario ?? '',
                           color: secondaryWhite,
                         )
                       ],
@@ -52,7 +54,7 @@ class TopicoWidget extends StatelessWidget {
             ),
           ),
           Container(
-            width: 300,
+            width: 340,
             height: 60,
             color: secondaryBlue,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

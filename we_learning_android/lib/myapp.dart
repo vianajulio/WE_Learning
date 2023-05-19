@@ -9,12 +9,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'WeLearning',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      // home: LoginPage(),
-      // home: ForumPage(),
-      home: MainPage(),
+      home: const MainPage(),
     );
   }
 }

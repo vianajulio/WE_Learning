@@ -13,8 +13,8 @@ class FiltroMateria extends StatelessWidget {
       () => ListView.builder(
         itemCount: controller.filter.length,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0),
+          return Container(
+            height: 70,
             child: CustomRadioBtn(
               text: controller.filter[index],
             ),

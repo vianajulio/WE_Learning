@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/topicoapp.dart';
+import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/api/topico_api.dart';
 
 class TopicModel extends GetxController{
-  Future<List<TopicoApp>?>? futureTopics;
+  Future<List<Topico>?>? futureTopics;
 
   @override
   onInit() async {
+    super.onInit();
     await get();
   }
   
@@ -16,7 +17,7 @@ class TopicModel extends GetxController{
     futureTopics = TopicoApi.instance.getAll();
   }
 
-  Future<List<TopicoApp>?> futureTopicApp() async {
+  Future<List<Topico>?> futureTopicApp() async {
     return await futureTopics;
   }
 

@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/topicoapp.dart';
-import 'package:we_learning_android/model/pages/forumpage_controller.dart';
+import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
 import 'package:we_learning_android/model/topic_model.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
-import 'package:we_learning_android/ui/pages/forum/widgets/topicowidget.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 import 'package:we_learning_android/ui/widgets/search_bar.dart';
 
 class ForumPage extends StatelessWidget {
-  ForumPage({super.key});
+  const ForumPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +44,7 @@ class ForumPage extends StatelessWidget {
         init: TopicModel(),
         builder: (controller) => FutureBuilder(
             future: controller.futureTopics,
-            builder: (context, AsyncSnapshot<List<TopicoApp>?> snapshot) {
+            builder: (context, AsyncSnapshot<List<Topico>?> snapshot) {
               switch (snapshot.connectionState) {
                 case ConnectionState.none:
                   return Message.alert(
@@ -77,7 +75,7 @@ class ForumPage extends StatelessWidget {
                             largura: width,
                           ),
                         ),
-                        SelectedTopics(),
+                        const SelectedTopics(),
                       ],
                     );
                   }
@@ -85,6 +83,7 @@ class ForumPage extends StatelessWidget {
             }),
       ),
       floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
         onPressed: () {},
       ),
     );

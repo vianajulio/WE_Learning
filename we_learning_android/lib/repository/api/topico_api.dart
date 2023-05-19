@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:we_learning_android/entities/topicoapp.dart';
+import 'package:we_learning_android/entities/topico.dart';
 
 class TopicoApi {
   static final TopicoApi instance = TopicoApi._();
   TopicoApi._();
 
-  Future<List<TopicoApp>?> getAll() async {
-      List<TopicoApp> topicos;
-      TopicoApp app = TopicoApp();
+  Future<List<Topico>?> getAll() async {
+      List<Topico> topicos;
+      Topico app = Topico();
     try {
       var url = Uri.http('apiwelearn.azurewebsites.net', '/api/topico/listar');
 
@@ -23,7 +23,7 @@ class TopicoApi {
         return topicos;
       }
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 }
