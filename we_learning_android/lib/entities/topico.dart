@@ -11,6 +11,5 @@ class Topico {
 
 class Filtro {
   String tipo;
-
   Filtro(this.tipo);
 }

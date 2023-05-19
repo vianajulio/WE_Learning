@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:we_learning_android/entities/user.dart';
 import 'package:http/http.dart' as http;
 
@@ -16,8 +15,7 @@ class UserApi {
 
       var encode = json.encode(encodeString);
 
-      var url =
-          Uri.https('weleaningapi.azurewebsites.net', '/api/usuario/login');
+      var url = Uri.https('apiwelearn.azurewebsites.net', '/api/usuario/login');
 
       var response = await http.post(
         url,

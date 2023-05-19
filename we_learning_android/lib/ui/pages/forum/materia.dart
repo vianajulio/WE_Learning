@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/model/forum_controller.dart';
+import 'package:we_learning_android/model/pages/forumpage_controller.dart';
 import 'package:we_learning_android/ui/pages/forum/custom_elevated_btn_forum.dart';
 
-class Materia extends StatelessWidget {
+class FiltroMateria extends StatelessWidget {
   final controller = Get.put(ForumController());
 
   @override

@@ -81,4 +81,24 @@ class Message extends StatelessWidget {
       ),
     );
   }
+
+  static Widget alert(
+    String message, {
+    double? fontSize,
+    FontWeight? fontWeight,
+    Color? color,
+  }) {
+    return Center(
+      child: Center(
+        child: Text(
+          message,
+          style: TextStyle(
+            fontSize: fontSize ?? 18.0,
+            color: color ?? Colors.grey,
+            fontWeight: fontWeight ?? FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
 }
