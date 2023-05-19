@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:we_learning_android/model/pages/loginpage_controller.dart';
 import 'package:we_learning_android/model/user_model.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
@@ -7,7 +8,6 @@ import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
 import 'package:we_learning_android/ui/pages/main/main_page.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 import 'package:we_learning_android/ui/validator/login_page_validator.dart';
-import 'package:we_learning_android/model/loginpage_controller.dart';
 
 class LoginPage extends StatelessWidget with LoginValidator {
   LoginPage({super.key});
