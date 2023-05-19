@@ -16,38 +16,35 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
     final comentarios = ComentariosRepository.comentarios;
     final listaAulas = AulasRepository.aulas;
     return Scaffold(
-      drawer: Drawer( 
+      drawer: SafeArea(
+        child: Drawer(
           child: ListView.separated(
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(listaAulas[index].titulo.toString()),
-                  trailing: listaAulas[index].assistida!
-                      ? const Icon(
-                          Icons.check,
-                          color: Colors.green,
-                        )
-                      : null,
-                  onTap: () {
-                    print('idAula: ${listaAulas[index].id}');
-                  },
-                );
-              },
-              separatorBuilder: (__, _) => const Divider(),
-              itemCount: listaAulas.length)),
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(listaAulas[index].titulo.toString()),
+                trailing: listaAulas[index].assistida!
+                    ? const Icon(
+                        Icons.check,
+                        color: Colors.green,
+                      )
+                    : null,
+                onTap: () {
+                  print('idAula: ${listaAulas[index].id}');
+                },
+              );
+            },
+            separatorBuilder: (__, _) => const Divider(),
+            itemCount: listaAulas.length,
+          ),
+        ),
+      ),
       appBar: AppBar(),
       body: SafeArea(
         child: LayoutBuilder(builder: (context, constraint) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                flex: 6,
-                child: SizedBox(
-                  child: Container(
-                    color: Colors.amber,
-                  ),
-                ),
-              ),
+              CustomYoutubePlayer(youtubeURL: "https://www.youtube.com/watch?v=z_67ApMhQk0"),
               /* e se as aulas ficassem na ordem dentro do player? */
               Expanded(
                 flex: 2,
