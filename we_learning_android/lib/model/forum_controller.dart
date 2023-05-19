@@ -27,7 +27,7 @@ class ForumController extends GetxController {
   void filterBag(String tag) async {
 
     if (tag == 'Todos') {
-      // _filtros.updateAll((key, value) => value = true);
+      _filtros.updateAll((key, value) => value = true);
      
       _selectedTopicos.assignAll(_topicos);
     } else {
@@ -35,12 +35,12 @@ class ForumController extends GetxController {
     }
   }
 
-  // void  toggle(Filtro item){
-  //   _filtros[item] = !(_filtros[item] ?? true);
-  //   if (_filtros[item] == false) {
-  //     _selectedTopicos.removeWhere((itemFiltro) => itemFiltro.topico.contains(item.tipo));
-  //   }
-  // }
+  void  toggle(Filtro item){
+    _filtros[item] = !(_filtros[item] ?? true);
+    if (_filtros[item] == false) {
+      _selectedTopicos.removeWhere((itemFiltro) => itemFiltro.topico.contains(item.tipo));
+    }
+  }
   
   // get selectedTopicos => _selectedTopicos;
   // get selectedFilter => _filtros.entries.where((element) => element.value).map((e) => e.key).toList();

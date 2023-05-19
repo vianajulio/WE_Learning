@@ -16,7 +16,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
     final comentarios = ComentariosRepository.comentarios;
     final listaAulas = AulasRepository.aulas;
     return Scaffold(
-      drawer: Drawer(
+      drawer: Drawer( 
           child: ListView.separated(
               itemBuilder: (context, index) {
                 return ListTile(
@@ -40,8 +40,14 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomYoutubePlayer(
-                  youtubeURL: 'https://www.youtube.com/watch?v=39HVf1Lbzqg'),
+              Expanded(
+                flex: 6,
+                child: SizedBox(
+                  child: Container(
+                    color: Colors.amber,
+                  ),
+                ),
+              ),
               /* e se as aulas ficassem na ordem dentro do player? */
               Expanded(
                 flex: 2,
@@ -78,12 +84,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                             ),
                             subtitle: Row(
                               children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(right: 5.0),
-                                  child: Icon(
-                                    Icons.account_circle,
-                                  ),
-                                ),
+                                const Icon(Icons.person),
                                 Text('${comentarios[index].nome}')
                               ],
                             ),
