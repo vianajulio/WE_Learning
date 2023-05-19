@@ -5,11 +5,7 @@
     android:versionName="1.0.0" >
 
     <uses-sdk
-<<<<<<< HEAD
-        android:minSdkVersion="16"
-=======
         android:minSdkVersion="20"
->>>>>>> origin/julio
         android:targetSdkVersion="33" />
     <!--
          The INTERNET permission is required for development. Specifically,
@@ -24,11 +20,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-<<<<<<< HEAD
-        android:label="we_learning_android" >
-=======
         android:label="We Learn" >
->>>>>>> origin/julio
         <activity
             android:name="com.example.we_learning_android.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -62,14 +54,11 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
-<<<<<<< HEAD
-=======
         <activity
             android:name="io.flutter.plugins.urllauncher.WebViewActivity"
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
->>>>>>> origin/julio
         <uses-library
             android:name="androidx.window.extensions"
             android:required="false" />

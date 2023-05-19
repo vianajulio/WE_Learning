@@ -4,14 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="19"
-<<<<<<< HEAD
-6-->C:\Users\gabri\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-3.7.0\android\src\main\AndroidManifest.xml
-7        android:targetSdkVersion="19" />
-7-->C:\Users\gabri\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-3.7.0\android\src\main\AndroidManifest.xml
-=======
 6-->C:\Users\julio\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-3.7.0\android\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="19" />
 7-->C:\Users\julio\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-3.7.0\android\src\main\AndroidManifest.xml
->>>>>>> origin/julio
 8
 9</manifest>

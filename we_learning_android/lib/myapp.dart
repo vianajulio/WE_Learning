@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/ui/pages/forum/forum_page.dart';
+import 'package:we_learning_android/ui/pages/main/main_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,8 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      // home: LoginPage(),
-      home: ForumPage(),
+      home: MainPage(),
     );
   }
 }
