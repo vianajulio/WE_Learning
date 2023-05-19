@@ -20,12 +20,10 @@ class TopicoApi {
         var listTopics =
             json.decode(response.body).cast<Map<String, dynamic>>();
             topicos = app.listFromJson(listTopics);
-            print(topicos);
         return topicos;
       }
     } catch (e) {
-      print(e);
-      return null;
+      throw e;
     }
   }
 }

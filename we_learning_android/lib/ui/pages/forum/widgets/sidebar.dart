@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/pages/forum/materia.dart';
 
 class Sidebar extends StatefulWidget {
   BoxConstraints constraints;

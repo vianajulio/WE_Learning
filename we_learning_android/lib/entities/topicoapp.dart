@@ -28,7 +28,6 @@ class TopicoApp {
 
   List<TopicoApp> listFromJson(List<Map<String, dynamic>> json){
     var lista = List<TopicoApp>.from(json.map((json) => TopicoApp.fromJson(json)));
-    print(lista);
     return lista;
   }
 

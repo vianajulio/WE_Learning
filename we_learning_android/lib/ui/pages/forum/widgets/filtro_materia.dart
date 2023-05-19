@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/model/pages/forumpage_controller.dart';
-import 'package:we_learning_android/ui/pages/forum/custom_elevated_btn_forum.dart';
+import 'package:we_learning_android/ui/pages/forum/widgets/custom_radio_btn.dart';
 
 class FiltroMateria extends StatelessWidget {
   final controller = Get.put(ForumController());
@@ -14,10 +14,9 @@ class FiltroMateria extends StatelessWidget {
         itemCount: controller.filter.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: CustomElevatedBtnForum(
-              filtro: controller.filter[index],
-              function: () => controller.filterBag(controller.filter[index].tipo),
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            child: CustomRadioBtn(
+              text: controller.filter[index],
             ),
           );
         },

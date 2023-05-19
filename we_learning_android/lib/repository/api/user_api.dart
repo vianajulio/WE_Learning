@@ -32,8 +32,7 @@ class UserApi {
         return null;
       }
     } catch (e) {
-      print('getUser: $e');
-      return null;
+      throw e;
     }
   }
 }
