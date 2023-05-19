@@ -13,7 +13,7 @@ class ForumPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = 340.0;
+    double width = 370.0;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Forum'),

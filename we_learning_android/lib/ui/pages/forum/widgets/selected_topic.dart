@@ -19,7 +19,7 @@ class SelectedTopics extends StatelessWidget {
             : ListView.builder(
                 itemCount: controller.selectedTopicos?.length ?? 0,
                 itemBuilder: (context, index) {
-                  return TopicWidget(
+                  return TopicoWidget(
                     topico:
                         controller.selectedTopicos?[index] ?? Topico(),
                   );

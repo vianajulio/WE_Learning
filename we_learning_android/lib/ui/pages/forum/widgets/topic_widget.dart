@@ -3,9 +3,9 @@ import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 
-class TopicWidget extends StatelessWidget {
- final Topico topico;
-  TopicWidget({required this.topico});
+class TopicoWidget extends StatelessWidget {
+  late final Topico topico;
+  TopicoWidget({required this.topico});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class TopicWidget extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.only(left: 16, top: 16),
-            width: 340,
+            width: 300,
             height: 100,
             color: tertiaryBlue,
             child: Column(
@@ -31,13 +31,11 @@ class TopicWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
                           text: topico.assuntoTopico ?? '',
                           color: primaryWhite,
                         ),
-                        const SizedBox(height: 4),
                         CustomText(
                           text: topico.nomeUsuario ?? '',
                           color: secondaryWhite,
@@ -54,11 +52,11 @@ class TopicWidget extends StatelessWidget {
             ),
           ),
           Container(
-            width: 340,
+            width: 300,
             height: 60,
             color: secondaryBlue,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            child: CustomText(
+            child: const CustomText(
               text: 'Resposta mais votada',
               color: primaryWhite,
             ),

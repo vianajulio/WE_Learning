@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:we_learning_android/ui/pages/forum/forum_page.dart';
+import 'package:we_learning_android/ui/pages/login/login_page.dart';
 import 'package:we_learning_android/ui/pages/main/main_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,13 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'WeLearning',
+    return GetMaterialApp(
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MainPage(),
+      home: MainPage(),
+      //  home: LoginPage(),
+      //home: ForumPage(),
     );
   }
 }
