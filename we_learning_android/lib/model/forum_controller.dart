@@ -1,12 +1,10 @@
 import 'package:get/get.dart';
 import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/model/topic_model.dart';
 import 'package:we_learning_android/repository/api/topico_api.dart';
 
 class ForumController extends GetxController {
   late List<Topico>? _topicos = <Topico>[].obs;
   List<Topico>? selectedTopicos = <Topico>[].obs;
-  TopicModel model = TopicModel();
 
   //TODO fazer um método para atualizar a lista de acordo com o BD
   final List<String> _filtros = [

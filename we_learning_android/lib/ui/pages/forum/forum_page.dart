@@ -27,9 +27,12 @@ class ForumPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 24),
-                CustomText(text: 'Filtros.', fontSize: 24,fontWeight: FontWeight.bold),
+                const CustomText(
+                    text: 'Filtros.',
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
                 const SizedBox(height: 8),
-                CustomText(text: 'Clique para filtrar os tópicos.'),
+                const CustomText(text: 'Clique para filtrar os tópicos.'),
                 const SizedBox(height: 16),
                 FiltroMateria(),
               ],
@@ -86,4 +89,3 @@ class ForumPage extends StatelessWidget {
     );
   }
 }
-

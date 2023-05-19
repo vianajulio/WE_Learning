@@ -11,6 +11,7 @@ class VideoaulaPage extends StatefulWidget {
 }
 
 class _VideoaulaPageState extends State<VideoaulaPage> {
+
   @override
   Widget build(BuildContext context) {
     final comentarios = ComentariosRepository.comentarios;
@@ -44,7 +45,11 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomYoutubePlayer(youtubeURL: "https://www.youtube.com/watch?v=z_67ApMhQk0"),
+              CustomYoutubePlayer(
+                youtubeURL: "https://www.youtube.com/watch?v=z_67ApMhQk0",
+                showFullScreenButton: true,
+                showControls: true,
+              ),
               /* e se as aulas ficassem na ordem dentro do player? */
               Expanded(
                 flex: 2,

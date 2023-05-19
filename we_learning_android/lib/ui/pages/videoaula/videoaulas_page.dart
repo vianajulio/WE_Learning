@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/pages/videoaula/videoaula_page.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
 
 class VideoaulasPage extends StatelessWidget {
   const VideoaulasPage({super.key});
