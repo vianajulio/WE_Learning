@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:we_learning_android/ui/pages/forum/forum_page.dart';
+import 'package:we_learning_android/ui/pages/forum/topico_page.dart';
 import 'package:we_learning_android/ui/pages/main/main_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: MainPage(),
+      // home: ForumPage(),
     );
   }
 }

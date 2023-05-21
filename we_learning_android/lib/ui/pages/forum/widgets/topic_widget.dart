@@ -31,10 +31,16 @@ class TopicoWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomText(
-                          text: topico.assuntoTopico ?? '',
-                          color: primaryWhite,
+                        SizedBox(
+                          width: 200,
+                          child: CustomText(
+                            text: topico.assuntoTopico ?? '',
+                            color: primaryWhite,
+                            maxLines: 1,
+                            
+                          ),
                         ),
                         CustomText(
                           text: topico.nomeUsuario ?? '',
@@ -44,7 +50,7 @@ class TopicoWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                CustomText(
+                const CustomText(
                   text: 'Quantidade de respostas',
                   color: secondaryWhite,
                 )

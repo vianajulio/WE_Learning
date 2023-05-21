@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/model/pages/loginpage_controller.dart';
-import 'package:we_learning_android/model/user_model.dart';
+import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
+import 'package:we_learning_android/controllers/pages_controllers/loginpage_controller.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
@@ -34,13 +34,13 @@ class LoginPage extends StatelessWidget with LoginValidator {
                     scale: 2,
                   ),
                   const SizedBox(height: 32),
-                  CustomText(
+                  const CustomText(
                     text: 'Bem vindo!',
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.center,
                   ),
-                  CustomText(
+                  const CustomText(
                     text: 'Plataforma de videocurso do senai',
                     textAlign: TextAlign.center,
                   ),
@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText(
+                      const CustomText(
                         text: 'Usuário',
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                         validator: validateLogin,
                       ),
                       const SizedBox(height: 32),
-                      CustomText(
+                      const CustomText(
                         text: 'Senha',
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -75,7 +75,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                     alignment: AlignmentDirectional.centerEnd,
                     child: TextButton(
                       onPressed: () {},
-                      child: CustomText(
+                      child: const CustomText(
                         text: 'Esqueceu a senha?',
                         color: secondaryBlue,
                       ),
@@ -92,7 +92,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                         style: const ButtonStyle(
                             backgroundColor:
                                 MaterialStatePropertyAll(primaryRed)),
-                        child: CustomText(
+                        child: const CustomText(
                           text: 'Login',
                           fontSize: 24,
                           fontWeight: FontWeight.bold,

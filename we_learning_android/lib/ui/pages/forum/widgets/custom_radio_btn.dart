@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/model/pages/forumpage_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/forumpage_controller.dart';
+import 'package:we_learning_android/entities/category.dart';
 
 class CustomRadioBtn extends StatelessWidget {
-  String text;
+  Category category;
 
-  CustomRadioBtn({required this.text});
+  CustomRadioBtn({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +19,21 @@ class CustomRadioBtn extends StatelessWidget {
         child: InkWell(
           child: Row(
             children: [
-              Text(text),
+              Text(category.name ?? ''),
               const Spacer(),
               Radio(
-                value: text,
+                value: category.name,
                 groupValue: controller.option,
                 onChanged: (value) {
-                  controller.opcoes(text);
-                  controller.filterBag(text);
+                  controller.opcoes(category.name ?? 'Todos');
+                  controller.filterBag(category.name ?? 'Todos');
                 },
               ),
             ],
           ),
           onTap: () {
-            controller.opcoes(text);
-            controller.filterBag(text);
+            controller.opcoes(category.name ?? 'Todos');
+            controller.filterBag(category.name ?? 'Todos');
           },
         ),
       ),
