@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Mon May 22 20:21:24 BRT 2023
 base.0=C\:\\Users\\gabri\\Documents\\WeLearnApp\\we_learning_android\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+=======
+#Fri May 19 20:22:59 BRT 2023
+base.0=D\:\\TCC\\teste\\we_learning_android\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+>>>>>>> aff9ea1950d100aaad037a471fdc319489e4ec94
 renamed.0=classes.dex
 path.0=classes.dex

@@ -7,12 +7,13 @@ class CriarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         body: SafeArea(
           child: Column(
-            children: const [
+            children: [
               TabBar(
                 tabs: [
                   Tab(
@@ -24,10 +25,14 @@ class CriarPage extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    CriarUser(),
-                    Center(
+                    Container(
+                        child: Center(
+                      child: Text('1st Tab'),
+                    )),
+                    Container(
+                        child: Center(
                       child: Text('2st Tab'),
-                    ),
+                    )),
                   ],
                 ),
               )
