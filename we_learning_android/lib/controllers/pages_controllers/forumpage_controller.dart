@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
 import 'package:we_learning_android/entities/topico.dart';
+import 'package:we_learning_android/repository/api/category_api.dart';
 import 'package:we_learning_android/repository/api/topico_api.dart';
 
 class ForumController extends GetxController {
@@ -43,9 +44,7 @@ class ForumController extends GetxController {
       selectedTopicos?.assignAll(_topicos!);
       update();
     } else {
-      selectedTopicos?.assignAll(_topicos!
-          .where((item) => item.nomeCategoria!.contains(tag))
-          .toList());
+      selectedTopicos = await TopicoApi.instance.getSelectedTopics(tag);
       update();
     }
   }
