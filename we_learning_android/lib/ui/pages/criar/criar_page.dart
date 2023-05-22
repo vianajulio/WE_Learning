@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
+import 'package:we_learning_android/ui/pages/criar/criar_user.dart';
 
 class CriarPage extends StatelessWidget {
   const CriarPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         body: SafeArea(
           child: Column(
-            children: [
+            children: const [
               TabBar(
                 tabs: [
                   Tab(
@@ -24,14 +24,10 @@ class CriarPage extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    Container(
-                        child: Center(
-                      child: Text('1st Tab'),
-                    )),
-                    Container(
-                        child: Center(
+                    CriarUser(),
+                    Center(
                       child: Text('2st Tab'),
-                    )),
+                    ),
                   ],
                 ),
               )
@@ -40,32 +36,6 @@ class CriarPage extends StatelessWidget {
         ),
       ),
     );
-    // return Container(
-    //   //child: const Center(child: CustomText(text: 'Criar'),),
-    //   child: SafeArea(
-    //     child: GridView.count(
-    //       crossAxisCount: 2,
-    //       children: [
-    //         _componenteFoda(
-    //           icon: const Icon(Icons.person, size: 80),
-    //           label: 'Usuários',
-    //         ),
-    //         _componenteFoda(
-    //           icon: const Icon(Icons.person, size: 80),
-    //           label: 'Aulas',
-    //         ),
-    //         _componenteFoda(
-    //           icon: const Icon(Icons.person, size: 80),
-    //           label: 'Cadastrar',
-    //         ),
-    //         _componenteFoda(
-    //           icon: const Icon(Icons.person, size: 80),
-    //           label: 'Cadastrar',
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }
 

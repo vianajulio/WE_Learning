@@ -14,7 +14,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
   @override
   Widget build(BuildContext context) {
     final comentarios = ComentariosRepository.comentarios;
-    final listaAulas = AulasRepository.aulas;
+    final listaAulas = AulasRepository.aulas; 
     return Scaffold(
       drawer: Drawer(
           child: ListView.separated(
