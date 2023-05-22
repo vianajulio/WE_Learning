@@ -14,7 +14,7 @@ class CriarPage extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              TabBar(
+              const TabBar(
                 tabs: [
                   Tab(
                     text: 'Usuário',
@@ -25,10 +25,7 @@ class CriarPage extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    Container(
-                        child: Center(
-                      child: Text('1st Tab'),
-                    )),
+                    const CriarUser(),
                     Container(
                         child: Center(
                       child: Text('2st Tab'),
