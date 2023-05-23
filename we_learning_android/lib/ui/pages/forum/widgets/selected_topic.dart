@@ -12,6 +12,7 @@ class SelectedTopics extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: GetBuilder(
+        //incialização do contotroler para utilizar o método getAll
         init: ForumController(),
         builder: (controller) => ListView.builder(
           itemCount: controller.selectedTopicos?.length ?? 0,

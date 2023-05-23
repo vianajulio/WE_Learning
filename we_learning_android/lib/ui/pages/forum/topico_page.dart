@@ -4,7 +4,9 @@ import 'package:we_learning_android/controllers/entities_controllers/respostas_m
 import 'package:we_learning_android/entities/resposta.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/api/resposta_api.dart';
+import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/forum/resposta_widget.dart';
+import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 
 class TopicPage extends StatefulWidget {
@@ -27,19 +29,52 @@ class _TopicPageState extends State<TopicPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.topico.tituloTopico!),
+        title: CustomText(
+          text: "Titulo: ${widget.topico.tituloTopico!}",
+          color: primaryWhite,
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+          maxLines: 1,
+        ),
       ),
-      body: SafeArea(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.topico.assuntoTopico!),
-            Container(
-              color: Colors.blueAccent,
-              height: 200,
-              width: double.infinity,
-              child: Text(widget.topico.nomeUsuario!),
+            Row(
+              children: [
+                CustomText(
+                  text: "Autor: ${widget.topico.nomeUsuario!}",
+                  fontSize: 14,
+                ),
+                const SizedBox(height: 8),
+                CustomText(
+                  text: "Categoria: ${widget.topico.nomeCategoria!}",
+                  fontSize: 14,
+                ),
+              ],
             ),
-            const SizedBox(height: 24),
+            CustomText(
+                text: "Data: ${widget.topico.dataTopico!}", fontSize: 12),
+            const Divider(thickness: 1.2, color: Colors.black26, height: 30),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: const Color.fromARGB(255, 243, 243, 243),
+                ),
+                padding: const EdgeInsets.all(16.0),
+                width: double.infinity,
+                child: Text(
+                  "${widget.topico.assuntoTopico!}  ",
+                ),
+              ),
+            ),
+
+            const Divider(thickness: 1.2, color: Colors.black26, height: 30),
+
+            //Respostas do tópico
             GetBuilder(
               init: RespostaModel(),
               builder: (controller) {

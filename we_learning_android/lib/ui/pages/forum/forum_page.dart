@@ -4,6 +4,7 @@ import 'package:we_learning_android/controllers/entities_controllers/category_mo
 import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
+import 'package:we_learning_android/repository/local/category_local.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
@@ -15,6 +16,7 @@ class ForumPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var listFiltros = CategoryLocal.instance.getCategory();
     double width = 340.0;
     return Scaffold(
       appBar: AppBar(
@@ -38,35 +40,38 @@ class ForumPage extends StatelessWidget {
                 const SizedBox(height: 16),
                 GetBuilder(
                   init: CategoryModel(),
-                  builder: (controller) => FutureBuilder(
-                    future: controller.futureCategories,
-                    builder: (context, AsyncSnapshot<List<Category>?> snapshot) {
-                      switch (snapshot.connectionState) {
-                        case ConnectionState.none:
-                          return Message.alert(
-                            'Não foi possivel obter os dados necessários',
-                          );
-                        case ConnectionState.waiting:
-                          return Message.loading(context);
-                        default:
-                          if (snapshot.hasError) {
-                            return Message.alert(
-                              'Não foi possível obter os dados do servidor',
-                            );
-                          } else if (!snapshot.hasData) {
-                            return Message.alert(
-                              'Não foi possível obter os dados dos topicos',
-                            );
-                          } else if (snapshot.data!.isEmpty) {
-                            return Message.alert(
-                              'Nenhum topico encontrado',
-                            );
-                          } else {
-                            return const FiltroMateria();
-                          }
-                      }
-                    },
-                  ),
+                  builder: (controller) => listFiltros == null
+                      ? FutureBuilder(
+                          future: controller.futureCategories,
+                          builder: (context,
+                              AsyncSnapshot<List<Category>?> snapshot) {
+                            switch (snapshot.connectionState) {
+                              case ConnectionState.none:
+                                return Message.alert(
+                                  'Não foi possivel obter os dados necessários',
+                                );
+                              case ConnectionState.waiting:
+                                return Message.loading(context);
+                              default:
+                                if (snapshot.hasError) {
+                                  return Message.alert(
+                                    'Não foi possível obter os dados do servidor',
+                                  );
+                                } else if (!snapshot.hasData) {
+                                  return Message.alert(
+                                    'Não foi possível obter os dados dos topicos',
+                                  );
+                                } else if (snapshot.data!.isEmpty) {
+                                  return Message.alert(
+                                    'Nenhum topico encontrado',
+                                  );
+                                } else {
+                                  return const FiltroMateria();
+                                }
+                            }
+                          },
+                        )
+                      : const FiltroMateria(),
                 ),
               ],
             ),

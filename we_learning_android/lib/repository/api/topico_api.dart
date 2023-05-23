@@ -9,8 +9,10 @@ class TopicoApi {
   Future<List<Topico>?> getAll() async {
     List<Topico> topicos;
     try {
+      
       var url = Uri.http('apiwelearn.azurewebsites.net', '/api/topico/listar');
 
+      //conexão com a api
       var response = await http.get(url);
 
       if (response.statusCode != 200) {
