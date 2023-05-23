@@ -3,9 +3,9 @@ import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 
-class TopicoWidget extends StatelessWidget {
+class ForumWidget extends StatelessWidget {
   late final Topico topico;
-  TopicoWidget({required this.topico});
+  ForumWidget({required this.topico});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class TopicoWidget extends StatelessWidget {
                         SizedBox(
                           width: 200,
                           child: CustomText(
-                            text: topico.assuntoTopico ?? '',
+                            text: topico.tituloTopico ?? '',
                             color: primaryWhite,
                             maxLines: 1,
                             

@@ -13,19 +13,24 @@ class SelectedTopics extends StatelessWidget {
     return Flexible(
       child: GetBuilder(
         init: ForumController(),
-        builder: (controller) =>  ListView.builder(
-                itemCount: controller.selectedTopicos?.length ?? 0,
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    child: TopicoWidget(
-                      topico: controller.selectedTopicos?[index] ?? Topico(),
-                    ),
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => TopicPage(topico: controller.selectedTopicos![index]),));
-                    },
-                  );
-                },
+        builder: (controller) => ListView.builder(
+          itemCount: controller.selectedTopicos?.length ?? 0,
+          itemBuilder: (context, index) {
+            return InkWell(
+              child: ForumWidget(
+                topico: controller.selectedTopicos?[index] ?? Topico(),
               ),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) {
+                    return TopicPage(
+                        topico: controller.selectedTopicos![index]);
+                  }),
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }

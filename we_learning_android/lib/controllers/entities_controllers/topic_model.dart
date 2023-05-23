@@ -15,7 +15,6 @@ class TopicModel extends GetxController{
 
   Future<void> get() async {
     futureTopics = TopicoApi.instance.getAll();
-    print(futureTopics);
   }
 
   Future<List<Topico>?> futureTopicApp() async {

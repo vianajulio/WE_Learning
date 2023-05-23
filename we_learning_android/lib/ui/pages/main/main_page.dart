@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/controller/navigation_controller.dart';
+import 'package:we_learning_android/controllers/navigation_controller.dart';
 //import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_page.dart';
 import 'package:we_learning_android/ui/pages/forum/forum_page.dart';

@@ -10,14 +10,7 @@ class ForumController extends GetxController {
   TopicModel model = TopicModel();
 
   //TODO fazer um método para atualizar a lista de acordo com o BD
-  final List<String> _filtros = [
-    'Todos',
-    'SOP',
-    'LMA',
-    'HARE',
-    'FPOO',
-    'Outros',
-  ].obs;
+  
 
   @override
   Future<void> onInit() async {
@@ -49,5 +42,5 @@ class ForumController extends GetxController {
     }
   }
 
-  get filter => _filtros;
+  // get filter => _filtros;
 }

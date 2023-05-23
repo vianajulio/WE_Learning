@@ -8,9 +8,8 @@ class TopicoApi {
 
   Future<List<Topico>?> getAll() async {
     List<Topico> topicos;
-    // Topico app = Topico();
     try {
-      var url = Uri.https('apiwelearn.azurewebsites.net', '/api/topico/listar');
+      var url = Uri.http('apiwelearn.azurewebsites.net', '/api/topico/listar');
 
       var response = await http.get(url);
 
