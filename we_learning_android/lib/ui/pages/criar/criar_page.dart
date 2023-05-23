@@ -1,36 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
+import 'package:we_learning_android/ui/pages/criar/criar_user.dart';
 
 class CriarPage extends StatelessWidget {
   const CriarPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context);
-    var icon = Icon(Icons.abc);
-    return Container(
-      //child: const Center(child: CustomText(text: 'Criar'),),
-      child: SafeArea(
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: [
-            _componenteFoda(
-              icon: const Icon(Icons.person, size: 80),
-              label: 'Usuários',
-            ),
-            _componenteFoda(
-              icon: const Icon(Icons.person, size: 80),
-              label: 'Aulas',
-            ),
-            _componenteFoda(
-              icon: const Icon(Icons.person, size: 80),
-              label: 'Cadastrar',
-            ),
-            _componenteFoda(
-              icon: const Icon(Icons.person, size: 80),
-              label: 'Cadastrar',
-            ),
-          ],
+    ;
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              const TabBar(
+                tabs: [
+                  Tab(
+                    text: 'Usuário',
+                  ),
+                  Tab(text: 'Aulas'),
+                ],
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    const CriarUser(),
+                    Container(
+                        child: Center(
+                      child: Text('2st Tab'),
+                    )),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
