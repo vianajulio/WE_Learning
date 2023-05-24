@@ -42,32 +42,43 @@ class _TopicPageState extends State<TopicPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                CustomText(
-                  text: "Autor: ${widget.topico.nomeUsuario!}",
-                  fontSize: 14,
-                ),
-                const SizedBox(height: 8),
-                CustomText(
-                  text: "Categoria: ${widget.topico.nomeCategoria!}",
-                  fontSize: 14,
-                ),
-              ],
+            Flexible(
+              child: Row(
+                children: [
+                  CustomText(
+                    text: "Autor: ${widget.topico.nomeUsuario!}",
+                    fontSize: 14,
+                  ),
+                  const SizedBox(width: 24),
+                  CustomText(
+                    text: "Categoria: ${widget.topico.nomeCategoria!}",
+                    fontSize: 14,
+                  ),
+                ],
+              ),
             ),
+            const SizedBox(height: 8),
             CustomText(
-                text: "Data: ${widget.topico.dataTopico!}", fontSize: 12),
+              text: "Data: ${widget.topico.dataTopico!}",
+              fontSize: 14,
+            ),
+
             const Divider(thickness: 1.2, color: Colors.black26, height: 30),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: const Color.fromARGB(255, 243, 243, 243),
-                ),
-                padding: const EdgeInsets.all(16.0),
-                width: double.infinity,
-                child: Text(
-                  "${widget.topico.assuntoTopico!}  ",
+
+            Flexible(
+              flex: 2,
+              fit: FlexFit.loose,
+              child: SingleChildScrollView(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: const Color.fromARGB(255, 243, 243, 243),
+                  ),
+                  padding: const EdgeInsets.all(16.0),
+                  width: double.infinity,
+                  child: Text(
+                    widget.topico.assuntoTopico!,
+                  ),
                 ),
               ),
             ),
@@ -103,7 +114,7 @@ class _TopicPageState extends State<TopicPage> {
                               'Nenhum topico encontrado',
                             );
                           } else {
-                            return Flexible(
+                            return Expanded(
                               child: ListView.builder(
                                 itemCount: snapshot.data?.length ?? 0,
                                 itemBuilder: (context, index) {

@@ -3,14 +3,14 @@ import 'package:we_learning_android/entities/usuario.dart';
 class Resposta {
   int? id;
   String? usuario;
-  String? assunto_topico;
+  String? assuntoResposta;
   String? data;
   String? pierSitReg;
 
   Resposta({
     this.id,
     this.usuario,
-    this.assunto_topico,
+    this.assuntoResposta,
     this.data,
     this.pierSitReg,
   });
@@ -19,7 +19,7 @@ class Resposta {
     return Resposta(
       id: json['id'],
       usuario: json['nome_usuario'],
-      assunto_topico: json['assunto_topico'],
+      assuntoResposta: json['assunto_topico'],
       data: json['data_resposta'],
       pierSitReg: json['pier_sit_reg']
     );
