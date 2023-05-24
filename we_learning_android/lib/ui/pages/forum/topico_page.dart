@@ -37,6 +37,11 @@ class _TopicPageState extends State<TopicPage> {
           maxLines: 1,
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        
+      },
+      child: const Icon(Icons.add),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -47,27 +52,36 @@ class _TopicPageState extends State<TopicPage> {
                 CustomText(
                   text: "Autor: ${widget.topico.nomeUsuario!}",
                   fontSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(width: 24),
                 CustomText(
                   text: "Categoria: ${widget.topico.nomeCategoria!}",
                   fontSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
               ],
             ),
+            const SizedBox(height: 8.0),
             CustomText(
-                text: "Data: ${widget.topico.dataTopico!}", fontSize: 12),
-            const Divider(thickness: 1.2, color: Colors.black26, height: 30),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: const Color.fromARGB(255, 243, 243, 243),
-                ),
-                padding: const EdgeInsets.all(16.0),
-                width: double.infinity,
-                child: Text(
-                  "${widget.topico.assuntoTopico!}  ",
+              text: "Data: ${widget.topico.dataTopico!}",
+              fontSize: 12,
+            ),
+            const SizedBox(height: 16),
+
+            Flexible(
+              fit: FlexFit.loose,
+              child: SingleChildScrollView(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: const Color.fromARGB(255, 243, 243, 243),
+                  ),
+                  padding: const EdgeInsets.all(16.0),
+                  width: double.infinity,
+                  child: Text(
+                    widget.topico.assuntoTopico!,
+                  ),
                 ),
               ),
             ),
@@ -103,15 +117,36 @@ class _TopicPageState extends State<TopicPage> {
                               'Nenhum topico encontrado',
                             );
                           } else {
-                            return Flexible(
-                              child: ListView.builder(
-                                itemCount: snapshot.data?.length ?? 0,
-                                itemBuilder: (context, index) {
-                                  return RespostaWidget(
-                                    resposta:
-                                        snapshot.data?[index] ?? Resposta(),
-                                  );
-                                },
+                            return Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 4,bottom: 24),
+                                    child: CustomText(
+                                      text:
+                                          "Quantidade de respostas: ${snapshot.data?.length}",
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: ListView.separated(
+                                      separatorBuilder: (context, index) =>
+                                          const Divider(
+                                              thickness: 1,
+                                              height: 40,
+                                              color: Colors.black26),
+                                      itemCount: snapshot.data?.length ?? 0,
+                                      itemBuilder: (context, index) {
+                                        return RespostaWidget(
+                                          resposta: snapshot.data?[index] ??
+                                              Resposta(),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
                               ),
                             );
                           }
