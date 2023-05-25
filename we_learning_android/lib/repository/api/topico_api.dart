@@ -14,7 +14,7 @@ class TopicoApi {
 
       //conexão com a api
       var response = await http.get(url);
-
+      
       if (response.statusCode != 200) {
         return null;
       } else {

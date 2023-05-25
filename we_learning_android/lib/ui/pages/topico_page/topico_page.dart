@@ -5,7 +5,7 @@ import 'package:we_learning_android/entities/resposta.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/api/resposta_api.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/pages/forum/resposta_widget.dart';
+import 'package:we_learning_android/ui/pages/topico_page/widgets/resposta_widget.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 
@@ -38,7 +38,18 @@ class _TopicPageState extends State<TopicPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        
+        print('OiS');
+        showModalBottomSheet(
+            constraints: BoxConstraints(minHeight: 1000),
+            backgroundColor: primaryWhite,
+            isDismissible: true,
+            context: context,
+            builder: (context) {
+              return Container(
+                height: 600,
+              );
+            },
+          );
       },
       child: const Icon(Icons.add),
       ),
