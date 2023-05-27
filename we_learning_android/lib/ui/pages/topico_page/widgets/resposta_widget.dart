@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/entities/resposta.dart';
+import 'package:we_learning_android/entities/topico.dart';
 
 class RespostaWidget extends StatelessWidget {
   Resposta resposta;
@@ -13,7 +14,7 @@ class RespostaWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(resposta.usuario ?? ""),
-          Text(resposta.data ?? ""),
+          Text(Topico.dataFormat(resposta.data)),
           const SizedBox(height: 16),
           Text(resposta.conteudoResposta ?? ""),
         ],

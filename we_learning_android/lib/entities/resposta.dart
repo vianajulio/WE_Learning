@@ -1,5 +1,3 @@
-import 'package:we_learning_android/entities/usuario.dart';
-
 class Resposta {
   int? id;
   String? usuario;
@@ -29,7 +27,5 @@ class Resposta {
     var lista = List<Resposta>.from(json.map((json) => Resposta.fromJson(json)));
     return lista;
   }
-
-
 
 }

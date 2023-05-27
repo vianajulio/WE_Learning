@@ -379,7 +379,7 @@
             "outputFile": "com.example.we_learning_android.app-merged_res-12:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "D:\\TCC\\teste\\we_learning_android\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\TCC\\WE_Learning\\we_learning_android\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -1027,7 +1027,7 @@
                     }
                 },
                 {
-                    "source": "D:\\TCC\\teste\\we_learning_android\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\TCC\\WE_Learning\\we_learning_android\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

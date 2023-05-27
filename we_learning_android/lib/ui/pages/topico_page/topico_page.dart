@@ -38,7 +38,6 @@ class _TopicPageState extends State<TopicPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        print('OiS');
         showModalBottomSheet(
             constraints: BoxConstraints(minHeight: 1000),
             backgroundColor: primaryWhite,
@@ -75,7 +74,7 @@ class _TopicPageState extends State<TopicPage> {
             ),
             const SizedBox(height: 8.0),
             CustomText(
-              text: "Data: ${widget.topico.dataTopico!}",
+              text: "Data: ${Topico.dataFormat(widget.topico.dataTopico)}",
               fontSize: 12,
             ),
             const SizedBox(height: 16),
@@ -121,11 +120,11 @@ class _TopicPageState extends State<TopicPage> {
                             );
                           } else if (!snapshot.hasData) {
                             return Message.alert(
-                              'Não foi possível obter os dados dos topicos',
+                              'Não foi possível obter os dados das resposta',
                             );
                           } else if (snapshot.data!.isEmpty) {
                             return Message.alert(
-                              'Nenhum topico encontrado',
+                              'Nenhuma resposta encontrada',
                             );
                           } else {
                             return Expanded(

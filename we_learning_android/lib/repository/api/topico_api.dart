@@ -48,4 +48,18 @@ class TopicoApi {
       rethrow;
     }
   }
+
+  Future<bool> cadastroTopico() async{
+    try {
+      
+
+      return true;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+
+
+
 }
