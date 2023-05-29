@@ -11,7 +11,6 @@ import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 import 'package:we_learning_android/ui/widgets/search_bar.dart';
-import 'package:we_learning_android/ui/pages/criar_topico/criar_topico.dart';
 
 class ForumPage extends StatelessWidget {
   const ForumPage({super.key});
