@@ -7,20 +7,19 @@ class TopicoApi {
   TopicoApi._();
 
   Future<List<Topico>?> getAll() async {
-    List<Topico> topicos;
     try {
-      
+      List<Topico> topicos;
       var url = Uri.http('apiwelearn.azurewebsites.net', '/api/topico/listar');
 
       //conexão com a api
       var response = await http.get(url);
-      
+
       if (response.statusCode != 200) {
         return null;
       } else {
         var listTopics =
             json.decode(response.body).cast<Map<String, dynamic>>();
-        topicos = Topico().listFromJson(listTopics);
+        topicos = Topico.listFromJson(listTopics);
         return topicos;
       }
     } catch (e) {
@@ -31,8 +30,8 @@ class TopicoApi {
   Future<List<Topico>?> getSelectedTopics(String nomeCategoria) async {
     List<Topico> topico;
     try {
-      var url = Uri.http('apiwelearn.azurewebsites.net',
-          '/api/topico/buscar/$nomeCategoria');
+      var url = Uri.http(
+          'apiwelearn.azurewebsites.net', '/api/topico/buscar/$nomeCategoria');
 
       var response = await http.get(url);
 
@@ -41,7 +40,7 @@ class TopicoApi {
       } else {
         var topicoJson =
             json.decode(response.body).cast<Map<String, dynamic>>();
-        topico = Topico().listFromJson(topicoJson);
+        topico = Topico.listFromJson(topicoJson);
         return topico;
       }
     } catch (e) {
@@ -49,17 +48,27 @@ class TopicoApi {
     }
   }
 
-  Future<bool> cadastroTopico() async{
+  Future<bool> cadastroTopico(Topico topico) async {
     try {
-      
+      var encodeString =topico.toJson();
+      var encode = json.encode(encodeString);
+
+      var url =
+          Uri.http('apiwelearn.azurewebsites.net', '/api/topico/cadastrar');
+
+      var response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: encode,
+      );
+
+      if (response.statusCode != 200) {
+        return false;
+      }
 
       return true;
     } catch (e) {
       rethrow;
     }
   }
-
-
-
-
 }

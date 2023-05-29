@@ -5,12 +5,13 @@ import 'package:we_learning_android/controllers/entities_controllers/topic_model
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/local/category_local.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
+import 'package:we_learning_android/ui/pages/criar_topico/widgets/test.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 import 'package:we_learning_android/ui/widgets/search_bar.dart';
+import 'package:we_learning_android/ui/pages/criar_topico/criar_topico.dart';
 
 class ForumPage extends StatelessWidget {
   const ForumPage({super.key});
@@ -124,8 +125,11 @@ class ForumPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          print('BTN Forum Page');
-          
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => Test(),
+            ),
+          );
         },
       ),
     );

@@ -6,16 +6,16 @@ class CategoryApi {
   static final CategoryApi instance = CategoryApi._();
   CategoryApi._();
 
-  Future<List<Category>?> getAll() async {
-    List<Category> category;
+  Future<List<Category>> getAll() async {
     try {
+    List<Category> category = [];
       var url =
           Uri.http('apiwelearn.azurewebsites.net', '/api/categoria/listar');
 
       var response = await http.get(url);
 
       if (response.statusCode != 200) {
-        return null;
+        return category;
       } else {
         var listCategories =
             json.decode(response.body).cast<Map<String, dynamic>>();

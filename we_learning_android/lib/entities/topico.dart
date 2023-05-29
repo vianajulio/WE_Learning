@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 class Topico {
   int? id;
   String? tituloTopico;
-  String? assuntoTopico;
+  String? descricaoTopico;
   String? nomeCategoria;
   String? nomeUsuario;
   int? idAulaTopico;
@@ -13,7 +13,7 @@ class Topico {
   Topico(
       {this.id,
       this.tituloTopico,
-      this.assuntoTopico,
+      this.descricaoTopico,
       this.nomeCategoria,
       this.nomeUsuario,
       this.idAulaTopico,
@@ -24,7 +24,7 @@ class Topico {
     return Topico(
       id: json['id'],
       tituloTopico: json['titulo_topico'],
-      assuntoTopico: json['assunto'],
+      descricaoTopico: json['assunto'],
       nomeCategoria: json['categoria'],
       nomeUsuario: json['nome_usuario'],
       idAulaTopico: json['id_aula'],
@@ -33,7 +33,18 @@ class Topico {
     );
   }
 
-  List<Topico> listFromJson(List<Map<String, dynamic>> json) {
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'titulo_topico': tituloTopico,
+      'assunto': descricaoTopico,
+      'categoria': nomeCategoria,//id categoria
+      'nome_usuario': nomeUsuario,//id usuario
+      'id_aula': idAulaTopico, //apenas para aulas
+      'data': DateTime.now(),
+    };
+  }
+
+  static List<Topico> listFromJson(List<Map<String, dynamic>> json) {
     var lista = List<Topico>.from(json.map((json) => Topico.fromJson(json)));
     return lista;
   }
