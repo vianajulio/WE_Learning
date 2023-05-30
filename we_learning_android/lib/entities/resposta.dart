@@ -1,4 +1,5 @@
-import 'package:we_learning_android/entitys/usuario.dart';
+
+import 'package:we_learning_android/entities/usuario.dart';
 
 class Resposta {
   int? id;

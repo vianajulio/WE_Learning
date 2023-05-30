@@ -1,6 +1,3 @@
-import 'package:we_learning_android/entitys/resposta.dart';
-import 'package:we_learning_android/entitys/usuario.dart';
-
 class Comentario {
   int? id;
   String? assunto;

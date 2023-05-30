@@ -1,4 +1,5 @@
-import 'package:we_learning_android/entitys/aula.dart';
+
+import 'package:we_learning_android/entities/aula.dart';
 
 class AulasRepository {
   static List<Aula> aulas = [
