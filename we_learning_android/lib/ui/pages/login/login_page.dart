@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: secondaryWhite,
+        backgroundColor: primaryWhite,
         body: Form(
           key: _formKey,
           child: Center(

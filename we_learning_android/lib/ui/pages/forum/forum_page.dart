@@ -5,6 +5,7 @@ import 'package:we_learning_android/controllers/entities_controllers/topic_model
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/local/category_local.dart';
+import 'package:we_learning_android/ui/pages/criar_topico/criar_topico.dart';
 import 'package:we_learning_android/ui/pages/criar_topico/widgets/dropdownbtn.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
@@ -126,7 +127,7 @@ class ForumPage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => Test(),
+              builder: (context) => CadastrarTopico(),
             ),
           );
         },

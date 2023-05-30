@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/ui/pages/main/main_page.dart';
+import 'package:we_learning_android/ui/pages/login/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,9 +12,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: LoginPage(),
     );
   }
 }

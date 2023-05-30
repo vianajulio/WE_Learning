@@ -48,9 +48,17 @@ class TopicoApi {
     }
   }
 
-  Future<bool> cadastroTopico(Topico topico) async {
+  Future<bool> cadastroTopico(
+      String titulo, String descricao, int idCategoria, int idUsuario) async {
     try {
-      var encodeString =topico.toJson();
+      Map<String, dynamic> encodeString = {
+        "titulo_topico": titulo,
+        "assunto": descricao,
+        "categoria": idCategoria.toString(),
+        "nome_usuario": idUsuario.toString(),
+        "pier_sit_reg": "ATV"
+      };
+
       var encode = json.encode(encodeString);
 
       var url =

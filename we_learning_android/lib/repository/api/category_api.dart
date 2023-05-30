@@ -8,7 +8,7 @@ class CategoryApi {
 
   Future<List<Category>> getAll() async {
     try {
-    List<Category> category = [];
+      List<Category> category = [];
       var url =
           Uri.http('apiwelearn.azurewebsites.net', '/api/categoria/listar');
 
