@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_user.dart';
+import 'package:we_learning_android/ui/pages/criar/criar_aula.dart';
 
 class CriarPage extends StatelessWidget {
   const CriarPage({super.key});
@@ -12,22 +13,50 @@ class CriarPage extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
+<<<<<<< HEAD
               const TabBar(
                 tabs: [
                   Tab(
                     text: 'Usuário',
+=======
+              Container(
+                height: 50.0,
+                color: Colors.red,
+                alignment: Alignment.center,
+                child: const Text(
+                  "Criar",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+>>>>>>> origin/gabriel
                   ),
-                  Tab(text: 'Aulas'),
-                ],
+                ),
               ),
-              Expanded(
+              Container(
+                color: Colors.red,
+                child: const TabBar(
+                  tabs: [
+                    Tab(
+                      text: 'Usuário',
+                    ),
+                    Tab(text: 'Aulas'),
+                  ],
+                ),
+              ),
+              const Expanded(
                 child: TabBarView(
                   children: [
+<<<<<<< HEAD
                     const CriarUser(),
                     Container(
                         child: Center(
                       child: Text('2st Tab'),
                     )),
+=======
+                    CriarUser(),
+                    CriarAula(),
+>>>>>>> origin/gabriel
                   ],
                 ),
               )
