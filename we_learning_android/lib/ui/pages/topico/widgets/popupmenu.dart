@@ -13,19 +13,17 @@ class CustomPopUpMenu extends StatelessWidget {
           context: context,
           builder: (context) => AlertDialog(
             actions: [
-              Text("$value"),
+              SizedBox(
+                width: 200,
+                height: 100,
+                child: Text("$value"),
+              ),
             ],
           ),
         );
       },
       itemBuilder: (_) {
-        return [
-          // CustomPopUpItem(text: 'Oi', )
-          PopupMenuItem(
-            value: 0,
-            child: Text('Oi'),
-          )
-        ];
+        return [];
       },
     );
   }
