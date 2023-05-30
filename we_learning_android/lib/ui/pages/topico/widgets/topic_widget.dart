@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
+import 'package:we_learning_android/ui/pages/topico/widgets/popupmenu.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 
 class ForumWidget extends StatelessWidget {
   late final Topico topico;
   ForumWidget({required this.topico});
+
+  double width = 340;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class ForumWidget extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.only(left: 16, top: 16),
-            width: 300,
+            width: width,
             height: 100,
             color: tertiaryBlue,
             child: Column(
@@ -34,20 +37,20 @@ class ForumWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          width: 200,
+                          width: 220,
                           child: CustomText(
                             text: topico.tituloTopico ?? '',
                             color: primaryWhite,
                             maxLines: 1,
-                            
                           ),
                         ),
                         CustomText(
                           text: topico.nomeUsuario ?? '',
                           color: secondaryWhite,
-                        )
+                        ),
                       ],
                     ),
+                    CustomPopUpMenu()
                   ],
                 ),
                 const CustomText(
@@ -58,7 +61,7 @@ class ForumWidget extends StatelessWidget {
             ),
           ),
           Container(
-            width: 300,
+            width: width,
             height: 60,
             color: secondaryBlue,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

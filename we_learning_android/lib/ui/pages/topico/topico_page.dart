@@ -39,13 +39,11 @@ class _TopicoPageState extends State<TopicoPage> {
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
         showModalBottomSheet(
-            constraints: BoxConstraints(minHeight: 1000),
             backgroundColor: primaryWhite,
-            isDismissible: true,
             context: context,
             builder: (context) {
               return Container(
-                height: 600,
+                height: 900,
               );
             },
           );
