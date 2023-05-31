@@ -50,10 +50,11 @@ class ForumWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    CustomPopUpMenu()
+                    CustomPopUpMenu(topico: topico,)
                   ],
                 ),
                 const CustomText(
+                  //TODO Fazer método para pegar as respostas
                   text: 'Quantidade de respostas',
                   color: secondaryWhite,
                 )

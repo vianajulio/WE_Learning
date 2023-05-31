@@ -33,7 +33,7 @@ class CadastrarTopico extends StatelessWidget {
               const CustomText(
                 text: 'Coloque um título que correspoda a sua dúvida.',
               ),
-              CustomTexteFormField(
+              CustomTextFormField(
                 counter: true,
                 maxLength: 40,
                 textController: _tituloController,
@@ -50,7 +50,7 @@ class CadastrarTopico extends StatelessWidget {
                 maxLines: 2,
               ),
               const SizedBox(height: 14),
-              CustomTexteFormField(
+              CustomTextFormField(
                 textController: _descricaoController,
                 maxLines: 16,
                 maxLength: 840,

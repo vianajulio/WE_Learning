@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 
-class CustomTexteFormField extends StatelessWidget {
+class CustomTextFormField extends StatelessWidget {
   TextEditingController? textController;
   String? hintText;
   FormFieldValidator<String>? validator;
   int? maxLines;
   int? maxLength;
   bool? counter;
-  CustomTexteFormField({
+
+  CustomTextFormField({
     super.key,
     this.textController,
     this.hintText = '',

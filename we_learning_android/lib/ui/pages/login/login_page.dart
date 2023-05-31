@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
-                      CustomTexteFormField(
+                      CustomTextFormField(
                         hintText: 'senaizerbini@senai.edu.br',
                         textController: _emailController,
                         validator: validateLogin,
@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
-                      CustomTexteFormField(
+                      CustomTextFormField(
                         hintText: '********',
                         textController: _passwordController,
                         validator: validateSenha,
