@@ -1,4 +1,4 @@
-#Wed May 31 16:12:06 BRT 2023
+#Wed May 31 18:56:48 BRT 2023
 base.0=D\:\\TCC\\WE_Learning\\we_learning_android\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

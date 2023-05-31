@@ -6,7 +6,9 @@ import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/api/resposta_api.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/topico/widgets/resposta_widget.dart';
+import 'package:we_learning_android/ui/pages/topico/widgets/respostas_widget.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 
 class TopicoPage extends StatefulWidget {
@@ -37,18 +39,18 @@ class _TopicoPageState extends State<TopicoPage> {
           maxLines: 1,
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        showModalBottomSheet(
-            backgroundColor: primaryWhite,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
             context: context,
             builder: (context) {
-              return Container(
-                height: 900,
+              return Dialog.fullscreen(
+                child: RespostaWidget(topico: widget.topico),
               );
             },
           );
-      },
-      child: const Icon(Icons.add),
+        },
+        child: const Icon(Icons.add),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -76,7 +78,6 @@ class _TopicoPageState extends State<TopicoPage> {
               fontSize: 12,
             ),
             const SizedBox(height: 16),
-
             Flexible(
               fit: FlexFit.loose,
               child: SingleChildScrollView(
@@ -101,65 +102,66 @@ class _TopicoPageState extends State<TopicoPage> {
               init: RespostaModel(),
               builder: (controller) {
                 return FutureBuilder(
-                    future: respostas,
-                    builder:
-                        (context, AsyncSnapshot<List<Resposta>?> snapshot) {
-                      switch (snapshot.connectionState) {
-                        case ConnectionState.none:
+                  future: respostas,
+                  builder: (context, AsyncSnapshot<List<Resposta>?> snapshot) {
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.none:
+                        return Message.alert(
+                          'Não foi possivel obter os dados necessários',
+                        );
+                      case ConnectionState.waiting:
+                        return Message.loading(context);
+                      default:
+                        if (snapshot.hasError) {
                           return Message.alert(
-                            'Não foi possivel obter os dados necessários',
+                            'Não foi possível obter os dados do servidor',
                           );
-                        case ConnectionState.waiting:
-                          return Message.loading(context);
-                        default:
-                          if (snapshot.hasError) {
-                            return Message.alert(
-                              'Não foi possível obter os dados do servidor',
-                            );
-                          } else if (!snapshot.hasData) {
-                            return Message.alert(
-                              'Não foi possível obter os dados das resposta',
-                            );
-                          } else if (snapshot.data!.isEmpty) {
-                            return Message.alert(
-                              'Nenhuma resposta encontrada',
-                            );
-                          } else {
-                            return Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 4,bottom: 24),
-                                    child: CustomText(
-                                      text:
-                                          "Quantidade de respostas: ${snapshot.data?.length}",
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                        } else if (!snapshot.hasData) {
+                          return Message.alert(
+                            'Não foi possível obter os dados das resposta',
+                          );
+                        } else if (snapshot.data!.isEmpty) {
+                          return Message.alert(
+                            'Nenhuma resposta encontrada',
+                          );
+                        } else {
+                          return Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 4, bottom: 24),
+                                  child: CustomText(
+                                    text:
+                                        "Quantidade de respostas: ${snapshot.data?.length}",
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                  Expanded(
-                                    child: ListView.separated(
-                                      separatorBuilder: (context, index) =>
-                                          const Divider(
-                                              thickness: 1,
-                                              height: 40,
-                                              color: Colors.black26),
-                                      itemCount: snapshot.data?.length ?? 0,
-                                      itemBuilder: (context, index) {
-                                        return RespostaWidget(
-                                          resposta: snapshot.data?[index] ??
-                                              Resposta(),
-                                        );
-                                      },
-                                    ),
+                                ),
+                                Expanded(
+                                  child: ListView.separated(
+                                    separatorBuilder: (context, index) =>
+                                        const Divider(
+                                            thickness: 1,
+                                            height: 40,
+                                            color: Colors.black26),
+                                    itemCount: snapshot.data?.length ?? 0,
+                                    itemBuilder: (context, index) {
+                                      return RespostasWidget(
+                                        resposta:
+                                            snapshot.data?[index] ?? Resposta(),
+                                      );
+                                    },
                                   ),
-                                ],
-                              ),
-                            );
-                          }
-                      }
-                    });
+                                ),
+                              ],
+                            ),
+                          );
+                        }
+                    }
+                  },
+                );
               },
             ),
           ],

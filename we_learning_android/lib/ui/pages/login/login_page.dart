@@ -115,6 +115,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
 
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) {
         return const Center(
           child: CircularProgressIndicator(),
