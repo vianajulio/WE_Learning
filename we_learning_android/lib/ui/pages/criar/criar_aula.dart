@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/entities/aula.dart';
 
 class CriarAula extends StatefulWidget {
   const CriarAula({super.key});
@@ -150,10 +151,17 @@ class _CriarAulaState extends State<CriarAula> {
                           ),
                           onPressed: () {
                             if (_formkey.currentState!.validate()) {
-                              print(
-                                  'Nome: ${_edtTitulo.text}, Email: ${_edtDescricao.text}, '
-                                  'Senha: ${_edtUrl.text}, Tipo: ${_tipos.indexOf(_selectedOption!) + 1}, '
-                                  'PierSitReg: $_pierSitReg');
+                              Aula aula = Aula(
+                                id: 0,
+                                titulo: _edtTitulo.text,
+                                descricao: _edtDescricao.text,
+                                url: _edtUrl.text,
+                                tipo: _tipos.indexOf(_selectedOption!) + 1,
+                                dateCadastro: DateTime.now().toString(),
+                                pierSitReg: _pierSitReg ? 'ATV' : 'DES',
+                                assistida: false,
+                              );
+                              print(aula.toJson());
                             }
                           },
                         ),
