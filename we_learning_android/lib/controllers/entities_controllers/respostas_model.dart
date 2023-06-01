@@ -30,4 +30,8 @@ class RespostaModel extends GetxController {
       onFail!();
     }
   }
+
+  void recarregarPagina() {
+    refresh();
+  }
 }

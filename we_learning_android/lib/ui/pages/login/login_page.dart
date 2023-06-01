@@ -113,6 +113,9 @@ class LoginPage extends StatelessWidget with LoginValidator {
   _loginOnPress(BuildContext context) {
     FocusScope.of(context).unfocus();
 
+    if (!_formKey.currentState!.validate()) return;
+    
+
     showDialog(
       context: context,
       barrierDismissible: false,

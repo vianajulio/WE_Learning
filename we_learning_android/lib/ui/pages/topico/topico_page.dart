@@ -20,6 +20,7 @@ class TopicoPage extends StatefulWidget {
 
 class _TopicoPageState extends State<TopicoPage> {
   late Future<List<Resposta>?> respostas;
+
   @override
   void initState() {
     respostas = RespostaApi.instance.getAll(widget.topico.id ?? 0);
@@ -51,120 +52,124 @@ class _TopicoPageState extends State<TopicoPage> {
         },
         child: const Icon(Icons.add),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                CustomText(
-                  text: "Autor: ${widget.topico.nomeUsuario!}",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-                const SizedBox(width: 24),
-                CustomText(
-                  text: "Categoria: ${widget.topico.nomeCategoria!}",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-              ],
-            ),
-            const SizedBox(height: 8.0),
-            CustomText(
-              text: "Data: ${Topico.dataFormat(widget.topico.dataTopico)}",
-              fontSize: 12,
-            ),
-            const SizedBox(height: 16),
-            Flexible(
-              fit: FlexFit.loose,
-              child: SingleChildScrollView(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: const Color.fromARGB(255, 243, 243, 243),
+      body: GetBuilder(
+        init: RespostaModel(),
+        builder: (controller) => Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  CustomText(
+                    text: "Autor: ${widget.topico.nomeUsuario!}",
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
                   ),
-                  padding: const EdgeInsets.all(16.0),
-                  width: double.infinity,
-                  child: Text(
-                    widget.topico.descricaoTopico!,
+                  const SizedBox(width: 24),
+                  CustomText(
+                    text: "Categoria: ${widget.topico.nomeCategoria!}",
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8.0),
+              CustomText(
+                text: "Data: ${Topico.dataFormat(widget.topico.dataTopico)}",
+                fontSize: 12,
+              ),
+              const SizedBox(height: 16),
+              Flexible(
+                fit: FlexFit.loose,
+                child: SingleChildScrollView(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: const Color.fromARGB(255, 243, 243, 243),
+                    ),
+                    padding: const EdgeInsets.all(16.0),
+                    width: double.infinity,
+                    child: Text(
+                      widget.topico.descricaoTopico!,
+                    ),
                   ),
                 ),
               ),
-            ),
 
-            const Divider(thickness: 1.2, color: Colors.black26, height: 30),
+              const Divider(thickness: 1.2, color: Colors.black26, height: 30),
 
-            //Respostas do tópico
-            GetBuilder(
-              init: RespostaModel(),
-              builder: (controller) {
-                return FutureBuilder(
-                  future: respostas,
-                  builder: (context, AsyncSnapshot<List<Resposta>?> snapshot) {
-                    switch (snapshot.connectionState) {
-                      case ConnectionState.none:
-                        return Message.alert(
-                          'Não foi possivel obter os dados necessários',
-                        );
-                      case ConnectionState.waiting:
-                        return Message.loading(context);
-                      default:
-                        if (snapshot.hasError) {
+              //Respostas do tópico
+              GetBuilder(
+                init: RespostaModel(),
+                builder: (controller) {
+                  return FutureBuilder(
+                    future: respostas,
+                    builder:
+                        (context, AsyncSnapshot<List<Resposta>?> snapshot) {
+                      switch (snapshot.connectionState) {
+                        case ConnectionState.none:
                           return Message.alert(
-                            'Não foi possível obter os dados do servidor',
+                            'Não foi possivel obter os dados necessários',
                           );
-                        } else if (!snapshot.hasData) {
-                          return Message.alert(
-                            'Não foi possível obter os dados das resposta',
-                          );
-                        } else if (snapshot.data!.isEmpty) {
-                          return Message.alert(
-                            'Nenhuma resposta encontrada',
-                          );
-                        } else {
-                          return ConstrainedBox(
-                            constraints: BoxConstraints(maxHeight: 480),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 4, bottom: 24),
-                                  child: CustomText(
-                                    text:
-                                        "Quantidade de respostas: ${snapshot.data?.length}",
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
+                        case ConnectionState.waiting:
+                          return Message.loading(context);
+                        default:
+                          if (snapshot.hasError) {
+                            return Message.alert(
+                              'Não foi possível obter os dados do servidor',
+                            );
+                          } else if (!snapshot.hasData) {
+                            return Message.alert(
+                              'Não foi possível obter os dados das resposta',
+                            );
+                          } else if (snapshot.data!.isEmpty) {
+                            return Message.alert(
+                              'Nenhuma resposta encontrada',
+                            );
+                          } else {
+                            return ConstrainedBox(
+                              constraints: const BoxConstraints(maxHeight: 480),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 4, bottom: 24),
+                                    child: CustomText(
+                                      text:
+                                          "Quantidade de respostas: ${snapshot.data?.length}",
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: ListView.separated(
-                                    separatorBuilder: (context, index) =>
-                                        const Divider(
-                                            thickness: 1,
-                                            height: 40,
-                                            color: Colors.black26),
-                                    itemCount: snapshot.data?.length ?? 0,
-                                    itemBuilder: (context, index) {
-                                      return RespostasWidget(
-                                        resposta:
-                                            snapshot.data?[index] ?? Resposta(),
-                                      );
-                                    },
+                                  Expanded(
+                                    child: ListView.separated(
+                                      separatorBuilder: (context, index) =>
+                                          const Divider(
+                                              thickness: 1,
+                                              height: 40,
+                                              color: Colors.black26),
+                                      itemCount: snapshot.data?.length ?? 0,
+                                      itemBuilder: (context, index) {
+                                        return RespostasWidget(
+                                          resposta: snapshot.data?[index] ??
+                                              Resposta(),
+                                        );
+                                      },
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          );
-                        }
-                    }
-                  },
-                );
-              },
-            ),
-          ],
+                                ],
+                              ),
+                            );
+                          }
+                      }
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

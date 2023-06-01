@@ -50,7 +50,7 @@ class RespostaWidget extends StatelessWidget {
                 textController: _descricaoResposta,
                 counter: true,
                 maxLines: 50,
-                maxLength: 850,
+                maxLength: 1400,
               ),
               Container(
                 alignment: Alignment.center,
@@ -72,7 +72,7 @@ class RespostaWidget extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      ), 
     );
   }
 

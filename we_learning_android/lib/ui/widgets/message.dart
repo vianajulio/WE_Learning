@@ -22,7 +22,7 @@ class Message extends StatelessWidget {
           style: const TextStyle(),
         ),
         duration: Duration(seconds: duration),
-        backgroundColor: primaryBlue,
+        backgroundColor: tertiaryBlue,
       ),
     );
 
