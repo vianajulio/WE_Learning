@@ -5,11 +5,17 @@ class CustomTexteFormField extends StatelessWidget {
   TextEditingController? textController;
   String? hintText;
   FormFieldValidator<String>? validator;
+  int? maxLines;
+  int? maxLength;
+  bool? counter;
   CustomTexteFormField({
     super.key,
     this.textController,
     this.hintText = '',
     this.validator,
+    this.maxLines = 1,
+    this.maxLength = 50,
+    this.counter = false,
   });
 
   @override
@@ -20,14 +26,20 @@ class CustomTexteFormField extends StatelessWidget {
         TextFormField(
           controller: textController,
           validator: validator,
+          maxLines: maxLines,
+          minLines: 1,
+          maxLength: maxLength,
           decoration: InputDecoration(
             fillColor: primaryWhite,
             filled: true,
             hintText: hintText,
+            
             border: const OutlineInputBorder(
               borderSide: BorderSide(strokeAlign: 2),
               borderRadius: BorderRadius.all(Radius.circular(8)),
             ),
+            // counter: counter == false ? Container() : Text('Oi'),
+            counterStyle: TextStyle(fontSize: counter == false ? 0 : 12 )
           ),
         ),
       ],

@@ -2,7 +2,6 @@ class Comentario {
   int? id;
   String? assunto;
   DateTime? dataPostagem;
-  String? categoria;
   String? nome;
   String? pierSitReg;
 

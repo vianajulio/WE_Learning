@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/controller/navigation_controller.dart';
+import 'package:we_learning_android/controllers/navigation_controller.dart';
 //import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_page.dart';
 import 'package:we_learning_android/ui/pages/forum/forum_page.dart';
@@ -19,10 +19,10 @@ class MainPage extends StatelessWidget {
         //physics: const   BouncingScrollPhysics(),
         controller: controller.pageController,
         children:  [
-          const HomePage(),
+          HomePage(),
           ForumPage(),
-          const VideoaulasPage(),
-          const CriarPage(),
+          VideoaulasPage(),
+          CriarPage(),
         ],
         onPageChanged: (value) {
           controller.goToTab2(value);

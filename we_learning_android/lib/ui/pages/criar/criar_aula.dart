@@ -48,6 +48,7 @@ class _CriarAulaState extends State<CriarAula> {
                 key: _formkey,
                 child: Column(
                   children: [
+                    const Icon(Icons.play_circle_outline_outlined, size: 250.0),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12.0),
                       child: TextFormField(

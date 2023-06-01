@@ -8,6 +8,7 @@ class CustomText extends StatelessWidget {
   final FontWeight fontWeight;
   final int maxLines;
   final TextAlign? textAlign;
+  
   const CustomText({
     super.key,
     required this.text,
@@ -30,6 +31,7 @@ class CustomText extends StatelessWidget {
       softWrap: true,
       maxLines: maxLines,
       textAlign: textAlign,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

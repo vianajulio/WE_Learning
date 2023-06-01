@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_user.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_aula.dart';
 
@@ -45,7 +44,7 @@ class CriarPage extends StatelessWidget {
                     CriarAula(),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
