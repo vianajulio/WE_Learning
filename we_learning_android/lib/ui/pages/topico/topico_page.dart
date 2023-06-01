@@ -8,7 +8,6 @@ import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/topico/widgets/resposta_widget.dart';
 import 'package:we_learning_android/ui/pages/topico/widgets/respostas_widget.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 
 class TopicoPage extends StatefulWidget {
@@ -125,7 +124,8 @@ class _TopicoPageState extends State<TopicoPage> {
                             'Nenhuma resposta encontrada',
                           );
                         } else {
-                          return Expanded(
+                          return ConstrainedBox(
+                            constraints: BoxConstraints(maxHeight: 480),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

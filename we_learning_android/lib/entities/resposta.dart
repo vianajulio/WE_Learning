@@ -1,5 +1,6 @@
 class Resposta {
   int? id;
+  int? idTopico;
   String? usuario;
   String? conteudoResposta;
   String? data;
@@ -7,6 +8,7 @@ class Resposta {
 
   Resposta({
     this.id,
+    this.idTopico,
     this.usuario,
     this.conteudoResposta,
     this.data,
@@ -16,6 +18,7 @@ class Resposta {
   factory Resposta.fromJson(Map<String, dynamic> json){
     return Resposta(
       id: json['id'],
+      idTopico: json['id_topico'],
       usuario: json['nome_usuario'],
       conteudoResposta: json['conteudo_resposta'],
       data: json['data_resposta'],
