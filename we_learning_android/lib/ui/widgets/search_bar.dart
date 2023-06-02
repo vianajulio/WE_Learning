@@ -5,11 +5,12 @@ class SearchBar extends StatefulWidget {
   double largura;
   double altura;
 
-  SearchBar(
-      {super.key,
-      required this.hintText,
-      this.largura = 48,
-      this.altura = 200});
+  SearchBar({
+    super.key,
+    required this.hintText,
+    this.largura = 200,
+    this.altura = 48,
+  });
 
   @override
   State<SearchBar> createState() => _SearchBarState();

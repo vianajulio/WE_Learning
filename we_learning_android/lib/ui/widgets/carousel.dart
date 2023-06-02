@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class CustomCarosel extends StatefulWidget {
+class CustomCarosel extends StatelessWidget {
   List<Widget> listItens;
   CarouselController? carouselController;
   double? width;
@@ -12,6 +12,7 @@ class CustomCarosel extends StatefulWidget {
   int initialPage;
   bool enableInfiniteScroll;
   bool padEnds;
+  bool? sideArrow;
 
   CustomCarosel({
     super.key,
@@ -25,24 +26,15 @@ class CustomCarosel extends StatefulWidget {
     this.initialPage = 0,
     this.enableInfiniteScroll = true,
     this.padEnds = false,
+    this.sideArrow = true,
   });
 
-  @override
-  State<CustomCarosel> createState() => _CustomCaroselState();
-}
-
-class _CustomCaroselState extends State<CustomCarosel> {
   final CarouselController _controller = CarouselController();
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    double sizeValue = 60;
+    const double sizeValue = 48;
+    const double iconSizeValue = 32;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -50,29 +42,31 @@ class _CustomCaroselState extends State<CustomCarosel> {
         SizedBox(
           width: sizeValue,
           height: sizeValue,
-          child: IconButton(
-            icon: const Icon(
-              Icons.navigate_before,
-              size: 48,
-            ),
-            hoverColor: Colors.transparent,
-            splashRadius: 1,
-            //Função resposável para trocar de página
-            onPressed: () => _controller.previousPage(),
-          ),
+          child: sideArrow != false
+              ? IconButton(
+                  icon: const Icon(
+                    Icons.navigate_before,
+                    size: iconSizeValue,
+                  ),
+                  hoverColor: Colors.transparent,
+                  splashRadius: 1,
+                  //Função resposável para trocar de página
+                  onPressed: () => _controller.previousPage(),
+                )
+              : Container(),
         ),
         Flexible(
           child: CarouselSlider(
-            items: widget.listItens,
+            items: listItens,
             options: CarouselOptions(
               //Define o tamanho do widget exibido de acordo com tamanho do carrossel
-              viewportFraction: widget.viewPortFraction,
-              autoPlay: widget.autoPlay,
+              viewportFraction: viewPortFraction,
+              autoPlay: autoPlay,
               //Duração do intervalo da troca de widget
-              autoPlayInterval: widget.autoPlayInterval,
-              initialPage: widget.initialPage,
-              enableInfiniteScroll: widget.enableInfiniteScroll,
-              padEnds: widget.padEnds,
+              autoPlayInterval: autoPlayInterval,
+              initialPage: initialPage,
+              enableInfiniteScroll: enableInfiniteScroll,
+              padEnds: padEnds,
             ),
             //Controller é responsável pelas interações com o carrossel
             carouselController: _controller,
@@ -82,16 +76,18 @@ class _CustomCaroselState extends State<CustomCarosel> {
         SizedBox(
           width: sizeValue,
           height: sizeValue,
-          child: IconButton(
-            icon: const Icon(
-              Icons.navigate_next,
-              size: 48,
-            ),
-            hoverColor: Colors.transparent,
-            splashRadius: 1,
-            //Função resposável para trocar de página
-            onPressed: () => _controller.nextPage(),
-          ),
+          child: sideArrow != false
+              ? IconButton(
+                  icon: const Icon(
+                    Icons.navigate_next,
+                    size: iconSizeValue,
+                  ),
+                  hoverColor: Colors.transparent,
+                  splashRadius: 1,
+                  //Função resposável para trocar de página
+                  onPressed: () => _controller.nextPage(),
+                )
+              : Container(),
         ),
       ],
     );

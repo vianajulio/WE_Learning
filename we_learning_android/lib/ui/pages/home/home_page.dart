@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
+import 'package:we_learning_android/controllers/pages_controllers/bottom_nav_controller.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
+import 'package:we_learning_android/ui/pages/criar/criar_page.dart';
 import 'package:we_learning_android/ui/widgets/carousel.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/google_maps.dart';
+import 'package:we_learning_android/ui/widgets/search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -28,35 +28,100 @@ class HomePage extends StatelessWidget {
             CustomCarosel(
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 5),
-              listItens: const [
-                ColoredBox(
-                  color: secondaryRed,
-                  child: SizedBox(
-                    height: 100,
-                    width: 300,
-                  ),
+              listItens: [
+                SizedBox(
+                  height: 100,
+                  width: 340,
+                  child: Image.asset('assets/images/carousel_home_1.png'),
                 ),
-                ColoredBox(
-                  color: secondaryBlue,
-                  child: SizedBox(
-                    height: 100,
-                    width: 300,
-                  ),
+                SizedBox(
+                  height: 100,
+                  width: 340,
+                  child: Image.asset('assets/images/carousel_home_2.png'),
                 ),
-                ColoredBox(
-                  color: secondaryBlack,
-                  child: SizedBox(
-                    height: 100,
-                    width: 300,
-                  ),
+                SizedBox(
+                  height: 100,
+                  width: 340,
+                  child: Image.asset('assets/images/carousel_home_3.png'),
+                ),
+                SizedBox(
+                  height: 100,
+                  width: 340,
+                  child: Image.asset('assets/images/carousel_home_4.png'),
                 ),
               ],
             ),
             const SizedBox(height: 32),
+
+            SearchBar(hintText: 'Qual matéria deseja estudar?', largura: 320),
+            const SizedBox(height: 24),
+            CustomCarosel(
+              sideArrow: false,
+              listItens: [
+                materiaItem(
+                  'POO',
+                  'Programação Orientada a Objetos',
+                  Colors.black54,
+                  context,
+                ),
+                materiaItem(
+                  'LMA',
+                  'Linguagem de Marcação',
+                  Colors.blueGrey,
+                  context,
+                ),
+                materiaItem(
+                  'Hare',
+                  'Hardware e Redes',
+                  Colors.indigo,
+                  context,
+                ),
+                materiaItem(
+                  'SOP',
+                  'Sistemas Operacionais',
+                  Colors.deepPurple,
+                  context,
+                ),
+                materiaItem(
+                  'PWE',
+                  'Programação Web Back-End',
+                  Colors.deepOrangeAccent,
+                  context,
+                ),
+              ],
+            ),
             // Container(width: 100, height: 100, child: const CustomGoogleMaps()),
           ],
         ),
       ),
     );
   }
+}
+
+Widget materiaItem(
+    String titulo, String subtitulo, Color color, BuildContext context) {
+  var controller = Get.put(BottomNavBarController());
+  return InkWell(
+    child: Container(
+      color: color,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomText(
+              text: titulo,
+              color: primaryWhite,
+            ),
+            CustomText(
+              text: subtitulo,
+              color: primaryWhite,
+            ),
+          ],
+        ),
+      ),
+    ),
+    onTap: () {
+      controller.goToTab(2);
+    },
+  );
 }

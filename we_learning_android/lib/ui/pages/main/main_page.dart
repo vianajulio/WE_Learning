@@ -10,7 +10,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GetBuilder(
-        init: BottomNavBar(),
+        init: BottomNavBarController(),
         builder: (controller) => PageView(
           controller: controller.pageController,
           children: controller.pages,

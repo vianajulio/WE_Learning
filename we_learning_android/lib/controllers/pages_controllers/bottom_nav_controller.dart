@@ -6,7 +6,7 @@ import 'package:we_learning_android/ui/pages/home/home_page.dart';
 import 'package:we_learning_android/ui/pages/perfil/perfil_page.dart';
 import 'package:we_learning_android/ui/pages/videoaula/videoaulas_page.dart';
 
-class BottomNavBar extends GetxController {
+class BottomNavBarController extends GetxController {
   var currentPage = 0.obs;
 
   late PageController pageController;

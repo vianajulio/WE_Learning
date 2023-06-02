@@ -6,7 +6,6 @@ import 'package:we_learning_android/ui/colors/colors.dart';
 class CustomBottomNavigationBar extends StatelessWidget {
   CustomBottomNavigationBar({super.key});
 
-
   List<BottomNavigationBarItem> bottomItens = const [
     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
     BottomNavigationBarItem(icon: Icon(Icons.people), label: "Forum"),
@@ -18,7 +17,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder(
-      init: BottomNavBar(),
+      init: BottomNavBarController(),
       builder: (controller) {
         return BottomNavigationBar(
           currentIndex: controller.currentPage.value,
