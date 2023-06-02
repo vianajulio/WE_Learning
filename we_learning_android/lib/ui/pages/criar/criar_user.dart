@@ -29,7 +29,7 @@ class _CriarUserState extends State<CriarUser> {
     return Scaffold(
       body: ListView(
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 1.15,
             child: Padding(
               padding: const EdgeInsets.all(24.0),

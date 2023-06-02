@@ -39,7 +39,7 @@ class _CriarAulaState extends State<CriarAula> {
     return Scaffold(
       body: ListView(
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Padding(
               padding: const EdgeInsets.all(24.0),
@@ -54,12 +54,13 @@ class _CriarAulaState extends State<CriarAula> {
                         decoration: const InputDecoration(
                             border: OutlineInputBorder(), labelText: 'Título'),
                         keyboardType: TextInputType.text,
-                        validator: (value) {
+                        validator: (String? value) {
                           if (value!.isEmpty) {
                             return 'Insira algum valor';
                           } else if (value.length < 5) {
                             return 'Coloque um título válido';
                           }
+                          return null;
                         },
                       ),
                     ),
@@ -77,6 +78,7 @@ class _CriarAulaState extends State<CriarAula> {
                           } else if (value.length < 15) {
                             return 'Coloque uma descrição válido';
                           }
+                          return null;
                         },
                       ),
                     ),
@@ -94,6 +96,7 @@ class _CriarAulaState extends State<CriarAula> {
                           } else if (value.length < 15) {
                             return 'Coloque uma URL válida';
                           }
+                          return null;
                         },
                       ),
                     ),

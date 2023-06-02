@@ -26,7 +26,7 @@ class TopicModel extends GetxController {
 
   Future<void> post(String titulo, String descricao,
       {VoidCallback? onSucess, VoidCallback? onFail}) async {
-    User? usuario = await UserLocal.instance.getUser();
+    User? usuario = await UserLocal.getUser();
     int? idUsuario = usuario?.id;
     Category? category = await CategoryLocal.instance.getId();
     bool cadastrado = await TopicoApi.instance

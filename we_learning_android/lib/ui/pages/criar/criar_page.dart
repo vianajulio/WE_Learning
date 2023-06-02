@@ -13,12 +13,6 @@ class CriarPage extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-<<<<<<< HEAD
-              const TabBar(
-                tabs: [
-                  Tab(
-                    text: 'Usuário',
-=======
               Container(
                 height: 50.0,
                 color: Colors.red,
@@ -29,7 +23,6 @@ class CriarPage extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
->>>>>>> origin/gabriel
                   ),
                 ),
               ),
@@ -47,16 +40,8 @@ class CriarPage extends StatelessWidget {
               const Expanded(
                 child: TabBarView(
                   children: [
-<<<<<<< HEAD
-                    const CriarUser(),
-                    Container(
-                        child: Center(
-                      child: Text('2st Tab'),
-                    )),
-=======
                     CriarUser(),
                     CriarAula(),
->>>>>>> origin/gabriel
                   ],
                 ),
               )

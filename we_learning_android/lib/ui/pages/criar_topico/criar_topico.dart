@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
 import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/criar_topico/widgets/dropdownbtn.dart';
