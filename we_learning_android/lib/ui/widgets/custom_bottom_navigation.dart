@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:we_learning_android/controllers/bottom_nav_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/bottom_nav_controller.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/controllers/bottom_nav_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/bottom_nav_controller.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/ui/widgets/custom_bottom_navigation.dart';
 
