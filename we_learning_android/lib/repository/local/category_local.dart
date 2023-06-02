@@ -30,7 +30,6 @@ class CategoryLocal {
     await instance.setString('category.list', '');
   }
 
-  //TODO Fazer método para pegar apenas 1 tipo de categoria, para realizar o post do tópico.
   Future<void> saveId(Category category) async {
     String categoryString = json.encode(category);
     var instance = await SharedPreferences.getInstance();

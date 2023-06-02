@@ -12,7 +12,7 @@ class UserModel extends GetxController {
     user = await UserApi.instance.login(email, password);
     if (user != null) {
       onSucess!();
-      await UserLocal.instance.saveUser(user!);
+      await UserLocal.saveUser(user!);
     } else {
       onFail!();
     }

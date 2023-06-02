@@ -79,7 +79,7 @@ class RespostaWidget extends StatelessWidget {
   cadastrarResposta(BuildContext context) async {
     FocusScope.of(context).unfocus();
 
-    User? usuario = await UserLocal.instance.getUser();
+    User? usuario = await UserLocal.getUser();
     Resposta resposta;
 
     if (usuario?.id != null) {

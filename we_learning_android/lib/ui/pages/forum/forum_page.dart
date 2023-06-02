@@ -5,7 +5,6 @@ import 'package:we_learning_android/controllers/entities_controllers/topic_model
 import 'package:we_learning_android/controllers/pages_controllers/forumpage_controller.dart';
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/repository/api/topico_api.dart';
 import 'package:we_learning_android/repository/local/category_local.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/criar_topico.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
@@ -43,7 +42,7 @@ class ForumPage extends StatelessWidget {
                 const SizedBox(height: 16),
                 GetBuilder(
                   init: CategoryModel(),
-                  builder: (controller) => listFiltros == ""
+                  builder: (controller) => listFiltros == null
                       ? FutureBuilder(
                           future: controller.futureCategories,
                           builder: (context,

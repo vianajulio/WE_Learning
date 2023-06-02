@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/entities/user.dart';
@@ -26,7 +25,7 @@ class TopicModel extends GetxController {
 
   Future<void> post(String titulo, String descricao,
       {VoidCallback? onSucess, VoidCallback? onFail}) async {
-    User? usuario = await UserLocal.instance.getUser();
+    User? usuario = await UserLocal.getUser();
     int? idUsuario = usuario?.id;
     Category? category = await CategoryLocal.instance.getId();
     bool cadastrado = await TopicoApi.instance
