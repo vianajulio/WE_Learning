@@ -3,6 +3,7 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:we_learning_android/entities/aula.dart';
 import 'package:we_learning_android/entities/category.dart';
+import 'package:we_learning_android/ui/pages/videoaula/videoaula_page.dart';
 import '../../../controllers/entities_controllers/category_model.dart';
 import '../../../repository/local/category_local.dart';
 import '../../widgets/card_categoria.dart';
@@ -42,9 +43,13 @@ class VideoaulasPage extends StatelessWidget {
                 childAspectRatio: .90,
                 children: List.generate(snapshot.data?.length ?? 0, (index) {
                   return InkWell(
-                    child: CardCategoria(
-                      categoria: snapshot.data?[index] ?? Category(),
-                      icon: icons[index],
+                    child: InkWell(
+                      child: CardCategoria(
+                        categoria: snapshot.data?[index] ?? Category(),
+                        icon: icons[index],
+                      ),
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const VideoaulaPage())),
                     ),
                     onTap: () {
                       print('Teste');

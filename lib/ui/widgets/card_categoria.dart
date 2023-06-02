@@ -15,7 +15,7 @@ class CardCategoria extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 50.0),
+            Icon(icon, size: 50.0, color: Colors.red),
             SizedBox(height: 15),
             Text('${categoria.name}'),
           ],
