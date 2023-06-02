@@ -17,4 +17,7 @@ class UserModel extends GetxController {
       onFail!();
     }
   }
+
+  
+
 }

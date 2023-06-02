@@ -8,7 +8,7 @@ import 'package:we_learning_android/ui/pages/main/main_page.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   User? user = await UserLocal.getUser();
-  var email = user?.email ?? '';
+  String? email = user?.email;
 
-  runApp(MyApp(home: email == null ? LoginPage() : MainPage()));
+  runApp(MyApp(home: email == null ? LoginPage() : const MainPage()));
 }

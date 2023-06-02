@@ -87,11 +87,13 @@ class LoginPage extends StatelessWidget with LoginValidator {
                     builder: (controller) {
                       return ElevatedButton(
                         onPressed: () async {
+                          controller.onClickBtn();
                           await _loginOnPress(context);
                         },
                         style: const ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(primaryRed)),
+                          backgroundColor: MaterialStatePropertyAll(primaryRed),
+                        ),
+                        onLongPress: controller.btnAtv ? () {} : null,
                         child: const CustomText(
                           text: 'Login',
                           fontSize: 24,
@@ -114,7 +116,6 @@ class LoginPage extends StatelessWidget with LoginValidator {
     FocusScope.of(context).unfocus();
 
     if (!_formKey.currentState!.validate()) return;
-    
 
     showDialog(
       context: context,
@@ -138,7 +139,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
               (value) => Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (context) {
-                    return MainPage();
+                    return const MainPage();
                   },
                 ),
               ),
@@ -152,6 +153,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
           context: context,
           message: 'Não foi possível realizar login.',
           onPop: (_) {
+            LoginPageController().onClickBtn();
             return;
           },
         );
