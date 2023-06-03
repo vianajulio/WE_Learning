@@ -16,10 +16,6 @@
         "source": "com.example.we_learning_android.app-main-9:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.we_learning_android.app-merged_res-15:/drawable_launch_background.xml.flat",
-        "source": "com.example.we_learning_android.app-main-9:/drawable/launch_background.xml"
-    },
-    {
         "merged": "com.example.we_learning_android.app-merged_res-15:/drawable-v21_launch_background.xml.flat",
         "source": "com.example.we_learning_android.app-main-9:/drawable-v21/launch_background.xml"
     },

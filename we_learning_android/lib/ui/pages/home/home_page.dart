@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/pages_controllers/bottom_nav_controller.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/pages/criar/criar_page.dart';
 import 'package:we_learning_android/ui/widgets/carousel.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/search_bar.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final LatLng currentLocation =
+        LatLng(-22.914862218175745, -47.05600610502315);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -52,7 +54,6 @@ class HomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 32),
-
             SearchBar(hintText: 'Qual matéria deseja estudar?', largura: 320),
             const SizedBox(height: 24),
             CustomCarosel(
@@ -90,7 +91,12 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            // Container(width: 100, height: 100, child: const CustomGoogleMaps()),
+            SizedBox(
+              height: 200,
+              child: GoogleMap(
+                  initialCameraPosition:
+                      CameraPosition(target: currentLocation)),
+            )
           ],
         ),
       ),
