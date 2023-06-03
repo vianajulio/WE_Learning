@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/pages_controllers/topico_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/topico_page_controller.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/topico/widgets/editar_topico_page.dart';

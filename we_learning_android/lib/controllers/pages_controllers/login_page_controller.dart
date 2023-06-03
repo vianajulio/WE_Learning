@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 class LoginPageController extends GetxController {
   var isLoading = false.obs;
   bool btnAtv = true;
+  bool eye = true;
 
   bool updateIsLoading(bool loading) {
     isLoading.value = !isLoading.value;
@@ -17,4 +18,10 @@ class LoginPageController extends GetxController {
     update();
     return btnAtv;
   }
+
+  void eyeOnClick(){ 
+    eye = !eye;
+    update();
+  }
+
 }

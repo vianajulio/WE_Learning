@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/controllers/pages_controllers/forumpage_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/forum_page_controller.dart';
 import 'package:we_learning_android/ui/pages/topico/topico_page.dart';
 import 'package:we_learning_android/ui/pages/topico/widgets/topic_widget.dart';
 

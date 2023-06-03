@@ -21,8 +21,8 @@ class BottomNavBarController extends GetxController {
 
   goToTab(int value) {
     currentPage.value = value;
-    pageController.jumpToPage(value);
     update();
+    pageController.jumpToPage(value);
   }
 
   void animatedToTab(int page) {

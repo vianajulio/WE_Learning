@@ -1,7 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
-import 'package:we_learning_android/controllers/pages_controllers/loginpage_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/login_page_controller.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
@@ -15,6 +16,9 @@ class LoginPage extends StatelessWidget with LoginValidator {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+
+  final _sendEmailController = TextEditingController();
+  final _sendEmailFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -64,21 +68,95 @@ class LoginPage extends StatelessWidget with LoginValidator {
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
-                      CustomTextFormField(
-                        hintText: '********',
-                        textController: _passwordController,
-                        validator: validateSenha,
+                      GetBuilder(
+                        init: LoginPageController(),
+                        builder: (controller) => CustomTextFormFieldObscure(
+                          hintText: '********',
+                          textController: _passwordController,
+                          validator: validateSenha,
+                        ),
                       ),
                     ],
                   ),
                   Container(
                     alignment: AlignmentDirectional.centerEnd,
                     child: TextButton(
-                      onPressed: () {},
                       child: const CustomText(
                         text: 'Esqueceu a senha?',
                         color: secondaryBlue,
+                        fontWeight: FontWeight.w400,
                       ),
+                      onPressed: () {
+                        showCupertinoDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (context) {
+                            return Dialog(
+                              child: Form(
+                                key: _sendEmailFormKey,
+                                child: Container(
+                                  height: 240,
+                                  padding: const EdgeInsets.all(16),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const CustomText(
+                                        text: 'Digite seu e-mail pessoal',
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      const SizedBox(height: 14),
+                                      CustomTextFormField(
+                                        counter: true,
+                                        maxLength: 60,
+                                        textController: _sendEmailController,
+                                        validator: (value) => sendEmail(value),
+                                      ),
+                                      const SizedBox(height: 32),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          if (!_sendEmailFormKey.currentState!
+                                              .validate()) return;
+                                          Navigator.pop(context);
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            const SnackBar(
+                                              content: Text(
+                                                "Senha enviada, confira seu e-mail",
+                                                style: TextStyle(),
+                                              ),
+                                              duration: Duration(seconds: 3),
+                                              backgroundColor: tertiaryBlue,
+                                            ),
+                                          );
+                                        },
+                                        style: const ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStatePropertyAll(
+                                            Colors.red,
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: const [
+                                            CustomText(
+                                              text: 'Enviar',
+                                              color: primaryWhite,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            Spacer(),
+                                            Icon(Icons.send)
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -134,6 +212,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
         Message.onSucess(
           context: context,
           message: 'Usuário logado com sucesso.',
+          duration: 1,
           onPop: (_) {
             Future.delayed(const Duration(milliseconds: 500)).then(
               (value) => Navigator.of(context).pushReplacement(

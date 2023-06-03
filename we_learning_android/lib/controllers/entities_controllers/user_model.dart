@@ -6,6 +6,7 @@ import 'package:we_learning_android/repository/local/user_local.dart';
 
 class UserModel extends GetxController {
   User? user;
+  Future<User?>? futureUser;
 
   Future<void> login(String email, String password,
       {VoidCallback? onSucess, VoidCallback? onFail}) async {
@@ -18,6 +19,10 @@ class UserModel extends GetxController {
     }
   }
 
-  
+  @override
+  void onInit() {
+    futureUser = UserLocal.getUser();
+    super.onInit();
+  }
 
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
 import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
-import 'package:we_learning_android/controllers/pages_controllers/forumpage_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/forum_page_controller.dart';
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/local/category_local.dart';
