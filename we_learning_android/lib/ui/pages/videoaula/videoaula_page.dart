@@ -21,9 +21,9 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
     super.initState();
   }
 
+  final comentarios = ComentariosRepository.comentarios;
   @override
   Widget build(BuildContext context) {
-    final comentarios = ComentariosRepository.comentarios;
     int selected = 0;
     return Scaffold(
       drawer: SafeArea(
