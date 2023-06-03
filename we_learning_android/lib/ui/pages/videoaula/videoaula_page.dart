@@ -40,6 +40,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                 onTap: () {
                   print('idAula: ${listaAulas[index].id}');
                   widget.selected = listaAulas[index];
+                  Navigator.pop(context);
                   setState(() {});
                 },
               );
@@ -65,7 +66,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                 flex: 2,
                 child: SizedBox(
                   child: Container(
-                    decoration: BoxDecoration(),
+                    //decoration: BoxDecoration(),
                     //margin: EdgeInsets.all(10),
                     color: Colors.white24,
                     child: Padding(
