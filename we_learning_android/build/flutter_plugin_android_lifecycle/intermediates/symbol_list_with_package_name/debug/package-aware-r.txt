@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:we_learning_android/build/flutter_plugin_android_lifecycle/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
 io.flutter.plugins.flutter_plugin_android_lifecycle
+========
+com.example.maps_launcher
+>>>>>>>> Jaqueline:we_learning_android/build/maps_launcher/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
 attr activityAction
 attr activityName
 attr alpha
