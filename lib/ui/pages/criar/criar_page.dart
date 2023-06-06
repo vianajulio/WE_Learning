@@ -13,23 +13,10 @@ class CriarPage extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-<<<<<<< HEAD
               const TabBar(
                 tabs: [
                   Tab(
                     text: 'Usuário',
-=======
-              Container(
-                height: 50.0,
-                color: Colors.red,
-                alignment: Alignment.center,
-                child: const Text(
-                  "Criar",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
->>>>>>> origin/gabriel
                   ),
                 ),
               ),
