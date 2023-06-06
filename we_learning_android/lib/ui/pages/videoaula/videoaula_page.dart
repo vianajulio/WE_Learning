@@ -21,9 +21,10 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
     super.initState();
   }
 
+  final comentarios = ComentariosRepository.comentarios;
   @override
   Widget build(BuildContext context) {
-    final comentarios = ComentariosRepository.comentarios;
+    int selected = 0;
     return Scaffold(
       drawer: SafeArea(
         child: Drawer(
@@ -40,6 +41,8 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                 onTap: () {
                   print('idAula: ${listaAulas[index].id}');
                   widget.selected = listaAulas[index];
+                  selected = index;
+                  Navigator.pop(context);
                   setState(() {});
                 },
               );
@@ -65,7 +68,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                 flex: 2,
                 child: SizedBox(
                   child: Container(
-                    decoration: BoxDecoration(),
+                    //decoration: BoxDecoration(),
                     //margin: EdgeInsets.all(10),
                     color: Colors.white24,
                     child: Padding(
@@ -78,6 +81,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                           child: const Text('Concluir'),
                           onPressed: () {
                             //fazer evento de alterar a aula assistida para true
+                            listaAulas[selected].assistida = true;
                             setState(() {});
                           },
                         ),
