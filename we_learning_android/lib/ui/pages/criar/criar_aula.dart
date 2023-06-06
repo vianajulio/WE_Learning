@@ -1,38 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CriarAula extends StatefulWidget {
+class CriarAula extends StatelessWidget {
   const CriarAula({super.key});
-
-  @override
-  State<CriarAula> createState() => _CriarAulaState();
-}
-
-class _CriarAulaState extends State<CriarAula> {
-  final _edtTitulo = TextEditingController();
-  final _edtDescricao = TextEditingController();
-  final _edtUrl = TextEditingController();
-  bool _pierSitReg = false;
-  final _formkey = GlobalKey<FormState>();
-  String? _selectedOption;
-  final _tipos = [
-    'Todas categorias',
-    'Teste de Software',
-    'Sistemas Operacionais',
-    'Requisitos e Modelagem',
-    'Projeto',
-    'Programação Web Back-End',
-    'Programação de Dispositiveis Moveis',
-    'Linguagem de Marcação',
-    'Hardware e Redes',
-    'Fundamentos de Programação Orientada a Objetos'
-  ];
-
-  @override
-  void initState() {
-    _pierSitReg = true;
-    _selectedOption = _tipos[0];
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
