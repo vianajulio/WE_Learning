@@ -88,7 +88,7 @@ class CadastrarTopico extends StatelessWidget {
 
   void cadastrarTopic(BuildContext context) {
     FocusScope.of(context).unfocus();
-    
+
     showDialog(
       context: context,
       builder: (context) {

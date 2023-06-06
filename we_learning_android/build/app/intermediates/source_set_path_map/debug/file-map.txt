@@ -16,6 +16,7 @@ com.example.we_learning_android.app-mergeDebugResources-14 D:\Projetos\tcc\WE_Le
 com.example.we_learning_android.app-merged_res-15 D:\Projetos\tcc\WE_Learning\we_learning_android\build\app\intermediates\merged_res\debug
 com.example.we_learning_android.app-packaged_res-16 D:\Projetos\tcc\WE_Learning\we_learning_android\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug
 com.example.we_learning_android.app-packaged_res-17 D:\Projetos\tcc\WE_Learning\we_learning_android\build\google_maps_flutter_android\intermediates\packaged_res\debug
-com.example.we_learning_android.app-packaged_res-18 D:\Projetos\tcc\WE_Learning\we_learning_android\build\shared_preferences_android\intermediates\packaged_res\debug
-com.example.we_learning_android.app-packaged_res-19 D:\Projetos\tcc\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\packaged_res\debug
-com.example.we_learning_android.app-packaged_res-20 D:\Projetos\tcc\WE_Learning\we_learning_android\build\webview_flutter_android\intermediates\packaged_res\debug
+com.example.we_learning_android.app-packaged_res-18 D:\Projetos\tcc\WE_Learning\we_learning_android\build\maps_launcher\intermediates\packaged_res\debug
+com.example.we_learning_android.app-packaged_res-19 D:\Projetos\tcc\WE_Learning\we_learning_android\build\shared_preferences_android\intermediates\packaged_res\debug
+com.example.we_learning_android.app-packaged_res-20 D:\Projetos\tcc\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\packaged_res\debug
+com.example.we_learning_android.app-packaged_res-21 D:\Projetos\tcc\WE_Learning\we_learning_android\build\webview_flutter_android\intermediates\packaged_res\debug

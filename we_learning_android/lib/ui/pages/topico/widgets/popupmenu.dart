@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
 import 'package:we_learning_android/controllers/pages_controllers/topico_page_controller.dart';
 import 'package:we_learning_android/entities/topico.dart';
+import 'package:we_learning_android/repository/api/topico_api.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/pages/topico/widgets/editar_topico_page.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
@@ -21,13 +23,24 @@ class CustomPopUpMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var listFunc = <Function>[
+      () {},
+      () async {
+        await TopicModel.put(topico.id ?? 0);
+      },
+      () {
+        print("object");
+      }
+    ];
     return PopupMenuButton(
       color: primaryWhite,
       onSelected: (int value) {
         if (value == 0) {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) =>  EditarTopico(topico: topico,),
+              builder: (context) => EditarTopico(
+                topico: topico,
+              ),
             ),
           );
         } else {
@@ -39,23 +52,24 @@ class CustomPopUpMenu extends StatelessWidget {
               constraints: const BoxConstraints(maxHeight: 180),
               child: AlertDialog(
                 title: Text(titulos[value]),
-    
+
                 actions: [
                   // BTN cancelar
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).pop();
+                      listFunc[value];
                     },
                     child: const CustomText(
                       text: "Cancelar",
                       color: primaryBlack,
                     ),
                   ),
-    
+
                   // BTN para confirmar a função
                   TextButton(
-                    onPressed: () {
-                      //TODO tela de agredecimento da denuncia
+                    onPressed: () async {
+                      Navigator.of(context).pop();
                     },
                     child: CustomText(
                       text: content[value],
@@ -64,7 +78,7 @@ class CustomPopUpMenu extends StatelessWidget {
                     ),
                   ),
                 ],
-    
+
                 //Conteúdo do AlertDialog
                 content: GetBuilder(
                   init: TopicoModel(),
@@ -76,7 +90,6 @@ class CustomPopUpMenu extends StatelessWidget {
             ),
           );
         }
-        
       },
       itemBuilder: (_) {
         return const [
@@ -127,5 +140,9 @@ class CustomPopUpMenu extends StatelessWidget {
       default:
         return const CustomText(text: "Selecione novamente");
     }
+  }
+
+  void onApagar() async {
+    await TopicModel.put(topico.id ?? 0);
   }
 }

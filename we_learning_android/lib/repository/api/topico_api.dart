@@ -49,7 +49,11 @@ class TopicoApi {
   }
 
   Future<bool> cadastroTopico(
-      String titulo, String descricao, int idCategoria, int idUsuario) async {
+    String titulo,
+    String descricao,
+    int idCategoria,
+    int idUsuario,
+  ) async {
     try {
       Map<String, dynamic> encodeString = {
         "titulo_topico": titulo,
@@ -74,6 +78,22 @@ class TopicoApi {
         return false;
       }
 
+      return true;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<bool>? putTopicDes(int id_topico) async {
+    try {
+      var url = Uri.http(
+          'apiwelearn.azurewebsites.net', '/api/topico/putTopicDes/$id_topico');
+
+      var response = await http.put(url);
+
+      if (response.statusCode != 200) {
+        return false;
+      }
       return true;
     } catch (e) {
       rethrow;

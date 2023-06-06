@@ -23,8 +23,12 @@ class TopicModel extends GetxController {
     futureTopics = TopicoApi.instance.getAll();
   }
 
-  Future<void> post(String titulo, String descricao,
-      {VoidCallback? onSucess, VoidCallback? onFail}) async {
+  Future<void> post(
+    String titulo,
+    String descricao, {
+    VoidCallback? onSucess,
+    VoidCallback? onFail,
+  }) async {
     User? usuario = await UserLocal.getUser();
     int? idUsuario = usuario?.id;
     Category? category = await CategoryLocal.instance.getId();
@@ -36,5 +40,19 @@ class TopicModel extends GetxController {
     } else {
       onFail!();
     }
+  }
+
+  static Future<void> put(
+    int id_topico, {
+    VoidCallback? onSucess,
+    VoidCallback? onFail,
+  }) async {
+    bool? alterado = await TopicoApi.instance.putTopicDes(id_topico);
+
+      if (alterado == true) {
+        onSucess!();
+      } else {
+        onFail!();
+      }
   }
 }
