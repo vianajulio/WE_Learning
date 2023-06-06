@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:we_learning_android/entities/user.dart';
 import 'package:we_learning_android/myapp.dart';
 import 'package:we_learning_android/repository/local/user_local.dart';
@@ -12,3 +13,10 @@ Future<void> main() async {
 
   runApp(MyApp(home: email == null ? LoginPage() : const MainPage()));
 }
+=======
+import 'package:we_learning_android/myapp.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+>>>>>>> Jaqueline

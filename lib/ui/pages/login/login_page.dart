@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
 import 'package:we_learning_android/controllers/pages_controllers/login_page_controller.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
+import 'package:we_learning_android/controllers/pages_controllers/loginpage_controller.dart';
+>>>>>>> Jaqueline
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
@@ -17,15 +24,22 @@ class LoginPage extends StatelessWidget with LoginValidator {
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+<<<<<<< HEAD
   final _sendEmailController = TextEditingController();
   final _sendEmailFormKey = GlobalKey<FormState>();
 
+=======
+>>>>>>> Jaqueline
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
+<<<<<<< HEAD
         backgroundColor: primaryWhite,
+=======
+        backgroundColor: secondaryWhite,
+>>>>>>> Jaqueline
         body: Form(
           key: _formKey,
           child: Center(
@@ -57,7 +71,11 @@ class LoginPage extends StatelessWidget with LoginValidator {
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
+<<<<<<< HEAD
                       CustomTextFormField(
+=======
+                      CustomTexteFormField(
+>>>>>>> Jaqueline
                         hintText: 'senaizerbini@senai.edu.br',
                         textController: _emailController,
                         validator: validateLogin,
@@ -68,6 +86,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
+<<<<<<< HEAD
                       GetBuilder(
                         init: LoginPageController(),
                         builder: (controller) => CustomTextFormFieldObscure(
@@ -75,12 +94,19 @@ class LoginPage extends StatelessWidget with LoginValidator {
                           textController: _passwordController,
                           validator: validateSenha,
                         ),
+=======
+                      CustomTexteFormField(
+                        hintText: '********',
+                        textController: _passwordController,
+                        validator: validateSenha,
+>>>>>>> Jaqueline
                       ),
                     ],
                   ),
                   Container(
                     alignment: AlignmentDirectional.centerEnd,
                     child: TextButton(
+<<<<<<< HEAD
                       child: const CustomText(
                         text: 'Esqueceu a senha?',
                         color: secondaryBlue,
@@ -157,6 +183,13 @@ class LoginPage extends StatelessWidget with LoginValidator {
                           },
                         );
                       },
+=======
+                      onPressed: () {},
+                      child: const CustomText(
+                        text: 'Esqueceu a senha?',
+                        color: secondaryBlue,
+                      ),
+>>>>>>> Jaqueline
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -165,6 +198,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                     builder: (controller) {
                       return ElevatedButton(
                         onPressed: () async {
+<<<<<<< HEAD
                           controller.onClickBtn();
                           await _loginOnPress(context);
                         },
@@ -172,6 +206,13 @@ class LoginPage extends StatelessWidget with LoginValidator {
                           backgroundColor: MaterialStatePropertyAll(primaryRed),
                         ),
                         onLongPress: controller.btnAtv ? () {} : null,
+=======
+                          await _loginOnPress(context);
+                        },
+                        style: const ButtonStyle(
+                            backgroundColor:
+                                MaterialStatePropertyAll(primaryRed)),
+>>>>>>> Jaqueline
                         child: const CustomText(
                           text: 'Login',
                           fontSize: 24,
@@ -193,11 +234,16 @@ class LoginPage extends StatelessWidget with LoginValidator {
   _loginOnPress(BuildContext context) {
     FocusScope.of(context).unfocus();
 
+<<<<<<< HEAD
     if (!_formKey.currentState!.validate()) return;
 
     showDialog(
       context: context,
       barrierDismissible: false,
+=======
+    showDialog(
+      context: context,
+>>>>>>> Jaqueline
       builder: (context) {
         return const Center(
           child: CircularProgressIndicator(),
@@ -212,13 +258,20 @@ class LoginPage extends StatelessWidget with LoginValidator {
         Message.onSucess(
           context: context,
           message: 'Usuário logado com sucesso.',
+<<<<<<< HEAD
           duration: 1,
+=======
+>>>>>>> Jaqueline
           onPop: (_) {
             Future.delayed(const Duration(milliseconds: 500)).then(
               (value) => Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (context) {
+<<<<<<< HEAD
                     return const MainPage();
+=======
+                    return MainPage();
+>>>>>>> Jaqueline
                   },
                 ),
               ),
@@ -232,7 +285,10 @@ class LoginPage extends StatelessWidget with LoginValidator {
           context: context,
           message: 'Não foi possível realizar login.',
           onPop: (_) {
+<<<<<<< HEAD
             LoginPageController().onClickBtn();
+=======
+>>>>>>> Jaqueline
             return;
           },
         );

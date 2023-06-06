@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:we_learning_android/controllers/pages_controllers/bottom_nav_controller.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/widgets/carousel.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/search_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+=======
+import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
+import 'package:we_learning_android/ui/widgets/custom_text.dart';
+>>>>>>> Jaqueline
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final LatLng currentLocation =
         LatLng(-22.914862218175745, -47.05600610502315);
     return Scaffold(
@@ -131,3 +137,15 @@ Widget materiaItem(
     },
   );
 }
+=======
+    return GetBuilder<UserModel>(
+      init: UserModel(),
+      builder: (controller) {
+        return const Center(
+          child: CustomText(text: 'Home'),
+        );
+      },
+    );
+  }
+}
+>>>>>>> Jaqueline

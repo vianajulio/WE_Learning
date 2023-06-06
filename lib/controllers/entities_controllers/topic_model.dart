@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'dart:ui';
 
 import 'package:get/get.dart';
@@ -9,6 +10,13 @@ import 'package:we_learning_android/repository/local/category_local.dart';
 import 'package:we_learning_android/repository/local/user_local.dart';
 
 class TopicModel extends GetxController {
+=======
+import 'package:get/get.dart';
+import 'package:we_learning_android/entities/topico.dart';
+import 'package:we_learning_android/repository/api/topico_api.dart';
+
+class TopicModel extends GetxController{
+>>>>>>> Jaqueline
   Future<List<Topico>?>? futureTopics;
 
   @override
@@ -16,13 +24,18 @@ class TopicModel extends GetxController {
     super.onInit();
     await get();
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> Jaqueline
   get topics => futureTopics;
 
   Future<void> get() async {
     futureTopics = TopicoApi.instance.getAll();
   }
 
+<<<<<<< HEAD
   Future<void> post(
     String titulo,
     String descricao, {
@@ -56,3 +69,10 @@ class TopicModel extends GetxController {
       }
   }
 }
+=======
+  Future<List<Topico>?> futureTopicApp() async {
+    return await futureTopics;
+  }
+
+}
+>>>>>>> Jaqueline

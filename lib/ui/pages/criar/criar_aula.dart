@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 class CriarAula extends StatefulWidget {
   const CriarAula({super.key});
 
@@ -35,6 +36,12 @@ class _CriarAulaState extends State<CriarAula> {
   }
 
   @override
+=======
+class CriarAula extends StatelessWidget {
+  const CriarAula({super.key});
+
+  @override
+>>>>>>> Jaqueline
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -171,4 +178,8 @@ class _CriarAulaState extends State<CriarAula> {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> Jaqueline

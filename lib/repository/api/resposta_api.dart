@@ -11,8 +11,13 @@ class RespostaApi {
     try {
       List<Resposta> respostas;
 
+<<<<<<< HEAD
       var url = Uri.https(
           'apiwelearn.azurewebsites.net', '/api/respostas/listar/$tag');
+=======
+      var url =
+          Uri.https('apiwelearn.azurewebsites.net', '/api/respostas/listar/$tag');
+>>>>>>> Jaqueline
 
       var response = await http.get(url);
 
@@ -26,6 +31,7 @@ class RespostaApi {
       rethrow;
     }
   }
+<<<<<<< HEAD
 
   Future<bool> post(String idUsuario, String conteudoResposta, int idTopico) async {
     try {
@@ -56,4 +62,6 @@ class RespostaApi {
       rethrow;
     }
   }
+=======
+>>>>>>> Jaqueline
 }

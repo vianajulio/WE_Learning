@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:we_learning_android/entities/user.dart';
+=======
+>>>>>>> Jaqueline
 
 class CriarUser extends StatefulWidget {
   const CriarUser({Key? key}) : super(key: key);
@@ -18,6 +21,7 @@ class _CriarUserState extends State<CriarUser> {
   String? _selectedOption;
 
   @override
+<<<<<<< HEAD
   void initState() {
     _pierSitReg = true;
     _selectedOption = _tipos[0];
@@ -31,6 +35,14 @@ class _CriarUserState extends State<CriarUser> {
       body: ListView(
         children: [
           SizedBox(
+=======
+  Widget build(BuildContext context) {
+    return Scaffold(
+<<<<<<<< HEAD:we_learning_android/lib/ui/pages/criar/criar_user.dart
+      body: ListView(
+        children: [
+          Container(
+>>>>>>> Jaqueline
             height: MediaQuery.of(context).size.height * 1.15,
             child: Padding(
               padding: const EdgeInsets.all(24.0),
@@ -57,7 +69,12 @@ class _CriarUserState extends State<CriarUser> {
                           }
                           return null;
                         },
+<<<<<<< HEAD
 =======
+=======
+                      ),
+========
+>>>>>>> Jaqueline
       body: SingleChildScrollView(
         child: Container(
           constraints: BoxConstraints(
@@ -79,6 +96,7 @@ class _CriarUserState extends State<CriarUser> {
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Nome',
+<<<<<<< HEAD
                     ),
                     keyboardType: TextInputType.text,
                     validator: (value) {
@@ -89,6 +107,10 @@ class _CriarUserState extends State<CriarUser> {
                     },
                   ),
                 ),
+=======
+>>>>>>>> Jaqueline:lib/ui/pages/criar/criar_user.dart
+                    ),
+>>>>>>> Jaqueline
 
                 /* textfield email */
                 Padding(
@@ -196,6 +218,7 @@ class _CriarUserState extends State<CriarUser> {
                             ),
                           ),
                         ],
+<<<<<<< HEAD
 >>>>>>> Jaqueline:lib/ui/pages/criar/criar_user.dart
                       ),
                     ),
@@ -334,6 +357,24 @@ class _CriarUserState extends State<CriarUser> {
             ),
           ),
         ],
+=======
+                      ),
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          print(
+                              'Nome: ${_edtNome.text}, Email: ${_edtEmail.text}, '
+                              'Senha: ${_edtSenha.text}, Tipo: $_selectedOption, '
+                              'PierSitReg: $_pierSitReg');
+                        }
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+>>>>>>> Jaqueline
       ),
     );
   }

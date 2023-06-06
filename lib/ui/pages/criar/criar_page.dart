@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/ui/pages/criar/criar_user.dart';
+<<<<<<< HEAD
 import 'package:we_learning_android/ui/pages/criar/criar_aula.dart';
+=======
+>>>>>>> Jaqueline
 
 class CriarPage extends StatelessWidget {
   const CriarPage({super.key});
@@ -24,6 +27,7 @@ class CriarPage extends StatelessWidget {
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                   ),
+<<<<<<< HEAD
                 ),
               ),
               Container(
@@ -38,6 +42,12 @@ class CriarPage extends StatelessWidget {
                 ),
               ),
               const Expanded(
+=======
+                  Tab(text: 'Aulas'),
+                ],
+              ),
+              Expanded(
+>>>>>>> Jaqueline
                 child: TabBarView(
                   children: [
                     CriarUser(),
