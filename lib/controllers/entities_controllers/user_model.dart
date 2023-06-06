@@ -19,10 +19,22 @@ class UserModel extends GetxController {
     }
   }
 
+<<<<<<< HEAD:lib/controllers/entities_controllers/user_model.dart
   @override
   void onInit() {
     futureUser = UserLocal.getUser();
     super.onInit();
   }
 
+=======
+  Future<void> cadastrar(
+      User? user1, VoidCallback onSucess, VoidCallback onFail) async {
+    bool auser = await UserApi.instance.cadastroUsuario(user1!);
+    if (auser) {
+      onSucess();
+    } else {
+      onFail();
+    }
+  }
+>>>>>>> gabriel:we_learning_android/lib/controllers/entities_controllers/user_model.dart
 }

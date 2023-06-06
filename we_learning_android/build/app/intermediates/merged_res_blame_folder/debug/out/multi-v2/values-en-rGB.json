@@ -4,6 +4,7 @@
             "outputFile": "com.example.we_learning_android.app-mergeDebugResources-13:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\julio\\.gradle\\caches\\transforms-3\\5ff4a353de7064fc161fb566343d6916\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-en-rGB\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -39,6 +40,9 @@
                 },
                 {
                     "source": "C:\\Users\\julio\\.gradle\\caches\\transforms-3\\4ca28c4a71705f8a687c69dda140a277\\transformed\\core-1.6.0\\res\\values-en-rGB\\values-en-rGB.xml",
+=======
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\transforms-3\\4ca28c4a71705f8a687c69dda140a277\\transformed\\core-1.6.0\\res\\values-en-rGB\\values-en-rGB.xml",
+>>>>>>> gabriel
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

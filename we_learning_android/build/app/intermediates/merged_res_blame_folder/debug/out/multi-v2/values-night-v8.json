@@ -4,7 +4,11 @@
             "outputFile": "com.example.we_learning_android.app-mergeDebugResources-13:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "D:\\Projetos\\tcc\\WE_Learning\\we_learning_android\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+=======
+                    "source": "C:\\Users\\gabri\\Documents\\WeLearnApp\\we_learning_android\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+>>>>>>> gabriel
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

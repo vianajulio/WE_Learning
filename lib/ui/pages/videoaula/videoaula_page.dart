@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD:lib/ui/pages/videoaula/videoaula_page.dart
+=======
+import 'package:we_learning_android/entities/aula.dart';
+>>>>>>> gabriel:we_learning_android/lib/ui/pages/videoaula/videoaula_page.dart
 import 'package:we_learning_android/repository/local/aulas_repository.dart';
 import 'package:we_learning_android/repository/local/comentario_repository.dart';
 import 'package:we_learning_android/ui/widgets/youtube_player.dart';
 
 class VideoaulaPage extends StatefulWidget {
-  const VideoaulaPage({super.key});
+  //usar o id para gettar a lista de aula da api
+  Aula? selected;
+  VideoaulaPage({super.key, this.selected});
 
   @override
   State<VideoaulaPage> createState() => _VideoaulaPageState();
 }
 
 class _VideoaulaPageState extends State<VideoaulaPage> {
+  final listaAulas = AulasRepository.aulas;
+  @override
+  void initState() {
+    widget.selected = listaAulas[0];
+    super.initState();
+  }
 
+  final comentarios = ComentariosRepository.comentarios;
   @override
   Widget build(BuildContext context) {
-    final comentarios = ComentariosRepository.comentarios;
-    final listaAulas = AulasRepository.aulas; 
+    int selected = 0;
     return Scaffold(
       drawer: SafeArea(
         child: Drawer(
@@ -31,6 +43,10 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                     : null,
                 onTap: () {
                   print('idAula: ${listaAulas[index].id}');
+                  widget.selected = listaAulas[index];
+                  selected = index;
+                  Navigator.pop(context);
+                  setState(() {});
                 },
               );
             },
@@ -46,7 +62,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomYoutubePlayer(
-                youtubeURL: "https://www.youtube.com/watch?v=z_67ApMhQk0",
+                youtubeURL: widget.selected!.url.toString(),
                 showFullScreenButton: true,
                 showControls: true,
               ),
@@ -55,47 +71,34 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
                 flex: 2,
                 child: SizedBox(
                   child: Container(
+                    //decoration: BoxDecoration(),
                     //margin: EdgeInsets.all(10),
-                    color: Colors.green,
+                    color: Colors.white24,
                     child: Padding(
                       padding: const EdgeInsets.all(0),
                       child: ListTile(
-                        title: const Text('Aula Foda'),
-                        subtitle: const Text('150 views 10/10/2022'),
+                        title: Text("${widget.selected!.titulo}"),
+                        subtitle:
+                            Text('150 views ${widget.selected!.dateCadastro}'),
                         trailing: ElevatedButton(
                           child: const Text('Concluir'),
-                          onPressed: () {},
+                          onPressed: () {
+                            //fazer evento de alterar a aula assistida para true
+                            listaAulas[selected].assistida = true;
+                            setState(() {});
+                          },
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
+              //const Divider(color: Colors.black),
               Expanded(
                 flex: 12,
                 child: SizedBox(
                   child: Container(
-                    color: Colors.blue,
-                    child: ListView.separated(
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                          child: ListTile(
-                            title: Padding(
-                              padding: const EdgeInsets.only(bottom: 5),
-                              child: Text('${comentarios[index].assunto}'),
-                            ),
-                            subtitle: Row(
-                              children: [
-                                const Icon(Icons.person),
-                                Text('${comentarios[index].nome}')
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                      separatorBuilder: (__, _) => const Divider(),
-                      itemCount: comentarios.length,
-                    ),
+                    color: Colors.white38,
                   ),
                 ),
               )
