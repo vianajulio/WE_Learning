@@ -1,0 +1,39 @@
+name: we_learning_android
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.5 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  http: ^0.13.6
+  shared_preferences: ^2.1.0
+  youtube_player_iframe: ^4.0.4
+  intl: ^0.18.1
+  carousel_slider: ^4.2.1
+  google_maps_flutter: ^2.2.8
+  maps_launcher: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/senailogo.png
+    - assets/images/carousel_home_1.png
+    - assets/images/carousel_home_2.png
+    - assets/images/carousel_home_3.png
+    - assets/images/carousel_home_4.png
