@@ -13,11 +13,11 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->D:\Projetos\tcc\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:4:5-66
-15-->D:\Projetos\tcc\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:4:22-64
+15-->D:\TCC\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:4:5-66
+15-->D:\TCC\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:4:22-64
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->D:\Projetos\tcc\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:5:5-78
-16-->D:\Projetos\tcc\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:5:22-76
+16-->D:\TCC\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:5:5-78
+16-->D:\TCC\WE_Learning\we_learning_android\android\app\src\main\AndroidManifest.xml:5:22-76
 17
 18    <uses-feature
 18-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\julio\.gradle\caches\transforms-3\a0e34175b89fa528462076cc4208822f\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
@@ -76,13 +76,13 @@
 65            android:value="2" />
 66
 67        <activity
-67-->[:url_launcher_android] D:\Projetos\tcc\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+67-->[:url_launcher_android] D:\TCC\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
 68            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-68-->[:url_launcher_android] D:\Projetos\tcc\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+68-->[:url_launcher_android] D:\TCC\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
 69            android:exported="false"
-69-->[:url_launcher_android] D:\Projetos\tcc\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+69-->[:url_launcher_android] D:\TCC\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
 70            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-70-->[:url_launcher_android] D:\Projetos\tcc\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+70-->[:url_launcher_android] D:\TCC\WE_Learning\we_learning_android\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
 71
 72        <uses-library
 72-->[androidx.window:window:1.0.0-beta04] C:\Users\julio\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40

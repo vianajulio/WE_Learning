@@ -44,7 +44,7 @@ class CriarPage extends StatelessWidget {
                     CriarAula(),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
