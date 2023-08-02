@@ -48,14 +48,14 @@ class CustomTextFormField extends StatelessWidget {
 }
 
 class CustomTextFormFieldObscure extends StatelessWidget {
-  TextEditingController? textController;
-  String? hintText;
-  FormFieldValidator<String>? validator;
-  int? maxLines;
-  int? maxLength;
-  bool? counter;
+  final TextEditingController? textController;
+  final String? hintText;
+  final FormFieldValidator<String>? validator;
+  final int? maxLines;
+  final int? maxLength;
+  final bool? counter;
 
-  CustomTextFormFieldObscure({
+  const CustomTextFormFieldObscure({
     super.key,
     this.textController,
     this.hintText = '',

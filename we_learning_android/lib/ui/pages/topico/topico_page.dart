@@ -11,8 +11,8 @@ import 'package:we_learning_android/ui/widgets/custom_text.dart';
 import 'package:we_learning_android/ui/widgets/message.dart';
 
 class TopicoPage extends StatefulWidget {
-  Topico topico;
-  TopicoPage({super.key, required this.topico});
+  final Topico topico;
+  const TopicoPage({super.key, required this.topico});
 
   @override
   State<TopicoPage> createState() => _TopicoPageState();
