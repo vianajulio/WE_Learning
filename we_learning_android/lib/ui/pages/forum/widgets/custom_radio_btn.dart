@@ -4,9 +4,9 @@ import 'package:we_learning_android/controllers/pages_controllers/forum_page_con
 import 'package:we_learning_android/entities/category.dart';
 
 class CustomRadioBtn extends StatelessWidget {
-  Category category;
+  final Category category;
 
-  CustomRadioBtn({super.key, required this.category});
+  const CustomRadioBtn({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {

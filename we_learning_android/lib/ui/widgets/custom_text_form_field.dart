@@ -4,14 +4,14 @@ import 'package:we_learning_android/controllers/pages_controllers/login_page_con
 import 'package:we_learning_android/ui/colors/colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  TextEditingController? textController;
-  String? hintText;
-  FormFieldValidator<String>? validator;
-  int? maxLines;
-  int? maxLength;
-  bool? counter;
+  final TextEditingController? textController;
+  final String? hintText;
+  final FormFieldValidator<String>? validator;
+  final int? maxLines;
+  final int? maxLength;
+  final bool? counter;
 
-  CustomTextFormField({
+  const CustomTextFormField({
     super.key,
     this.textController,
     this.hintText = '',

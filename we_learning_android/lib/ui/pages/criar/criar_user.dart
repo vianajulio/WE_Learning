@@ -158,9 +158,9 @@ class _CriarUserState extends State<CriarUser> {
                       child: Container(
                         alignment: Alignment.topCenter,
                         child: ElevatedButton(
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               Icon(Icons.check),
                               Padding(
                                 padding: EdgeInsets.all(20),

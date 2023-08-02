@@ -4,9 +4,9 @@ import 'package:we_learning_android/controllers/pages_controllers/bottom_nav_con
 import 'package:we_learning_android/ui/colors/colors.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  CustomBottomNavigationBar({super.key});
+  const CustomBottomNavigationBar({super.key});
 
-  List<BottomNavigationBarItem> bottomItens = const [
+  final List<BottomNavigationBarItem> bottomItens = const [
     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
     BottomNavigationBarItem(icon: Icon(Icons.people), label: "Forum"),
     BottomNavigationBarItem(icon: Icon(Icons.subscriptions), label: "Aulas"),

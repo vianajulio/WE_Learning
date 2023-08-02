@@ -3,11 +3,12 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CustomYoutubePlayer extends StatefulWidget {
   final String youtubeURL;
-  bool loop;
-  bool mute;
-  bool showFullScreenButton;
-  bool showControls;
-  CustomYoutubePlayer({
+  final bool loop;
+  final bool mute;
+  final bool showFullScreenButton;
+  final bool showControls;
+
+  const CustomYoutubePlayer({
     super.key,
     required this.youtubeURL,
     this.loop = false,

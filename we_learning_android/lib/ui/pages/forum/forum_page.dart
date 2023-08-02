@@ -6,11 +6,7 @@ import 'package:we_learning_android/controllers/pages_controllers/forum_page_con
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/local/category_local.dart';
-<<<<<<< HEAD
-import 'package:we_learning_android/ui/pages/forum/widgets/criar_topico.dart';
-=======
 import 'package:we_learning_android/ui/pages/criar_topico/criar_topico.dart';
->>>>>>> gabriel
 import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';

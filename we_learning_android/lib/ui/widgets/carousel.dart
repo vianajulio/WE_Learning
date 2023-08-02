@@ -2,17 +2,17 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class CustomCarosel extends StatelessWidget {
-  List<Widget> listItens;
-  CarouselController? carouselController;
-  double? width;
-  double? height;
-  double viewPortFraction;
-  bool autoPlay;
-  Duration autoPlayInterval;
-  int initialPage;
-  bool enableInfiniteScroll;
-  bool padEnds;
-  bool? sideArrow;
+  final List<Widget> listItens;
+  final CarouselController? carouselController;
+  final double? width;
+  final double? height;
+  final double viewPortFraction;
+  final bool autoPlay;
+  final Duration autoPlayInterval;
+  final int initialPage;
+  final bool enableInfiniteScroll;
+  final bool padEnds;
+  final bool? sideArrow;
 
   CustomCarosel({
     super.key,

@@ -61,11 +61,7 @@ class _CriarAulaState extends State<CriarAula> {
                           if (value.length < 5) {
                             return 'Coloque um título válido';
                           }
-<<<<<<< HEAD
-                          return null;
-=======
                           return '';
->>>>>>> gabriel
                         },
                       ),
                     ),
@@ -84,11 +80,7 @@ class _CriarAulaState extends State<CriarAula> {
                           if (value.length < 15) {
                             return 'Coloque uma descrição válido';
                           }
-<<<<<<< HEAD
-                          return null;
-=======
                           return '';
->>>>>>> gabriel
                         },
                       ),
                     ),
@@ -107,11 +99,7 @@ class _CriarAulaState extends State<CriarAula> {
                           if (value.length < 15) {
                             return 'Coloque uma URL válida';
                           }
-<<<<<<< HEAD
-                          return null;
-=======
                           return '';
->>>>>>> gabriel
                         },
                       ),
                     ),

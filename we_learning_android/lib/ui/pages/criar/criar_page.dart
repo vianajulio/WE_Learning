@@ -53,16 +53,16 @@ class CriarPage extends StatelessWidget {
   }
 }
 
-_componenteFoda({String? label, Icon? icon}) {
-  return Container(
-    padding: const EdgeInsets.all(20),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        icon!,
-        Text(label.toString(), textAlign: TextAlign.center),
-      ],
-    ),
-  );
-}
+// _componenteFoda({String? label, Icon? icon}) {
+//   return Container(
+//     padding: const EdgeInsets.all(20),
+//     child: Column(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       crossAxisAlignment: CrossAxisAlignment.center,
+//       children: [
+//         icon!,
+//         Text(label.toString(), textAlign: TextAlign.center),
+//       ],
+//     ),
+//   );
+// }

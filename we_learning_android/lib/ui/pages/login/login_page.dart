@@ -137,8 +137,8 @@ class LoginPage extends StatelessWidget with LoginValidator {
                                             Colors.red,
                                           ),
                                         ),
-                                        child: Row(
-                                          children: const [
+                                        child: const Row(
+                                          children: [
                                             CustomText(
                                               text: 'Enviar',
                                               color: primaryWhite,
