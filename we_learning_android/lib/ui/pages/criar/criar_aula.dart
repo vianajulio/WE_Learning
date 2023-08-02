@@ -57,10 +57,15 @@ class _CriarAulaState extends State<CriarAula> {
                         validator: (String? value) {
                           if (value!.isEmpty) {
                             return 'Insira algum valor';
-                          } else if (value.length < 5) {
+                          }
+                          if (value.length < 5) {
                             return 'Coloque um título válido';
                           }
+<<<<<<< HEAD
                           return null;
+=======
+                          return '';
+>>>>>>> gabriel
                         },
                       ),
                     ),
@@ -75,10 +80,15 @@ class _CriarAulaState extends State<CriarAula> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Insira algum valor';
-                          } else if (value.length < 15) {
+                          }
+                          if (value.length < 15) {
                             return 'Coloque uma descrição válido';
                           }
+<<<<<<< HEAD
                           return null;
+=======
+                          return '';
+>>>>>>> gabriel
                         },
                       ),
                     ),
@@ -93,10 +103,15 @@ class _CriarAulaState extends State<CriarAula> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Insira algum valor';
-                          } else if (value.length < 15) {
+                          }
+                          if (value.length < 15) {
                             return 'Coloque uma URL válida';
                           }
+<<<<<<< HEAD
                           return null;
+=======
+                          return '';
+>>>>>>> gabriel
                         },
                       ),
                     ),
@@ -138,9 +153,9 @@ class _CriarAulaState extends State<CriarAula> {
                       child: Container(
                         alignment: Alignment.topCenter,
                         child: ElevatedButton(
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               Icon(Icons.check),
                               Padding(
                                 padding: EdgeInsets.all(20),

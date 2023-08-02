@@ -6,11 +6,11 @@ import 'package:we_learning_android/repository/api/resposta_api.dart';
 class RespostaModel extends GetxController {
   Future<List<Resposta>?>? futureRespostas;
 
-  @override
-  onInit() async {
-    super.onInit();
-    // await getAll();
-  }
+  // @override
+  // onInit() async {
+  //   super.onInit();
+  //   // await getAll();
+  // }
 
   // TODO trocar o initState por este método.
   // Future<void> getAll() async {

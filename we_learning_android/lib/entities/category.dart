@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> gabriel
 class Category {
   int? id;
   String? name;
