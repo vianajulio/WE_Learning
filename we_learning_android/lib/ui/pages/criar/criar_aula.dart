@@ -40,7 +40,7 @@ class _CriarAulaState extends State<CriarAula> {
     return Scaffold(
       body: ListView(
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Padding(
               padding: const EdgeInsets.all(24.0),
@@ -59,9 +59,11 @@ class _CriarAulaState extends State<CriarAula> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Insira algum valor';
-                          } else if (value.length < 5) {
+                          }
+                          if (value.length < 5) {
                             return 'Coloque um título válido';
                           }
+                          return '';
                         },
                       ),
                     ),
@@ -76,9 +78,11 @@ class _CriarAulaState extends State<CriarAula> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Insira algum valor';
-                          } else if (value.length < 15) {
+                          }
+                          if (value.length < 15) {
                             return 'Coloque uma descrição válido';
                           }
+                          return '';
                         },
                       ),
                     ),
@@ -93,9 +97,11 @@ class _CriarAulaState extends State<CriarAula> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Insira algum valor';
-                          } else if (value.length < 15) {
+                          }
+                          if (value.length < 15) {
                             return 'Coloque uma URL válida';
                           }
+                          return '';
                         },
                       ),
                     ),
@@ -137,9 +143,9 @@ class _CriarAulaState extends State<CriarAula> {
                       child: Container(
                         alignment: Alignment.topCenter,
                         child: ElevatedButton(
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               Icon(Icons.check),
                               Padding(
                                 padding: EdgeInsets.all(20),

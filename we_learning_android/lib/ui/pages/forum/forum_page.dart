@@ -6,7 +6,6 @@ import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/local/category_local.dart';
 import 'package:we_learning_android/ui/pages/criar_topico/criar_topico.dart';
-import 'package:we_learning_android/ui/pages/criar_topico/widgets/dropdownbtn.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
 import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
 import 'package:we_learning_android/ui/widgets/custom_text.dart';
@@ -110,7 +109,7 @@ class ForumPage extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 32),
-                          child: SearchBar(
+                          child: CustomSearchBar(
                             hintText: 'Qual é a sua dúvida?',
                             largura: width,
                           ),

@@ -13,7 +13,7 @@ class CategoryLocal {
     await instance.setString('category.list', categoryString);
   }
 
-  Future<List<Category>?> getCategory() async {
+  Future<List<Category>?>? getCategory() async {
     var instance = await SharedPreferences.getInstance();
     String? categoryString = instance.getString('category.list');
     if (categoryString!.isEmpty) {

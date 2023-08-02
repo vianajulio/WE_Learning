@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:we_learning_android/entities/user.dart';
 import 'package:http/http.dart' as http;
-import 'package:we_learning_android/entities/usuario.dart';
 
 class UserApi {
   static final UserApi instance = UserApi._();

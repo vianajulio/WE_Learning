@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class SearchBar extends StatefulWidget {
-  String hintText;
-  double largura;
-  double altura;
+class CustomSearchBar extends StatefulWidget {
+  final String hintText;
+  final double largura;
+  final double altura;
 
-  SearchBar(
+  const CustomSearchBar(
       {super.key,
       required this.hintText,
       this.largura = 48,
       this.altura = 200});
 
   @override
-  State<SearchBar> createState() => _SearchBarState();
+  State<CustomSearchBar> createState() => _CustomSearchBarState();
 }
 
-class _SearchBarState extends State<SearchBar> {
+class _CustomSearchBarState extends State<CustomSearchBar> {
   @override
   Widget build(BuildContext context) {
     return Container(

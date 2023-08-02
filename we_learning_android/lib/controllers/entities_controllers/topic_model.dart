@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/entities/user.dart';
