@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../entities/topico.dart';
-import '../../../../controllers/pages_controllers/forumPageController.dart';
+import '../../../../controllers/pages_controllers/forum_page_controller.dart';
 import '../../topico/topico_page.dart';
 import '../../topico/components/topic_widget.dart';
 

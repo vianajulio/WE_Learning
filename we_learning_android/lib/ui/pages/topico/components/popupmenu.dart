@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controllers/pages_controllers/topicoPageController.dart';
+import '../../../../controllers/pages_controllers/topico_page_controller.dart';
 import '../../../../entities/topico.dart';
 import '../../../colors/colors.dart';
 import '../../../custom_widgets/global_components/custom_text.dart';

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:we_learning_android/ui/custom_widgets/global_components/scaffold_custom.dart';
 import 'package:we_learning_android/ui/pages/forum/components/filtro_materia.dart';
 import '../../../controllers/entities_controllers/category_model.dart';
 import '../../../controllers/entities_controllers/topic_model.dart';
-import '../../../controllers/pages_controllers/forumPageController.dart';
+import '../../../controllers/pages_controllers/forum_page_controller.dart';
 import '../../../entities/category.dart';
 import '../../../entities/topico.dart';
-import '../../../repository/local/categoryLocal.dart';
+import '../../../repository/local/category_local.dart';
 import '../topico/criar_topico_screen/criar_topico.dart';
 import '../../custom_widgets/global_components/custom_text.dart';
 import '../../custom_widgets/global_components/message.dart';
@@ -20,11 +21,7 @@ class ForumPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var listFiltros = CategoryLocal.instance.getCategory();
     double width = 340.0;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Forum'),
-        centerTitle: true,
-      ),
+    return ScaffoldCustom(
       drawer: SafeArea(
         child: Drawer(
           child: Padding(

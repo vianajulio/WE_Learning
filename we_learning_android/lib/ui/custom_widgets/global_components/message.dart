@@ -14,7 +14,6 @@ class Message extends StatelessWidget {
       required String message,
       int duration = 3,
       Function(dynamic)? onPop}) async {
-
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -89,14 +88,12 @@ class Message extends StatelessWidget {
     Color? color,
   }) {
     return Center(
-      child: Center(
-        child: Text(
-          message,
-          style: TextStyle(
-            fontSize: fontSize ?? 18.0,
-            color: color ?? Colors.grey,
-            fontWeight: fontWeight ?? FontWeight.bold,
-          ),
+      child: Text(
+        message,
+        style: TextStyle(
+          fontSize: fontSize ?? 18.0,
+          color: color ?? Colors.grey,
+          fontWeight: fontWeight ?? FontWeight.bold,
         ),
       ),
     );

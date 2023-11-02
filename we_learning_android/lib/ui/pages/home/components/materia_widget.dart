@@ -39,9 +39,7 @@ class MateriaItem extends StatelessWidget {
           ),
         ),
       ),
-      onTap: () {
-        controller.goToTab(2);
-      },
+      onTap: () {},
     );
   }
 }

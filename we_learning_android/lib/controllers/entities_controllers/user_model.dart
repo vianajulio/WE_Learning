@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../entities/user.dart';
 import '../../repository/api/user_api.dart';
-import '../../repository/local/userLocal.dart';
+import '../../repository/local/user_local.dart';
 
 class UserModel extends GetxController {
   User? user;

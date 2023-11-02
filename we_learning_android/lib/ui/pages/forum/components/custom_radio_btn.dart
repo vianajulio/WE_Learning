@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../controllers/pages_controllers/forumPageController.dart';
+import '../../../../controllers/pages_controllers/forum_page_controller.dart';
 import '../../../../entities/category.dart';
 
 class CustomRadioBtn extends StatelessWidget {

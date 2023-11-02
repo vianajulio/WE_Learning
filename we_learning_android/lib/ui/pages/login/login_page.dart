@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:we_learning_android/ui/pages/home/home_page.dart';
 import '../../../controllers/entities_controllers/user_model.dart';
-import '../../../controllers/pages_controllers/loginPageController.dart';
+import '../../../controllers/pages_controllers/login_page_controller.dart';
 import '../../colors/colors.dart';
 import '../../custom_widgets/global_components/custom_text.dart';
 import '../../custom_widgets/global_components/custom_text_form_field.dart';
-import '../main/default_screen.dart';
 import '../../custom_widgets/global_components/message.dart';
 import '../../validators/login_page_validator.dart';
 
@@ -227,7 +227,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
               (value) => Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const MainPage();
+                    return const HomePage();
                   },
                 ),
               ),

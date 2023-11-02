@@ -22,7 +22,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
           currentIndex: controller.currentPage.value,
           items: bottomItens,
           onTap: (newIndex) {
-            controller.goToTab(newIndex);
+            controller.goToTab(newIndex, context);
           },
           type: BottomNavigationBarType.fixed,
           backgroundColor: primaryRed,

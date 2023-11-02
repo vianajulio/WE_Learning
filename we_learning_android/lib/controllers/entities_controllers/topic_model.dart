@@ -5,8 +5,8 @@ import '../../entities/category.dart';
 import '../../entities/topico.dart';
 import '../../entities/user.dart';
 import '../../repository/api/topico_api.dart';
-import '../../repository/local/categoryLocal.dart';
-import '../../repository/local/userLocal.dart';
+import '../../repository/local/category_local.dart';
+import '../../repository/local/user_local.dart';
 
 class TopicModel extends GetxController {
   Future<List<Topico>?>? futureTopics;

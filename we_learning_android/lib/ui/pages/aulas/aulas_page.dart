@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/ui/custom_widgets/global_components/scaffold_custom.dart';
 
 import 'components/card_video_aula.dart';
 
@@ -7,8 +8,8 @@ class AulasPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Center(
+    return ScaffoldCustom(
+      body: Center(
         child: GridView.builder(
           itemCount: 12,
           padding: const EdgeInsets.all(24),

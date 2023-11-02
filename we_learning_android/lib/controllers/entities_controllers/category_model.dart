@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../../entities/category.dart';
 import '../../repository/api/category_api.dart';
-import '../../repository/local/categoryLocal.dart';
+import '../../repository/local/category_local.dart';
 
 class CategoryModel extends GetxController {
   Future<List<Category>?>? futureCategories;

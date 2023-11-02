@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/ui/custom_widgets/global_components/scaffold_custom.dart';
 
 import 'criar_aula.dart';
 import 'criar_user.dart';
@@ -8,46 +9,31 @@ class CriarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        body: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                height: 50.0,
-                color: Colors.red,
-                alignment: Alignment.center,
-                child: const Text(
-                  "Criar",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
+    return ScaffoldCustom(
+      body: DefaultTabController(
+        length: 2,
+        child: Column(
+          children: [
+            Container(
+              color: Colors.red,
+              child: const TabBar(
+                tabs: [
+                  Tab(
+                    text: 'Usuário',
                   ),
-                ),
+                  Tab(text: 'Aulas'),
+                ],
               ),
-              Container(
-                color: Colors.red,
-                child: const TabBar(
-                  tabs: [
-                    Tab(
-                      text: 'Usuário',
-                    ),
-                    Tab(text: 'Aulas'),
-                  ],
-                ),
+            ),
+            const Expanded(
+              child: TabBarView(
+                children: [
+                  CriarUser(),
+                  CriarAula(),
+                ],
               ),
-              const Expanded(
-                child: TabBarView(
-                  children: [
-                    CriarUser(),
-                    CriarAula(),
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

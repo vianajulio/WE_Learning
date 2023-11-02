@@ -35,7 +35,12 @@ class TopicoApi {
     try {
       var url = Uri.https(apiIp, '/api/topico/buscar/$nomeCategoria');
 
-      var response = await http.get(url);
+      var response = await http.get(url).timeout(
+        const Duration(seconds: 10),
+        onTimeout: () {
+          return http.Response('Error', 408);
+        },
+      );
 
       if (response.statusCode != 200) {
         return null;

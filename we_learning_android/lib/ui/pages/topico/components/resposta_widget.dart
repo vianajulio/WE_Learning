@@ -4,7 +4,7 @@ import '../../../../controllers/entities_controllers/respostas_model.dart';
 import '../../../../entities/resposta.dart';
 import '../../../../entities/topico.dart';
 import '../../../../entities/user.dart';
-import '../../../../repository/local/userLocal.dart';
+import '../../../../repository/local/user_local.dart';
 import '../../../colors/colors.dart';
 import '../../../custom_widgets/global_components/custom_text.dart';
 import '../../../custom_widgets/global_components/custom_text_form_field.dart';

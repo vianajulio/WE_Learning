@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../repository/local/aulasRepository.dart';
-import '../../../repository/local/comentarioRepository.dart';
+import '../../../repository/local/aulas_repository.dart';
+import '../../../repository/local/comentario_repository.dart';
 import '../../custom_widgets/global_components/youtube_player.dart';
 
 class VideoAulaPage extends StatefulWidget {

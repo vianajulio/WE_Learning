@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../controllers/entities_controllers/category_model.dart';
 import '../../../../entities/category.dart';
-import '../../../../repository/local/categoryLocal.dart';
+import '../../../../repository/local/category_local.dart';
 import 'custom_radio_btn.dart';
 
 class FiltroMateria extends StatelessWidget {

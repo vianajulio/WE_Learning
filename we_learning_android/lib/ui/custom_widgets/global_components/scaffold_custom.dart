@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../../controllers/pages_controllers/bottom_nav_controller.dart';
 import '../../colors/colors.dart';
-import '../../custom_widgets/global_components/custom_bottom_navigation.dart';
-import '../perfil/perfil_page.dart';
+import '../../pages/perfil/perfil_page.dart';
+import 'custom_bottom_navigation.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+class ScaffoldCustom extends StatelessWidget {
+  final Widget body;
+  final Widget? drawer;
+  final Widget? floatingActionButton;
+  final Widget? leading;
+
+  const ScaffoldCustom({
+    super.key,
+    required this.body,
+    this.drawer,
+    this.floatingActionButton,
+    this.leading,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: drawer,
       endDrawer: Container(
         width: 320,
         color: primaryWhite,
         child: const PerfilPage(),
       ),
       appBar: AppBar(
+        leading: leading,
         actions: [
           Builder(
             builder: (context) {
@@ -31,16 +42,7 @@ class MainPage extends StatelessWidget {
         ],
       ),
       backgroundColor: const Color.fromARGB(255, 236, 236, 236),
-      body: GetBuilder(
-        init: BottomNavBarController(),
-        builder: (controller) => PageView(
-          controller: controller.pageController,
-          children: controller.pages,
-          onPageChanged: (value) {
-            controller.animatedToTab(value);
-          },
-        ),
-      ),
+      body: body,
       bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
