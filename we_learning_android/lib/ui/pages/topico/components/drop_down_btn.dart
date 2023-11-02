@@ -5,17 +5,30 @@ import '../../../../entities/category.dart';
 import '../../../../repository/api/category_api.dart';
 import '../../../custom_widgets/global_components/message.dart';
 
-class DropDownBTN extends StatelessWidget {
+class DropDownBTN extends StatefulWidget {
   const DropDownBTN({super.key});
 
   @override
+  State<DropDownBTN> createState() => _DropDownBTNState();
+}
+
+class _DropDownBTNState extends State<DropDownBTN> {
+  late Future<List<Category>?> categorias;
+
+  @override
+  void initState() {
+    categorias = CategoryApi.instance.getAll();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    var listCategories = CategoryApi.instance.getAll();
+    // var listcategorias =
     return GetBuilder(
       init: CategoryModel(),
       builder: (controller) => SizedBox(
         child: FutureBuilder(
-            future: listCategories,
+            future: categorias,
             builder: (context, AsyncSnapshot<List<Category>?> snapshot) {
               switch (snapshot.connectionState) {
                 case ConnectionState.none:
@@ -43,12 +56,11 @@ class DropDownBTN extends StatelessWidget {
                       child: DropdownButton(
                         onChanged: (String? value) {
                           controller.onPressDropButton(value);
-                          listCategories
-                              .then((list) => list.forEach((element) {
-                                    if (element.name == value) {
-                                      controller.updateId(element);
-                                    }
-                                  }));
+                          categorias.then((list) => list?.forEach((element) {
+                                if (element.name == value) {
+                                  controller.updateId(element);
+                                }
+                              }));
                         },
                         value: controller.dropDownValue,
                         items:
