@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text_form_field.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
-import 'package:we_learning_android/ui/widgets/page/criar_topico/dropdownbtn.dart';
+
+import '../../../../controllers/entities_controllers/topic_model.dart';
+import '../../../colors/colors.dart';
+import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/global_components/custom_text_form_field.dart';
+import '../../../custom_widgets/global_components/message.dart';
+import '../components/drop_down_btn.dart';
 
 class CadastrarTopico extends StatelessWidget {
   CadastrarTopico({super.key});
@@ -15,7 +16,6 @@ class CadastrarTopico extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
@@ -53,14 +53,11 @@ class CadastrarTopico extends StatelessWidget {
                 maxLength: 840,
                 counter: true,
               ),
-
-              //DropDown
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 alignment: Alignment.center,
                 child: const DropDownBTN(),
               ),
-
               Container(
                 alignment: Alignment.center,
                 child: SizedBox(
@@ -88,7 +85,7 @@ class CadastrarTopico extends StatelessWidget {
 
   void cadastrarTopic(BuildContext context) {
     FocusScope.of(context).unfocus();
-    
+
     showDialog(
       context: context,
       builder: (context) {

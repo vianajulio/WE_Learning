@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/controllers/pages_controllers/forumPageController.dart';
-import 'package:we_learning_android/ui/pages/topico/topico_page.dart';
-import 'package:we_learning_android/ui/widgets/page/topico/topic_widget.dart';
+import '../../../../entities/topico.dart';
+import '../../../../controllers/pages_controllers/forumPageController.dart';
+import '../../topico/topico_page.dart';
+import '../../topico/components/topic_widget.dart';
 
 class SelectedTopics extends StatelessWidget {
   const SelectedTopics({super.key});

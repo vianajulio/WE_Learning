@@ -1,4 +1,4 @@
-import 'package:we_learning_android/entities/comentario.dart';
+import '../../entities/comentario.dart';
 
 class ComentariosRepository {
   static List<Comentario> comentarios = [

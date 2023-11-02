@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/carousel.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/search_bar.dart';
+import '../../custom_widgets/global_components/carousel.dart';
+import '../../custom_widgets/global_components/search_bar.dart';
 
-import '../../widgets/page/home/materia_widget.dart';
+import 'components/materia_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

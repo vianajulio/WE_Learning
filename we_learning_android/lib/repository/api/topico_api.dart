@@ -1,7 +1,9 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
-import 'package:we_learning_android/constants/constants.dart';
-import 'package:we_learning_android/entities/topico.dart';
+
+import '../../constants/constants.dart';
+import '../../entities/topico.dart';
 
 class TopicoApi {
   static final TopicoApi instance = TopicoApi._();

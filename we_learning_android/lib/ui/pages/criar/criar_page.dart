@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/pages/criar/criar_user.dart';
-import 'package:we_learning_android/ui/pages/criar/criar_aula.dart';
+
+import 'criar_aula.dart';
+import 'criar_user.dart';
 
 class CriarPage extends StatelessWidget {
   const CriarPage({super.key});

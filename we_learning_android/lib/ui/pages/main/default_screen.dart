@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/controllers/pages_controllers/bottom_nav_controller.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/pages/perfil/perfil_page.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_bottom_navigation.dart';
+
+import '../../../controllers/pages_controllers/bottom_nav_controller.dart';
+import '../../colors/colors.dart';
+import '../../custom_widgets/global_components/custom_bottom_navigation.dart';
+import '../perfil/perfil_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});

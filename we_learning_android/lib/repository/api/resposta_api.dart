@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:we_learning_android/constants/constants.dart';
-import 'package:we_learning_android/entities/resposta.dart';
+import '../../constants/constants.dart';
+import '../../entities/resposta.dart';
 import 'package:http/http.dart' as http;
 
 class RespostaApi {

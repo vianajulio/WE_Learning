@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/entities_controllers/respostas_model.dart';
-import 'package:we_learning_android/entities/resposta.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/repository/api/resposta_api.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
-import 'package:we_learning_android/ui/widgets/page/topico/resposta_widget.dart';
-import 'package:we_learning_android/ui/widgets/page/topico/respostas_widget.dart';
+
+import '../../../controllers/entities_controllers/respostas_model.dart';
+import '../../../entities/resposta.dart';
+import '../../../entities/topico.dart';
+import '../../../repository/api/resposta_api.dart';
+import '../../colors/colors.dart';
+import '../../custom_widgets/global_components/custom_text.dart';
+import '../../custom_widgets/global_components/message.dart';
+import 'components/resposta_widget.dart';
+import 'components/respostas_widget.dart';
 
 class TopicoPage extends StatefulWidget {
   final Topico topico;

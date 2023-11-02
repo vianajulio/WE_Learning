@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../global_widgets/custom_text.dart';
+import '../../../custom_widgets/global_components/custom_text.dart';
 
 class CardAula extends StatelessWidget {
   final Color colorIcon;

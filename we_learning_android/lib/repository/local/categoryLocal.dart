@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:we_learning_android/entities/category.dart';
+
+import '../../entities/category.dart';
 
 class CategoryLocal {
   static final CategoryLocal instance = CategoryLocal._();

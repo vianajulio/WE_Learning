@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/page/topico/popupmenu.dart';
+
+import '../../../../entities/topico.dart';
+import '../../../colors/colors.dart';
+import '../../../custom_widgets/global_components/custom_text.dart';
+import 'popupmenu.dart';
 
 class ForumWidget extends StatelessWidget {
   final Topico topico;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
-import 'package:we_learning_android/entities/category.dart';
-import 'package:we_learning_android/repository/api/category_api.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
+import '../../../../controllers/entities_controllers/category_model.dart';
+import '../../../../entities/category.dart';
+import '../../../../repository/api/category_api.dart';
+import '../../../custom_widgets/global_components/message.dart';
 
 class DropDownBTN extends StatelessWidget {
   const DropDownBTN({super.key});

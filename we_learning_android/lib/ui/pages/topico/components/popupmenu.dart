@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/pages_controllers/topicoPageController.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/widgets/page/topico/editar_topico_page.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
+
+import '../../../../controllers/pages_controllers/topicoPageController.dart';
+import '../../../../entities/topico.dart';
+import '../../../colors/colors.dart';
+import '../../../custom_widgets/global_components/custom_text.dart';
+import 'editar_topico_page.dart';
 
 class CustomPopUpMenu extends StatelessWidget {
   final Topico topico;

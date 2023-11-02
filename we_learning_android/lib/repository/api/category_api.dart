@@ -1,7 +1,9 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
-import 'package:we_learning_android/constants/constants.dart';
-import 'package:we_learning_android/entities/category.dart';
+
+import '../../constants/constants.dart';
+import '../../entities/category.dart';
 
 class CategoryApi {
   static final CategoryApi instance = CategoryApi._();

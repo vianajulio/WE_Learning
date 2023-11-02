@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/entities/user.dart';
+
+import '../../../entities/user.dart';
 
 class CriarUser extends StatefulWidget {
   const CriarUser({Key? key}) : super(key: key);

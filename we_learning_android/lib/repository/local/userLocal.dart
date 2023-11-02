@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:we_learning_android/entities/user.dart';
+
+import '../../entities/user.dart';
 
 class UserLocal {
   // static final UserLocal instance = UserLocal._();

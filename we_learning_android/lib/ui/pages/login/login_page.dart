@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
-import 'package:we_learning_android/controllers/pages_controllers/loginPageController.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text_form_field.dart';
-import 'package:we_learning_android/ui/pages/main/default_screen.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
-import 'package:we_learning_android/ui/validator/login_page_validator.dart';
+import '../../../controllers/entities_controllers/user_model.dart';
+import '../../../controllers/pages_controllers/loginPageController.dart';
+import '../../colors/colors.dart';
+import '../../custom_widgets/global_components/custom_text.dart';
+import '../../custom_widgets/global_components/custom_text_form_field.dart';
+import '../main/default_screen.dart';
+import '../../custom_widgets/global_components/message.dart';
+import '../../validators/login_page_validator.dart';
 
 class LoginPage extends StatelessWidget with LoginValidator {
   LoginPage({super.key});

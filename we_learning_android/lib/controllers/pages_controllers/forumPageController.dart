@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/repository/api/topico_api.dart';
+
+import '../../entities/topico.dart';
+import '../../repository/api/topico_api.dart';
 
 class ForumController extends GetxController {
   List<Topico>? selectedTopicos = <Topico>[].obs;

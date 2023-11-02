@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/entities/resposta.dart';
-import 'package:we_learning_android/entities/topico.dart';
+
+import '../../../../entities/resposta.dart';
+import '../../../../entities/topico.dart';
 
 class RespostasWidget extends StatelessWidget {
   final Resposta resposta;

@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/category.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/entities/user.dart';
-import 'package:we_learning_android/repository/api/topico_api.dart';
-import 'package:we_learning_android/repository/local/categoryLocal.dart';
-import 'package:we_learning_android/repository/local/userLocal.dart';
+import '../../entities/category.dart';
+import '../../entities/topico.dart';
+import '../../entities/user.dart';
+import '../../repository/api/topico_api.dart';
+import '../../repository/local/categoryLocal.dart';
+import '../../repository/local/userLocal.dart';
 
 class TopicModel extends GetxController {
   Future<List<Topico>?>? futureTopics;

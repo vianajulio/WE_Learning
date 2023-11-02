@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/page/videoAula/cardVideoAula.dart';
+import 'components/card_video_aula.dart';
 
-class VideoaulasPage extends StatelessWidget {
-  const VideoaulasPage({super.key});
+class AulasPage extends StatelessWidget {
+  const AulasPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class VideoaulasPage extends StatelessWidget {
             mainAxisSpacing: 16,
           ),
           itemBuilder: (BuildContext context, int index) {
-            return CardAula(
+            return const CardAula(
               colorIcon: Colors.purple,
               titulo: 'Front-End',
               descricao: 'Criação e estilização web.',

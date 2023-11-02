@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
-import 'package:we_learning_android/entities/resposta.dart';
-import 'package:we_learning_android/repository/api/resposta_api.dart';
+import '../../entities/resposta.dart';
+import '../../repository/api/resposta_api.dart';
 
 class RespostaModel extends GetxController {
   Future<List<Resposta>?>? futureRespostas;

@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/entities/user.dart';
-import 'package:we_learning_android/repository/local/userLocal.dart';
-import 'package:we_learning_android/ui/main/myapp.dart';
-import 'package:we_learning_android/ui/pages/login/login_page.dart';
-import 'package:we_learning_android/ui/pages/main/default_screen.dart';
+import '../../entities/user.dart';
+import '../../repository/local/userLocal.dart';
+import 'myapp.dart';
+import '../pages/login/login_page.dart';
+import '../pages/main/default_screen.dart';
 
 class PostHttpOverrides extends HttpOverrides {
   @override

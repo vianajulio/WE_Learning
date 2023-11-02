@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:we_learning_android/ui/pages/criar/criar_page.dart';
-import 'package:we_learning_android/ui/pages/forum/forum_page.dart';
-import 'package:we_learning_android/ui/pages/home/home_page.dart';
-import 'package:we_learning_android/ui/pages/perfil/perfil_page.dart';
-import 'package:we_learning_android/ui/pages/videoaula/videoaulas_page.dart';
+
+import '../../ui/pages/criar/criar_page.dart';
+import '../../ui/pages/forum/forum_page.dart';
+import '../../ui/pages/home/home_page.dart';
+import '../../ui/pages/perfil/perfil_page.dart';
 
 class BottomNavBarController extends GetxController {
   var currentPage = 0.obs;
@@ -14,7 +14,7 @@ class BottomNavBarController extends GetxController {
   List<Widget> pages = [
     const HomePage(),
     const ForumPage(),
-    const VideoaulasPage(),
+    // const VideoaulasPage(),
     const CriarPage(),
     const PerfilPage(),
   ];

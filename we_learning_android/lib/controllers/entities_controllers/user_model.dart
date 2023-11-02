@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/entities/user.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/repository/api/user_api.dart';
-import 'package:we_learning_android/repository/local/userLocal.dart';
+
+import '../../entities/user.dart';
+import '../../repository/api/user_api.dart';
+import '../../repository/local/userLocal.dart';
 
 class UserModel extends GetxController {
   User? user;

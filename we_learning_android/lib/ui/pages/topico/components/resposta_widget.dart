@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/controllers/entities_controllers/respostas_model.dart';
-import 'package:we_learning_android/entities/resposta.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/entities/user.dart';
-import 'package:we_learning_android/repository/local/userLocal.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text_form_field.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
+
+import '../../../../controllers/entities_controllers/respostas_model.dart';
+import '../../../../entities/resposta.dart';
+import '../../../../entities/topico.dart';
+import '../../../../entities/user.dart';
+import '../../../../repository/local/userLocal.dart';
+import '../../../colors/colors.dart';
+import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/global_components/custom_text_form_field.dart';
+import '../../../custom_widgets/global_components/message.dart';
 
 class RespostaWidget extends StatelessWidget {
   final Topico topico;

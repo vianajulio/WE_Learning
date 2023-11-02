@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
-import 'package:we_learning_android/entities/category.dart';
-import 'package:we_learning_android/repository/api/category_api.dart';
-import 'package:we_learning_android/repository/local/categoryLocal.dart';
+
+import '../../entities/category.dart';
+import '../../repository/api/category_api.dart';
+import '../../repository/local/categoryLocal.dart';
 
 class CategoryModel extends GetxController {
   Future<List<Category>?>? futureCategories;

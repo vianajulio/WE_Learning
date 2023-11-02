@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/global_widgets/custom_text_form_field.dart';
+import '../../../../entities/topico.dart';
+import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/global_components/custom_text_form_field.dart';
 
 class EditarTopico extends StatelessWidget {
   final Topico topico;
