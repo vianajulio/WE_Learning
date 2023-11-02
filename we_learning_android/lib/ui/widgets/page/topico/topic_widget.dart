@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/pages/topico/widgets/popupmenu.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/page/topico/popupmenu.dart';
 
 class ForumWidget extends StatelessWidget {
-  late final Topico topico;
-  ForumWidget({required this.topico});
+  final Topico topico;
 
-  double width = 340;
+  const ForumWidget({super.key, required this.topico});
+
+  final double width = 340;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,9 @@ class ForumWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    CustomPopUpMenu(topico: topico,)
+                    CustomPopUpMenu(
+                      topico: topico,
+                    )
                   ],
                 ),
                 const CustomText(

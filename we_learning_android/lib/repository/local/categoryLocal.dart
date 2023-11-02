@@ -16,7 +16,7 @@ class CategoryLocal {
   Future<List<Category>?>? getCategory() async {
     var instance = await SharedPreferences.getInstance();
     String? categoryString = instance.getString('category.list');
-    if (categoryString!.isEmpty) {
+    if (categoryString == null) {
       return null;
     }
 
@@ -46,7 +46,4 @@ class CategoryLocal {
     Category category2 = Category.fromJson(categoryJson);
     return category2;
   }
-
-
-  
 }

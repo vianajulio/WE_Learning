@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/pages/criar_topico/widgets/dropdownbtn.dart';
 import 'package:we_learning_android/ui/validator/criar_topico_validator.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
-import 'package:we_learning_android/ui/widgets/message.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text_form_field.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
+import 'package:we_learning_android/ui/widgets/page/criar_topico/dropdownbtn.dart';
 
 
 

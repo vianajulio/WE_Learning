@@ -3,9 +3,9 @@ class LoginValidator {
     if (value == null || value.isEmpty) {
       return "Preencha o campo.";
     }
-    if (!value.contains('@') || !value.contains('senaisp')) {
-      return "Utilize um e-mail válido.";
-    }
+    // if (!value.contains('@') || !value.contains('senaisp')) {
+    //   return "Utilize um e-mail válido.";
+    // }
     return null;
   }
 

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:we_learning_android/constants/constants.dart';
 import 'package:we_learning_android/entities/resposta.dart';
 import 'package:http/http.dart' as http;
 
@@ -12,7 +13,7 @@ class RespostaApi {
       List<Resposta> respostas;
 
       var url = Uri.https(
-          'apiwelearn.azurewebsites.net', '/api/respostas/listar/$tag');
+          apiIp, '/api/respostas/listar/$tag');
 
       var response = await http.get(url);
 
@@ -39,7 +40,7 @@ class RespostaApi {
       var encode = jsonEncode(encodeString);
 
       var url =
-          Uri.https('apiwelearn.azurewebsites.net', '/api/respostas/cadastrar');
+          Uri.https(apiIp, '/api/respostas/cadastrar');
 
       var response = await http.post(
         url,

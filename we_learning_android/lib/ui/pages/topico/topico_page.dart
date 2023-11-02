@@ -5,10 +5,10 @@ import 'package:we_learning_android/entities/resposta.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/repository/api/resposta_api.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/pages/topico/widgets/resposta_widget.dart';
-import 'package:we_learning_android/ui/pages/topico/widgets/respostas_widget.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/message.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
+import 'package:we_learning_android/ui/widgets/page/topico/resposta_widget.dart';
+import 'package:we_learning_android/ui/widgets/page/topico/respostas_widget.dart';
 
 class TopicoPage extends StatefulWidget {
   final Topico topico;
@@ -41,14 +41,14 @@ class _TopicoPageState extends State<TopicoPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return Dialog.fullscreen(
-                child: RespostaWidget(topico: widget.topico),
-              );
-            },
-          );
+          // showDialog(
+          //   context: context,
+          //   builder: (context) {
+          //     return Dialog.fullscreen(
+          //       child: RespostaWidget(topico: widget.topico),
+          //     );
+          //   },
+          // );
         },
         child: const Icon(Icons.add),
       ),
@@ -173,5 +173,18 @@ class _TopicoPageState extends State<TopicoPage> {
         ),
       ),
     );
+  }
+
+  _openRespostaPage(Topico topico) async {
+    final respostaCadastrada = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => RespostaWidget(topico: topico),
+      ),
+    );
+
+    if (respostaCadastrada == true) {
+      
+    }
   }
 }

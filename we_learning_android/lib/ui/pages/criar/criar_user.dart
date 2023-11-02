@@ -171,6 +171,7 @@ class _CriarUserState extends State<CriarUser> {
                               ),
                             ],
                           ),
+                          // TODO Refatorar a função de cadastrar
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               User usuario = User(
@@ -179,7 +180,7 @@ class _CriarUserState extends State<CriarUser> {
                                   email: _edtEmail.text,
                                   password: _edtSenha.text,
                                   registerDate: DateTime.now().toString(),
-                                  userType: _tipos.indexOf(_selectedOption!),
+                                  userType: _tipos[0],
                                   pierSitReg: _pierSitReg ? 'ATV' : 'DES');
                               print('${usuario.toJson()}');
                             }

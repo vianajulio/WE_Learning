@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/user_model.dart';
-import 'package:we_learning_android/controllers/pages_controllers/login_page_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/loginPageController.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
-import 'package:we_learning_android/ui/pages/main/main_page.dart';
-import 'package:we_learning_android/ui/widgets/message.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text_form_field.dart';
+import 'package:we_learning_android/ui/pages/main/default_screen.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
 import 'package:we_learning_android/ui/validator/login_page_validator.dart';
 
 class LoginPage extends StatelessWidget with LoginValidator {
@@ -166,6 +166,7 @@ class LoginPage extends StatelessWidget with LoginValidator {
                       return ElevatedButton(
                         onPressed: () async {
                           controller.onClickBtn();
+                          // fetchFromLocalhostAPI();
                           await _loginOnPress(context);
                         },
                         style: const ButtonStyle(
@@ -189,6 +190,14 @@ class LoginPage extends StatelessWidget with LoginValidator {
       ),
     );
   }
+
+  // Future<http.Response> fetchFromLocalhostAPI() async {
+  //   final uri = Uri.parse('https://10.0.2.2:7285/api/categoria/listar');
+  //   final response = await http.get(uri);
+
+  //   print(response.statusCode);
+  //   return response;
+  // }
 
   _loginOnPress(BuildContext context) {
     FocusScope.of(context).unfocus();

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:we_learning_android/constants/constants.dart';
 import 'package:we_learning_android/entities/category.dart';
 
 class CategoryApi {
@@ -10,7 +11,7 @@ class CategoryApi {
     try {
       List<Category> category = [];
       var url =
-          Uri.http('apiwelearn.azurewebsites.net', '/api/categoria/listar');
+          Uri.https(apiIp, '/api/categoria/listar');
 
       var response = await http.get(url);
 

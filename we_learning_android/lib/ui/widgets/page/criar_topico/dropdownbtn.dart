@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/repository/api/category_api.dart';
-import 'package:we_learning_android/ui/widgets/message.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
 
 class DropDownBTN extends StatelessWidget {
   const DropDownBTN({super.key});

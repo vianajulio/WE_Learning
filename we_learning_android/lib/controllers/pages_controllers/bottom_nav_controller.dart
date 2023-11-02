@@ -15,8 +15,8 @@ class BottomNavBarController extends GetxController {
     const HomePage(),
     const ForumPage(),
     const VideoaulasPage(),
-    const PerfilPage(),
     const CriarPage(),
+    const PerfilPage(),
   ];
 
   goToTab(int value) {

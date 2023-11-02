@@ -3,7 +3,7 @@ class User {
   String? name;
   String? email;
   String? password;
-  int? userType;
+  String? userType;
   String? registerDate;
   String? pierSitReg;
 
@@ -22,8 +22,8 @@ class User {
     name = json['name'];
     email = json['email'];
     password = json['password'];
-    userType = (json['userType']);
-    registerDate = (json['registerDate']);
+    userType = json['userType'];
+    registerDate = json['registerDate'];
     pierSitReg = json['pierSitReg'];
   }
 

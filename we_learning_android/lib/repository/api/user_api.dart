@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:we_learning_android/entities/user.dart';
+import 'package:we_learning_android/constants/constants.dart';
 import 'package:http/http.dart' as http;
 
 class UserApi {
@@ -15,12 +16,21 @@ class UserApi {
 
       var encode = json.encode(encodeString);
 
-      var url = Uri.https('apiwelearn.azurewebsites.net', '/api/usuario/login');
+      // var url = Uri.http('192.168.0.203:7285', '/api/usuario/login');
+      var url = Uri.https(apiIp, '/api/usuario/login');
 
-      var response = await http.post(
+      // recebe os dados do User e gerencia o tempo para realizar o post
+      var response = await http
+          .post(
         url,
         headers: {'Content-Type': 'application/json'},
         body: encode,
+      )
+          .timeout(
+        const Duration(seconds: 5),
+        onTimeout: () {
+          return http.Response('Error', 408);
+        },
       );
 
       if (response.statusCode == 200) {

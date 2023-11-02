@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
 import 'package:we_learning_android/entities/category.dart';
-import 'package:we_learning_android/repository/local/category_local.dart';
-import 'package:we_learning_android/ui/pages/forum/widgets/custom_radio_btn.dart';
+import 'package:we_learning_android/repository/local/categoryLocal.dart';
+import 'package:we_learning_android/ui/widgets/page/forum/custom_radio_btn.dart';
 
 class FiltroMateria extends StatelessWidget {
   const FiltroMateria({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/repository/local/aulas_repository.dart';
-import 'package:we_learning_android/repository/local/comentario_repository.dart';
-import 'package:we_learning_android/ui/widgets/youtube_player.dart';
+import 'package:we_learning_android/repository/local/aulasRepository.dart';
+import 'package:we_learning_android/repository/local/comentarioRepository.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/youtube_player.dart';
 
 class VideoaulaPage extends StatefulWidget {
   const VideoaulaPage({super.key});
@@ -45,7 +45,7 @@ class _VideoaulaPageState extends State<VideoaulaPage> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomYoutubePlayer(
+              const CustomYoutubePlayer(
                 youtubeURL: "https://www.youtube.com/watch?v=z_67ApMhQk0",
                 showFullScreenButton: true,
                 showControls: true,

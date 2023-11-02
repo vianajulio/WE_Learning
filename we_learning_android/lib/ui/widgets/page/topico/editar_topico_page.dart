@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/custom_text_form_field.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text_form_field.dart';
 
 class EditarTopico extends StatelessWidget {
-  late Topico topico;
+  final Topico topico;
   EditarTopico({super.key, required this.topico});
 
   final _tituloController = TextEditingController();

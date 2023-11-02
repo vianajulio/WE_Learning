@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:we_learning_android/controllers/entities_controllers/category_model.dart';
 import 'package:we_learning_android/controllers/entities_controllers/topic_model.dart';
-import 'package:we_learning_android/controllers/pages_controllers/forum_page_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/forumPageController.dart';
 import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
-import 'package:we_learning_android/repository/local/category_local.dart';
+import 'package:we_learning_android/repository/local/categoryLocal.dart';
 import 'package:we_learning_android/ui/pages/criar_topico/criar_topico.dart';
-import 'package:we_learning_android/ui/pages/forum/widgets/selected_topic.dart';
-import 'package:we_learning_android/ui/pages/forum/widgets/filtro_materia.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
-import 'package:we_learning_android/ui/widgets/message.dart';
-import 'package:we_learning_android/ui/widgets/search_bar.dart';
+import 'package:we_learning_android/ui/widgets/forum/filtro_materia.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/message.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/search_bar.dart';
+import 'package:we_learning_android/ui/widgets/page/forum/selected_topic.dart';
 
 class ForumPage extends StatelessWidget {
   const ForumPage({super.key});

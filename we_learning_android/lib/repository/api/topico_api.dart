@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:we_learning_android/constants/constants.dart';
 import 'package:we_learning_android/entities/topico.dart';
 
 class TopicoApi {
@@ -9,7 +10,7 @@ class TopicoApi {
   Future<List<Topico>?> getAll() async {
     try {
       List<Topico> topicos;
-      var url = Uri.http('apiwelearn.azurewebsites.net', '/api/topico/listar');
+      var url = Uri.https(apiIp, '/api/topico/listar');
 
       //conexão com a api
       var response = await http.get(url);
@@ -30,8 +31,7 @@ class TopicoApi {
   Future<List<Topico>?> getSelectedTopics(String nomeCategoria) async {
     List<Topico> topico;
     try {
-      var url = Uri.http(
-          'apiwelearn.azurewebsites.net', '/api/topico/buscar/$nomeCategoria');
+      var url = Uri.https(apiIp, '/api/topico/buscar/$nomeCategoria');
 
       var response = await http.get(url);
 
@@ -61,8 +61,7 @@ class TopicoApi {
 
       var encode = json.encode(encodeString);
 
-      var url =
-          Uri.http('apiwelearn.azurewebsites.net', '/api/topico/cadastrar');
+      var url = Uri.https(apiIp, '/api/topico/cadastrar');
 
       var response = await http.post(
         url,

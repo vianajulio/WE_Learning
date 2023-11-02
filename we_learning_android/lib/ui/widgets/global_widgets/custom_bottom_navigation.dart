@@ -10,7 +10,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
     BottomNavigationBarItem(icon: Icon(Icons.people), label: "Forum"),
     BottomNavigationBarItem(icon: Icon(Icons.subscriptions), label: "Aulas"),
-    BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil"),
     BottomNavigationBarItem(icon: Icon(Icons.add_box), label: "Criar"),
   ];
 

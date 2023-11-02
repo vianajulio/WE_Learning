@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/controllers/pages_controllers/topico_page_controller.dart';
+import 'package:we_learning_android/controllers/pages_controllers/topicoPageController.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/ui/colors/colors.dart';
-import 'package:we_learning_android/ui/pages/topico/widgets/editar_topico_page.dart';
-import 'package:we_learning_android/ui/widgets/custom_text.dart';
+import 'package:we_learning_android/ui/widgets/page/topico/editar_topico_page.dart';
+import 'package:we_learning_android/ui/widgets/global_widgets/custom_text.dart';
 
 class CustomPopUpMenu extends StatelessWidget {
-  Topico topico;
+  final Topico topico;
   CustomPopUpMenu({super.key, required this.topico});
 
-  List<String> denuncias = [
+  final List<String> denuncias = [
     "Spam",
     "Símbolos ou discurso de ódio",
     "Outra coisa"
   ];
-  List<String> titulos = ["Editar Tópico", "Apa ga Tópico", "Denuncia"];
-  List<String> content = ["Editar Tópico", "Apagar", "Denunciar"];
-  String? dropValue;
+  final List<String> titulos = ["Editar Tópico", "Apa ga Tópico", "Denuncia"];
+  final List<String> content = ["Editar Tópico", "Apagar", "Denunciar"];
+  // String? dropValue;
 
   @override
   Widget build(BuildContext context) {

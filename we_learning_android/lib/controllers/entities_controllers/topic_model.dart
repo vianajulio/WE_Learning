@@ -5,8 +5,8 @@ import 'package:we_learning_android/entities/category.dart';
 import 'package:we_learning_android/entities/topico.dart';
 import 'package:we_learning_android/entities/user.dart';
 import 'package:we_learning_android/repository/api/topico_api.dart';
-import 'package:we_learning_android/repository/local/category_local.dart';
-import 'package:we_learning_android/repository/local/user_local.dart';
+import 'package:we_learning_android/repository/local/categoryLocal.dart';
+import 'package:we_learning_android/repository/local/userLocal.dart';
 
 class TopicModel extends GetxController {
   Future<List<Topico>?>? futureTopics;
@@ -27,6 +27,7 @@ class TopicModel extends GetxController {
       {VoidCallback? onSucess, VoidCallback? onFail}) async {
     User? usuario = await UserLocal.getUser();
     int? idUsuario = usuario?.id;
+    
     Category? category = await CategoryLocal.instance.getId();
     bool cadastrado = await TopicoApi.instance
         .cadastroTopico(titulo, descricao, category?.id ?? 0, idUsuario ?? 0);
