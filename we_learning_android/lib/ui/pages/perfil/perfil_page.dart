@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/entities_controllers/user_model.dart';
-import '../../custom_widgets/global_components/custom_text.dart';
+import '../../custom_widgets/custom_text.dart';
 import 'components/exit_dialog.dart';
 
 class PerfilPage extends StatelessWidget {

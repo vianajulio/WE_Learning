@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../../controllers/pages_controllers/topico_page_controller.dart';
 import '../../../../entities/topico.dart';
 import '../../../colors/colors.dart';
-import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/custom_text.dart';
 import 'editar_topico_page.dart';
 
 class CustomPopUpMenu extends StatelessWidget {
@@ -28,7 +28,9 @@ class CustomPopUpMenu extends StatelessWidget {
         if (value == 0) {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) =>  EditarTopico(topico: topico,),
+              builder: (context) => EditarTopico(
+                topico: topico,
+              ),
             ),
           );
         } else {
@@ -40,7 +42,7 @@ class CustomPopUpMenu extends StatelessWidget {
               constraints: const BoxConstraints(maxHeight: 180),
               child: AlertDialog(
                 title: Text(titulos[value]),
-    
+
                 actions: [
                   // BTN cancelar
                   TextButton(
@@ -52,7 +54,7 @@ class CustomPopUpMenu extends StatelessWidget {
                       color: primaryBlack,
                     ),
                   ),
-    
+
                   // BTN para confirmar a função
                   TextButton(
                     onPressed: () {
@@ -65,7 +67,7 @@ class CustomPopUpMenu extends StatelessWidget {
                     ),
                   ),
                 ],
-    
+
                 //Conteúdo do AlertDialog
                 content: GetBuilder(
                   init: TopicoModel(),
@@ -77,7 +79,6 @@ class CustomPopUpMenu extends StatelessWidget {
             ),
           );
         }
-        
       },
       itemBuilder: (_) {
         return const [

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../../controllers/entities_controllers/topic_model.dart';
 import '../../../colors/colors.dart';
+import '../../../custom_widgets/custom_text.dart';
+import '../../../custom_widgets/custom_text_form_field.dart';
+import '../../../custom_widgets/message.dart';
 import '../../../validators/criar_topico_validator.dart';
-import '../../../custom_widgets/global_components/custom_text.dart';
-import '../../../custom_widgets/global_components/custom_text_form_field.dart';
-import '../../../custom_widgets/global_components/message.dart';
 import '../../topico/components/drop_down_btn.dart';
 
 

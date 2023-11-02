@@ -5,9 +5,9 @@ import 'package:we_learning_android/ui/pages/home/home_page.dart';
 import '../../../controllers/entities_controllers/user_model.dart';
 import '../../../controllers/pages_controllers/login_page_controller.dart';
 import '../../colors/colors.dart';
-import '../../custom_widgets/global_components/custom_text.dart';
-import '../../custom_widgets/global_components/custom_text_form_field.dart';
-import '../../custom_widgets/global_components/message.dart';
+import '../../custom_widgets/custom_text.dart';
+import '../../custom_widgets/custom_text_form_field.dart';
+import '../../custom_widgets/message.dart';
 import '../../validators/login_page_validator.dart';
 
 class LoginPage extends StatelessWidget with LoginValidator {
@@ -191,13 +191,6 @@ class LoginPage extends StatelessWidget with LoginValidator {
     );
   }
 
-  // Future<http.Response> fetchFromLocalhostAPI() async {
-  //   final uri = Uri.parse('https://10.0.2.2:7285/api/categoria/listar');
-  //   final response = await http.get(uri);
-
-  //   print(response.statusCode);
-  //   return response;
-  // }
 
   _loginOnPress(BuildContext context) {
     FocusScope.of(context).unfocus();

@@ -6,8 +6,8 @@ import '../../../entities/resposta.dart';
 import '../../../entities/topico.dart';
 import '../../../repository/api/resposta_api.dart';
 import '../../colors/colors.dart';
-import '../../custom_widgets/global_components/custom_text.dart';
-import '../../custom_widgets/global_components/message.dart';
+import '../../custom_widgets/custom_text.dart';
+import '../../custom_widgets/message.dart';
 import 'components/resposta_widget.dart';
 import 'components/respostas_widget.dart';
 
@@ -184,8 +184,6 @@ class _TopicoPageState extends State<TopicoPage> {
       ),
     );
 
-    if (respostaCadastrada == true) {
-      
-    }
+    if (respostaCadastrada == true) {}
   }
 }

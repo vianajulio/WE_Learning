@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../../../controllers/entities_controllers/category_model.dart';
 import '../../../../entities/category.dart';
 import '../../../../repository/api/category_api.dart';
-import '../../../custom_widgets/global_components/message.dart';
+import '../../../custom_widgets/message.dart';
 
 class DropDownBTN extends StatefulWidget {
   const DropDownBTN({super.key});

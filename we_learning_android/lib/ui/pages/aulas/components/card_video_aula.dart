@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 
-import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/custom_text.dart';
 
 class CardAula extends StatelessWidget {
   final Color colorIcon;
   final String titulo;
   final String descricao;
 
-   const CardAula({
+  const CardAula({
     super.key,
     required this.colorIcon,
     required this.titulo,

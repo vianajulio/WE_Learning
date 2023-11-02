@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../repository/local/user_local.dart';
 import '../../../colors/colors.dart';
-import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/custom_text.dart';
 import '../../login/login_page.dart';
 
 class ExitDialog extends StatelessWidget {

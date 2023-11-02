@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../controllers/pages_controllers/bottom_nav_controller.dart';
 import '../../../colors/colors.dart';
-import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/custom_text.dart';
 
 class MateriaItem extends StatelessWidget {
   final String titulo;

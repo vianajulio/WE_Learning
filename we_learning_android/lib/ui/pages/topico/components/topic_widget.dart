@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../entities/topico.dart';
 import '../../../colors/colors.dart';
-import '../../../custom_widgets/global_components/custom_text.dart';
+import '../../../custom_widgets/custom_text.dart';
 import 'popupmenu.dart';
 
 class ForumWidget extends StatelessWidget {

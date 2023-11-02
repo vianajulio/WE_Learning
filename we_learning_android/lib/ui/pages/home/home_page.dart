@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/custom_widgets/global_components/scaffold_custom.dart';
-import '../../custom_widgets/global_components/carousel.dart';
-import '../../custom_widgets/global_components/search_bar.dart';
+import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
+import '../../custom_widgets/carousel.dart';
+import '../../custom_widgets/search_bar.dart';
 import 'components/materia_widget.dart';
 
 class HomePage extends StatelessWidget {

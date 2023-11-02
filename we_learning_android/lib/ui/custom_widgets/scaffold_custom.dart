@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../colors/colors.dart';
-import '../../pages/perfil/perfil_page.dart';
+import '../pages/perfil/perfil_page.dart';
+import './../colors/colors.dart';
 import 'custom_bottom_navigation.dart';
 
 class ScaffoldCustom extends StatelessWidget {
@@ -43,7 +43,7 @@ class ScaffoldCustom extends StatelessWidget {
       ),
       backgroundColor: const Color.fromARGB(255, 236, 236, 236),
       body: body,
-      bottomNavigationBar: const CustomBottomNavigationBar(),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }

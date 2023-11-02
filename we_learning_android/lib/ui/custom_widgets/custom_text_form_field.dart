@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/pages_controllers/login_page_controller.dart';
-import '../../colors/colors.dart';
+import './../colors/colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? textController;

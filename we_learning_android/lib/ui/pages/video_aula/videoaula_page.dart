@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../repository/local/aulas_repository.dart';
 import '../../../repository/local/comentario_repository.dart';
-import '../../custom_widgets/global_components/youtube_player.dart';
+import '../../custom_widgets/youtube_player.dart';
 
 class VideoAulaPage extends StatefulWidget {
   const VideoAulaPage({super.key});
@@ -12,11 +12,10 @@ class VideoAulaPage extends StatefulWidget {
 }
 
 class _VideoAulaPageState extends State<VideoAulaPage> {
-
   @override
   Widget build(BuildContext context) {
     final comentarios = ComentariosRepository.comentarios;
-    final listaAulas = AulasRepository.aulas; 
+    final listaAulas = AulasRepository.aulas;
     return Scaffold(
       drawer: SafeArea(
         child: Drawer(
