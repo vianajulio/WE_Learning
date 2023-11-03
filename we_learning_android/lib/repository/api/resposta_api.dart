@@ -12,10 +12,14 @@ class RespostaApi {
     try {
       List<Resposta> respostas;
 
-      var url = Uri.https(
-          apiIp, '/api/respostas/listar/$tag');
+      var url = Uri.https(apiIp, '/api/respostas/listar/$tag');
 
-      var response = await http.get(url);
+      var response = await http.get(url).timeout(
+        const Duration(seconds: 5),
+        onTimeout: () {
+          return http.Response('Error', 408);
+        },
+      );
 
       if (response.statusCode != 200) {}
 
@@ -28,7 +32,8 @@ class RespostaApi {
     }
   }
 
-  Future<bool> post(String idUsuario, String conteudoResposta, int idTopico) async {
+  Future<bool> post(
+      String idUsuario, String conteudoResposta, int idTopico) async {
     try {
       Map<String, dynamic> encodeString = <String, dynamic>{
         "id_topico": idTopico,
@@ -39,20 +44,18 @@ class RespostaApi {
 
       var encode = jsonEncode(encodeString);
 
-      var url =
-          Uri.https(apiIp, '/api/respostas/cadastrar');
+      var url = Uri.https(apiIp, '/api/respostas/cadastrar');
 
       var response = await http.post(
         url,
-        headers:{'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json'},
         body: encode,
       );
 
       if (response.statusCode == 200) {
         return true;
       }
-        return false;
-
+      return false;
     } catch (e) {
       rethrow;
     }

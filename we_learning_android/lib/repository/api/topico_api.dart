@@ -15,7 +15,12 @@ class TopicoApi {
       var url = Uri.https(apiIp, '/api/topico/listar');
 
       //conexão com a api
-      var response = await http.get(url);
+      var response = await http.get(url).timeout(
+        const Duration(seconds: 5),
+        onTimeout: () {
+          return http.Response('Error', 408);
+        },
+      );
 
       if (response.statusCode != 200) {
         return null;

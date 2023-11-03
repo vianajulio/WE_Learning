@@ -12,10 +12,14 @@ class CategoryApi {
   Future<List<Category>> getAll() async {
     try {
       List<Category> category = [];
-      var url =
-          Uri.https(apiIp, '/api/categoria/listar');
+      var url = Uri.https(apiIp, '/api/categoria/listar');
 
-      var response = await http.get(url);
+      var response = await http.get(url).timeout(
+        const Duration(seconds: 5),
+        onTimeout: () {
+          return http.Response('Error', 408);
+        },
+      );
 
       if (response.statusCode != 200) {
         return category;
