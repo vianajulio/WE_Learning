@@ -11,22 +11,21 @@ class CategoryApi {
 
   Future<List<Category>> getAll() async {
     try {
-      List<Category> category = [];
       var url = Uri.https(apiIp, '/api/categoria/listar');
 
       var response = await http.get(url).timeout(
-        const Duration(seconds: 5),
+        const Duration(seconds: 10),
         onTimeout: () {
           return http.Response('Error', 408);
         },
       );
 
       if (response.statusCode != 200) {
-        return category;
+        return [];
       } else {
         var listCategories =
             json.decode(response.body).cast<Map<String, dynamic>>();
-        category = Category().listFromJson(listCategories);
+        List<Category>? category = Category().listFromJson(listCategories);
         return category;
       }
     } catch (e) {

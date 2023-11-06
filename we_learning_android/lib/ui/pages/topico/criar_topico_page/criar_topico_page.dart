@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/ui/pages/topico/components/drop2.dart';
 
 import '../../../../controllers/entities_controllers/topic_model.dart';
 import '../../../colors/colors.dart';
 import '../../../custom_widgets/custom_text.dart';
 import '../../../custom_widgets/custom_text_form_field.dart';
 import '../../../custom_widgets/message.dart';
-import '../components/drop_down_btn.dart';
+import 'components/drop_down_btn.dart';
 
 class CadastrarTopico extends StatelessWidget {
   CadastrarTopico({super.key});
@@ -58,6 +59,7 @@ class CadastrarTopico extends StatelessWidget {
                 alignment: Alignment.center,
                 child: const DropDownBTN(),
               ),
+              // Drop2(),
               Container(
                 alignment: Alignment.center,
                 child: SizedBox(

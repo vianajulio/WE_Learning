@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/colors/colors.dart';
 import 'package:we_learning_android/ui/custom_widgets/custom_text.dart';
 import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
-import '../../custom_widgets/carousel.dart';
 import '../../custom_widgets/search_bar.dart';
-import 'components/materia_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +9,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
 
     return ScaffoldCustom(
       body: SingleChildScrollView(

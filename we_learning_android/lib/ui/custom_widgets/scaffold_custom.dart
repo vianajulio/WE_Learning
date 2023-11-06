@@ -43,6 +43,7 @@ class ScaffoldCustom extends StatelessWidget {
       ),
       backgroundColor: const Color.fromARGB(255, 236, 236, 236),
       body: body,
+      floatingActionButton: floatingActionButton,
       bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }

@@ -18,7 +18,6 @@ class BottomNavBarController extends GetxController {
   ];
 
   void goToTab(int value, BuildContext context) {
-    print(value);
     currentPage.value = value;
     update();
     // if (currentPage.value != value) {
