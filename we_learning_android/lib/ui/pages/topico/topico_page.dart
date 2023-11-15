@@ -1,61 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
 
 import '../../../controllers/entities_controllers/respostas_model.dart';
 import '../../../entities/resposta.dart';
 import '../../../entities/topico.dart';
-import '../../../repository/api/resposta_api.dart';
 import '../../colors/colors.dart';
 import '../../custom_widgets/custom_text.dart';
 import '../../custom_widgets/message.dart';
 import 'components/resposta_widget.dart';
 import 'components/respostas_widget.dart';
 
-class TopicoPage extends StatefulWidget {
+class TopicoPage extends StatelessWidget {
   final Topico topico;
+
   const TopicoPage({super.key, required this.topico});
 
   @override
-  State<TopicoPage> createState() => _TopicoPageState();
-}
-
-class _TopicoPageState extends State<TopicoPage> {
-  late Future<List<Resposta>?> respostas;
-
-  @override
-  void initState() {
-    respostas = RespostaApi.instance.getAll(widget.topico.id ?? 0);
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScaffoldCustom(
       appBar: AppBar(
         title: CustomText(
-          text: "Titulo: ${widget.topico.tituloTopico!}",
+          text: topico.tituloTopico!,
           color: primaryWhite,
           fontWeight: FontWeight.bold,
           fontSize: 18,
           maxLines: 1,
         ),
       ),
+      hasEndDrawer: false,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // showDialog(
-          //   context: context,
-          //   builder: (context) {
-          //     return Dialog.fullscreen(
-          //       child: RespostaWidget(topico: widget.topico),
-          //     );
-          //   },
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => RespostaWidget(topico: topico),
+            ),
+          ).then((value) {});
         },
         child: const Icon(Icons.add),
       ),
-      body: GetBuilder(
-        init: RespostaModel(),
-        builder: (controller) => Padding(
+      body: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,13 +49,13 @@ class _TopicoPageState extends State<TopicoPage> {
               Row(
                 children: [
                   CustomText(
-                    text: "Autor: ${widget.topico.nomeUsuario!}",
+                    text: "Autor: ${topico.nomeUsuario!}",
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
                   const SizedBox(width: 24),
                   CustomText(
-                    text: "Categoria: ${widget.topico.nomeCategoria!}",
+                    text: "Categoria: ${topico.nomeCategoria!}",
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
@@ -77,24 +63,19 @@ class _TopicoPageState extends State<TopicoPage> {
               ),
               const SizedBox(height: 8.0),
               CustomText(
-                text: "Data: ${Topico.dataFormat(widget.topico.dataTopico)}",
+                text: "Data: ${Topico.dataFormat(topico.dataTopico)}",
                 fontSize: 12,
               ),
               const SizedBox(height: 16),
-              Flexible(
-                fit: FlexFit.loose,
-                child: SingleChildScrollView(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color.fromARGB(255, 243, 243, 243),
-                    ),
-                    padding: const EdgeInsets.all(16.0),
-                    width: double.infinity,
-                    child: Text(
-                      widget.topico.descricaoTopico!,
-                    ),
-                  ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: const Color.fromARGB(255, 243, 243, 243),
+                ),
+                padding: const EdgeInsets.all(16.0),
+                width: double.infinity,
+                child: Text(
+                  topico.descricaoTopico!,
                 ),
               ),
 
@@ -102,69 +83,54 @@ class _TopicoPageState extends State<TopicoPage> {
 
               //Respostas do tópico
               GetBuilder(
-                init: RespostaModel(),
+                init: RespostaModel(tag: topico.id!),
                 builder: (controller) {
                   return FutureBuilder(
-                    future: respostas,
+                    future: controller.futureRespostas,
                     builder:
                         (context, AsyncSnapshot<List<Resposta>?> snapshot) {
-                      switch (snapshot.connectionState) {
-                        case ConnectionState.none:
-                          return Message.alert(
-                            'Não foi possivel obter os dados necessários',
-                          );
-                        case ConnectionState.waiting:
-                          return Message.loading(context);
-                        default:
-                          if (snapshot.hasError) {
-                            return Message.alert(
-                              'Não foi possível obter os dados do servidor',
-                            );
-                          } else if (!snapshot.hasData) {
-                            return Message.alert(
-                              'Não foi possível obter os dados das resposta',
-                            );
-                          } else if (snapshot.data!.isEmpty) {
-                            return Message.alert(
-                              'Nenhuma resposta encontrada',
-                            );
-                          } else {
-                            return ConstrainedBox(
-                              constraints: const BoxConstraints(maxHeight: 480),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 4, bottom: 24),
-                                    child: CustomText(
-                                      text:
-                                          "Quantidade de respostas: ${snapshot.data?.length}",
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: ListView.separated(
-                                      separatorBuilder: (context, index) =>
-                                          const Divider(
-                                              thickness: 1,
-                                              height: 40,
-                                              color: Colors.black26),
-                                      itemCount: snapshot.data?.length ?? 0,
-                                      itemBuilder: (context, index) {
-                                        return RespostasWidget(
-                                          resposta: snapshot.data?[index] ??
-                                              Resposta(),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                ],
+                      if (snapshot.hasData) {
+                        return ConstrainedBox(
+                          constraints: const BoxConstraints(maxHeight: 480),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 4, bottom: 24),
+                                child: CustomText(
+                                  text:
+                                      "Quantidade de respostas: ${snapshot.data?.length}",
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                            );
-                          }
+                              Expanded(
+                                child: ListView.separated(
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  separatorBuilder: (context, index) =>
+                                      const Divider(
+                                          thickness: 1,
+                                          height: 40,
+                                          color: Colors.black26),
+                                  itemCount: snapshot.data?.length ?? 0,
+                                  itemBuilder: (context, index) {
+                                    return RespostasWidget(
+                                      resposta:
+                                          snapshot.data?[index] ?? Resposta(),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      } else if (snapshot.hasError) {
+                        return Message.alert(
+                          'Não foi possível obter os dados do servidor',
+                        );
                       }
+                      return const Center(child: CircularProgressIndicator());
                     },
                   );
                 },
@@ -174,16 +140,5 @@ class _TopicoPageState extends State<TopicoPage> {
         ),
       ),
     );
-  }
-
-  _openRespostaPage(Topico topico) async {
-    final respostaCadastrada = await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => RespostaWidget(topico: topico),
-      ),
-    );
-
-    if (respostaCadastrada == true) {}
   }
 }

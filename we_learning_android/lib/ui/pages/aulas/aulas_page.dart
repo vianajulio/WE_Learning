@@ -9,18 +9,13 @@ class AulasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldCustom(
+      drawer: const SafeArea(child: Drawer()),
       body: Center(
-        child: GridView.builder(
-          itemCount: 12,
-          padding: const EdgeInsets.all(24),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 16,
-          ),
-          itemBuilder: (BuildContext context, int index) {
+        child: ListView.builder(
+          itemCount: 8,
+          padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 20),
+          itemBuilder: (context, index) {
             return const CardAula(
-              colorIcon: Colors.purple,
               titulo: 'Front-End',
               descricao: 'Criação e estilização web.',
             );

@@ -15,13 +15,15 @@ class RespostaApi {
       var url = Uri.https(apiIp, '/api/respostas/listar/$tag');
 
       var response = await http.get(url).timeout(
-        const Duration(seconds: 5),
+        const Duration(seconds: 10),
         onTimeout: () {
           return http.Response('Error', 408);
         },
       );
 
-      if (response.statusCode != 200) {}
+      if (response.statusCode != 200) {
+        return null;
+      }
 
       var listRespostas =
           json.decode(response.body).cast<Map<String, dynamic>>();

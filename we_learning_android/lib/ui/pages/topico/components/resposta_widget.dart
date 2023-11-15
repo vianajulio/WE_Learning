@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
 
 import '../../../../controllers/entities_controllers/respostas_model.dart';
 import '../../../../entities/resposta.dart';
@@ -18,7 +19,7 @@ class RespostaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScaffoldCustom(
       body: SingleChildScrollView(
         child: Form(
           child: Padding(
@@ -26,15 +27,6 @@ class RespostaWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    icon: const Icon(Icons.close),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ),
                 const CustomText(text: 'Tópico:'),
                 CustomText(
                   text: topico.tituloTopico ?? "",
@@ -91,14 +83,14 @@ class RespostaWidget extends StatelessWidget {
         conteudoResposta: _descricaoResposta.text,
         usuario: usuario!.id.toString(),
       );
-      RespostaModel().post(
+      RespostaModel(tag: topico.id!).post(
         resposta,
         onSucess: () => Message.onSucess(
           context: context,
           message: 'Resposta cadastada com sucesso.',
           duration: 3,
           onPop: (_) {
-            Navigator.of(context).canPop();
+            Navigator.pop(context);
           },
         ),
         onFail: () => Message.onFail(

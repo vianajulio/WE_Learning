@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/pages/topico/components/drop2.dart';
-
+import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
 import '../../../../controllers/entities_controllers/topic_model.dart';
 import '../../../colors/colors.dart';
 import '../../../custom_widgets/custom_text.dart';
@@ -16,7 +15,7 @@ class CadastrarTopico extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScaffoldCustom(
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
