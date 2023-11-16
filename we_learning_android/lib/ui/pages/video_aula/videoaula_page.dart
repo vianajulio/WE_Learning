@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
 
 import '../../../repository/local/aulas_repository.dart';
 import '../../../repository/local/comentario_repository.dart';
@@ -16,7 +17,7 @@ class _VideoAulaPageState extends State<VideoAulaPage> {
   Widget build(BuildContext context) {
     final comentarios = ComentariosRepository.comentarios;
     final listaAulas = AulasRepository.aulas;
-    return Scaffold(
+    return ScaffoldCustom(
       drawer: SafeArea(
         child: Drawer(
           child: ListView.separated(
@@ -39,17 +40,11 @@ class _VideoAulaPageState extends State<VideoAulaPage> {
           ),
         ),
       ),
-      appBar: AppBar(),
       body: SafeArea(
         child: LayoutBuilder(builder: (context, constraint) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomYoutubePlayer(
-                youtubeURL: "https://www.youtube.com/watch?v=z_67ApMhQk0",
-                showFullScreenButton: true,
-                showControls: true,
-              ),
               /* e se as aulas ficassem na ordem dentro do player? */
               Expanded(
                 flex: 2,

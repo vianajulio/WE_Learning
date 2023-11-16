@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_learning_android/constants/constants.dart';
 
 import '../../custom_widgets/scaffold_custom.dart';
 import 'components/card_video_aula.dart';
@@ -10,14 +11,19 @@ class AulasPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaffoldCustom(
       drawer: const SafeArea(child: Drawer()),
-      body: Center(
-        child: ListView.builder(
-          itemCount: 8,
-          padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 20),
+      body: Container(
+        padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: titleCourses.length,
           itemBuilder: (context, index) {
-            return const CardAula(
-              titulo: 'Front-End',
-              descricao: 'Criação e estilização web.',
+            return CardAula(
+              title: titleCourses[index],
+              icon: iconCourses[index],
             );
           },
         ),
