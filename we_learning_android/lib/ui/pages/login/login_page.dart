@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/ui/pages/home/home_page.dart';
+import '../home/home_page.dart';
 import '../../../controllers/entities_controllers/user_model.dart';
 import '../../../controllers/pages_controllers/login_page_controller.dart';
 import '../../colors/colors.dart';

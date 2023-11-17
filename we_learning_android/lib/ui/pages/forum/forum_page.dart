@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
-import 'package:we_learning_android/ui/pages/forum/components/filtro_materia.dart';
+import '../../custom_widgets/scaffold_custom.dart';
+import 'components/filtro_materia.dart';
 import '../../../controllers/entities_controllers/topic_model.dart';
-import '../../../controllers/pages_controllers/forum_page_controller.dart';
-import '../../../entities/topico.dart';
+import '../topico/components/topic_widget.dart';
 import '../topico/criar_topico_page/criar_topico_page.dart';
 import '../../custom_widgets/custom_text.dart';
 import '../../custom_widgets/message.dart';
 import '../../custom_widgets/search_bar.dart';
-import 'components/selected_topic.dart';
+import '../topico/topico_page.dart';
 
 class ForumPage extends StatelessWidget {
   const ForumPage({super.key});
@@ -17,6 +16,8 @@ class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = 340.0;
+    TopicModel controller = Get.put(TopicModel());
+
     return ScaffoldCustom(
       drawer: const SafeArea(
         child: Drawer(
@@ -40,49 +41,57 @@ class ForumPage extends StatelessWidget {
           ),
         ),
       ),
+      //TODO: RELACIONAR FILTRO COM TOPICOS
       body: RefreshIndicator(
-        onRefresh: () async => await ForumController().updateValues(),
-        child: GetBuilder(
-          init: TopicModel(),
-          builder: (controller) => FutureBuilder(
-            future: controller.futureTopics,
-            builder: (context, AsyncSnapshot<List<Topico>?> snapshot) {
-              switch (snapshot.connectionState) {
-                case ConnectionState.none:
-                  return Message.alert(
-                    'Não foi possivel obter os dados necessários',
+        onRefresh: () => controller.get(),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 32, bottom: 32),
+                child: CustomSearchBar(
+                  hintText: 'Qual é a sua dúvida?',
+                  largura: width,
+                ),
+              ),
+              // const SelectedTopics(),
+              GetBuilder<TopicModel>(
+                builder: (controllerBuilder) {
+                  return FutureBuilder(
+                    future: controllerBuilder.futureTopics,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: snapshot.data!.length,
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              child: ForumWidget(
+                                topico: snapshot.data![index],
+                              ),
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) {
+                                    return TopicoPage(
+                                        topico: snapshot.data![index]);
+                                  }),
+                                );
+                              },
+                            );
+                          },
+                        );
+                      } else if (snapshot.hasError) {
+                        return Message.alert('Erro na solicitação dos dados');
+                      }
+                      return const CircularProgressIndicator();
+                    },
                   );
-                case ConnectionState.waiting:
-                  return Message.loading(context);
-                default:
-                  if (snapshot.hasError) {
-                    return Message.alert(
-                      'Não foi possível obter os dados do servidor',
-                    );
-                  } else if (!snapshot.hasData) {
-                    return Message.alert(
-                      'Não foi possível obter os dados dos topicos',
-                    );
-                  } else if (snapshot.data!.isEmpty) {
-                    return Message.alert(
-                      'Nenhum topico encontrado',
-                    );
-                  } else {
-                    return Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 32),
-                          child: CustomSearchBar(
-                            hintText: 'Qual é a sua dúvida?',
-                            largura: width,
-                          ),
-                        ),
-                        const SelectedTopics(),
-                      ],
-                    );
-                  }
-              }
-            },
+                },
+              )
+            ],
           ),
         ),
       ),

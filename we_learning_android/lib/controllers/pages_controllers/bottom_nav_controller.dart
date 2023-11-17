@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:we_learning_android/ui/pages/aulas/aulas_page.dart';
+import '../../ui/pages/aulas/aulas_page.dart';
 import '../../ui/pages/criar/criar_page.dart';
 import '../../ui/pages/forum/forum_page.dart';
 import '../../ui/pages/home/home_page.dart';

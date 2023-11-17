@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
+import '../../custom_widgets/scaffold_custom.dart';
 
 import '../../../controllers/entities_controllers/respostas_model.dart';
 import '../../../entities/resposta.dart';
@@ -19,16 +19,13 @@ class TopicoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldCustom(
-      appBar: AppBar(
-        title: CustomText(
-          text: topico.tituloTopico!,
-          color: primaryWhite,
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-          maxLines: 1,
-        ),
+      titleAppBar: CustomText(
+        text: topico.tituloTopico!,
+        color: primaryWhite,
+        fontWeight: FontWeight.bold,
+        fontSize: 18,
+        maxLines: 1,
       ),
-      hasEndDrawer: false,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -84,6 +81,7 @@ class TopicoPage extends StatelessWidget {
               //Respostas do tópico
               GetBuilder(
                 init: RespostaModel(tag: topico.id!),
+                didUpdateWidget: (oldWidget, state) {},
                 builder: (controller) {
                   return FutureBuilder(
                     future: controller.futureRespostas,

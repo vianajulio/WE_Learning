@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
+import '../../../custom_widgets/scaffold_custom.dart';
 import '../../../../controllers/entities_controllers/topic_model.dart';
 import '../../../colors/colors.dart';
 import '../../../custom_widgets/custom_text.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../entities/topico.dart';
-import '../../../../controllers/pages_controllers/forum_page_controller.dart';
+import '../../../../controllers/entities_controllers/topic_model.dart';
+import '../../../custom_widgets/message.dart';
 import '../../topico/topico_page.dart';
 import '../../topico/components/topic_widget.dart';
 
@@ -10,29 +10,48 @@ class SelectedTopics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: GetBuilder(
-        //incialização do contotroler para utilizar o método getAll
-        init: ForumController(),
-        builder: (controller) => ListView.builder(
-          itemCount: controller.selectedTopicos?.length ?? 0,
-          itemBuilder: (context, index) {
-            return InkWell(
-              child: ForumWidget(
-                topico: controller.selectedTopicos?[index] ?? Topico(),
-              ),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return TopicoPage(
-                        topico: controller.selectedTopicos![index]);
-                  }),
-                );
+    TopicModel controller = Get.put(TopicModel());
+    return Column(
+      children: [
+        ElevatedButton(
+            onPressed: () {
+              controller.get();
+            },
+            child: Text('Clica')),
+        GetBuilder<TopicModel>(
+          builder: (controllerBuilder) {
+            return FutureBuilder(
+              future: controllerBuilder.futureTopics,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        child: ForumWidget(
+                          topico: snapshot.data![index],
+                        ),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) {
+                              return TopicoPage(topico: snapshot.data![index]);
+                            }),
+                          );
+                        },
+                      );
+                    },
+                  );
+                } else if (snapshot.hasError) {
+                  return Message.alert('Erro na solicitação dos dados');
+                }
+                return const CircularProgressIndicator();
               },
             );
           },
         ),
-      ),
+      ],
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'dart:convert';
 
+import 'package:http/http.dart' as http;
+
 import '../../constants/constants.dart';
 import '../../entities/resposta.dart';
-import 'package:http/http.dart' as http;
 
 class RespostaApi {
   static final RespostaApi instance = RespostaApi._();

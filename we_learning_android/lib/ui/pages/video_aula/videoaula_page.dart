@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/custom_widgets/scaffold_custom.dart';
+import '../../custom_widgets/scaffold_custom.dart';
 
 import '../../../repository/local/aulas_repository.dart';
 import '../../../repository/local/comentario_repository.dart';

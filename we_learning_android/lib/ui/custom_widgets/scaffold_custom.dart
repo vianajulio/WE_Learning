@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'custom_text.dart';
 
 import '../pages/perfil/perfil_page.dart';
-import './../colors/colors.dart';
+import '../colors/colors.dart';
 import 'custom_bottom_navigation.dart';
 
 class ScaffoldCustom extends StatelessWidget {
@@ -13,6 +14,7 @@ class ScaffoldCustom extends StatelessWidget {
   final List<Widget>? actions;
   final Widget? floatingActionButton;
   final Widget? leading;
+  final CustomText? titleAppBar;
 
   const ScaffoldCustom({
     super.key,
@@ -24,6 +26,7 @@ class ScaffoldCustom extends StatelessWidget {
     this.floatingActionButton,
     this.leading,
     this.appBar,
+    this.titleAppBar,
   });
 
   @override
@@ -40,6 +43,7 @@ class ScaffoldCustom extends StatelessWidget {
       appBar: appBar ??
           AppBar(
             leading: leading,
+            title: titleAppBar,
             actions: actions ??
                 [
                   Builder(

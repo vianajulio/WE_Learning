@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:we_learning_android/ui/custom_widgets/message.dart';
+import '../../../custom_widgets/message.dart';
 import '../../../../controllers/entities_controllers/category_model.dart';
 import '../../../../entities/category.dart';
 import 'custom_radio_btn.dart';

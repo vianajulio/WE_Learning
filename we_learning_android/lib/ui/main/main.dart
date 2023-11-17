@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/pages/home/home_page.dart';
+import '../pages/home/home_page.dart';
 import '../../entities/user.dart';
 import '../../repository/local/user_local.dart';
 import 'myapp.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/constants/constants.dart';
+import '../../../constants/constants.dart';
 
 import '../../custom_widgets/scaffold_custom.dart';
 import 'components/card_video_aula.dart';

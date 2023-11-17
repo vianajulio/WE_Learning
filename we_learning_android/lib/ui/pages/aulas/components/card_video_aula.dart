@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_learning_android/ui/pages/video_aula/videoaula_page.dart';
+import '../../video_aula/videoaula_page.dart';
 
 import '../../../custom_widgets/custom_text.dart';
 

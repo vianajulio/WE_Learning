@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
+
 import '../../entities/resposta.dart';
 import '../../repository/api/resposta_api.dart';
 
@@ -19,6 +20,7 @@ class RespostaModel extends GetxController {
   // TODO trocar o initState por este método.
   Future<void> getAll(int tagDuvida) async {
     futureRespostas = RespostaApi.instance.getAll(tagDuvida);
+    update();
   }
 
   Future<void>? post(Resposta resposta,
