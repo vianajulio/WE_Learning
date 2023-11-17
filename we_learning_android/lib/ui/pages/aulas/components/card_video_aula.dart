@@ -13,11 +13,10 @@ class CardAula extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print(title);
-        Navigator.pushReplacement(
+        Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => VideoAulaPage(),
+              builder: (context) => const VideoAulaPage(),
             ));
       },
       child: Card(

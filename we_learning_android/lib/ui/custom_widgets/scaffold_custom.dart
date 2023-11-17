@@ -10,6 +10,7 @@ class ScaffoldCustom extends StatelessWidget {
   final Widget? drawer;
   final Widget? endDrawer;
   final bool hasEndDrawer;
+  final List<Widget>? actions;
   final Widget? floatingActionButton;
   final Widget? leading;
 
@@ -19,6 +20,7 @@ class ScaffoldCustom extends StatelessWidget {
     this.drawer,
     this.endDrawer,
     this.hasEndDrawer = false,
+    this.actions,
     this.floatingActionButton,
     this.leading,
     this.appBar,
@@ -28,25 +30,28 @@ class ScaffoldCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: drawer,
-      endDrawer: hasEndDrawer ? Container(
-        width: 320,
-        color: primaryWhite,
-        child: const PerfilPage(),
-      ) : null,
+      endDrawer: hasEndDrawer
+          ? endDrawer
+          : Container(
+              width: 320,
+              color: primaryWhite,
+              child: const PerfilPage(),
+            ),
       appBar: appBar ??
           AppBar(
             leading: leading,
-            actions: [
-              Builder(
-                builder: (context) {
-                  return IconButton(
-                      onPressed: () {
-                        Scaffold.of(context).openEndDrawer();
-                      },
-                      icon: const Icon(Icons.account_circle_rounded));
-                },
-              )
-            ],
+            actions: actions ??
+                [
+                  Builder(
+                    builder: (context) {
+                      return IconButton(
+                          onPressed: () {
+                            Scaffold.of(context).openEndDrawer();
+                          },
+                          icon: const Icon(Icons.account_circle_rounded));
+                    },
+                  )
+                ],
           ),
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromARGB(255, 236, 236, 236),
