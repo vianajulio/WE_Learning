@@ -83,7 +83,7 @@ class RespostaWidget extends StatelessWidget {
         conteudoResposta: _descricaoResposta.text,
         usuario: usuario!.id.toString(),
       );
-      RespostaModel(tag: topico.id!).post(
+      RespostaModel().post(
         resposta,
         onSucess: () => Message.onSucess(
           context: context,

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../../../controllers/entities_controllers/topic_model.dart';
 import '../../../custom_widgets/message.dart';
 import '../../topico/topico_page.dart';
-import '../../topico/components/topic_widget.dart';
+import 'forum_widget.dart';
 
 class SelectedTopics extends StatelessWidget {
   const SelectedTopics({super.key});

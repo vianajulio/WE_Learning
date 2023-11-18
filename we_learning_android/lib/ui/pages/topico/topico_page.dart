@@ -18,6 +18,8 @@ class TopicoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    RespostaModel controller = Get.put(RespostaModel());
+
     return ScaffoldCustom(
       titleAppBar: CustomText(
         text: topico.tituloTopico!,
@@ -33,7 +35,9 @@ class TopicoPage extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => RespostaWidget(topico: topico),
             ),
-          ).then((value) {});
+          ).then((value) {
+            controller.getAll(topico.id!);
+          });
         },
         child: const Icon(Icons.add),
       ),
@@ -78,11 +82,24 @@ class TopicoPage extends StatelessWidget {
 
               const Divider(thickness: 1.2, color: Colors.black26, height: 30),
 
+              Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () {
+                    if (!controller.loadResposta.value) {
+                      controller.getAll(topico.id!);
+                    }
+                  },
+                  icon: const Icon(Icons.refresh),
+                ),
+              ),
               //Respostas do tópico
               GetBuilder(
-                init: RespostaModel(tag: topico.id!),
-                didUpdateWidget: (oldWidget, state) {},
-                builder: (controller) {
+                init: RespostaModel(),
+                initState: (state) {
+                  controller.getAll(topico.id!);
+                },
+                builder: (controllerBuilder) {
                   return FutureBuilder(
                     future: controller.futureRespostas,
                     builder:

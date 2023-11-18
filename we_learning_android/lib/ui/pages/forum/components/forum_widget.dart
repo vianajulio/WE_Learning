@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../entities/topico.dart';
 import '../../../colors/colors.dart';
 import '../../../custom_widgets/custom_text.dart';
-import 'popupmenu.dart';
+import '../../topico/components/popupmenu.dart';
 
 class ForumWidget extends StatelessWidget {
   final Topico topico;

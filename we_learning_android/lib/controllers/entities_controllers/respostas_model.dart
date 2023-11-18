@@ -6,20 +6,15 @@ import '../../repository/api/resposta_api.dart';
 
 class RespostaModel extends GetxController {
   Future<List<Resposta>?>? futureRespostas;
-  // late int tagDuvida;
-
-  int tag;
-  RespostaModel({required this.tag});
-
-  @override
-  onInit() async {
-    super.onInit();
-    await getAll(tag);
-  }
+  var loadResposta = false.obs;
 
   // TODO trocar o initState por este método.
   Future<void> getAll(int tagDuvida) async {
+    loadResposta.value = true;
+    update();
     futureRespostas = RespostaApi.instance.getAll(tagDuvida);
+    Future.delayed(const Duration(seconds: 5))
+        .then((value) => loadResposta.value = false);
     update();
   }
 
