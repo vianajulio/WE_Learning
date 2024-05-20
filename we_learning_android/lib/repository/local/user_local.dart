@@ -17,10 +17,13 @@ class UserLocal {
   static Future<User?> getUser() async {
     var instance = await SharedPreferences.getInstance();
     String? userString = instance.getString('user.data');
-    if (userString!.isEmpty) {
+    if (userString == null) {
       return null;
     }
-    Map<String, dynamic> userJson = json.decode(userString);
+
+    print(userString);
+
+    Map<String, dynamic> userJson = json.decode(userString!);
     User user = User.fromJson(userJson);
     return user;
   }

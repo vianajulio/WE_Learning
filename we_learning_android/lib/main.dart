@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import '../pages/home/home_page.dart';
-import '../../entities/user.dart';
-import '../../repository/local/user_local.dart';
+import 'ui/pages/home/home_page.dart';
+import 'entities/user.dart';
+import 'repository/local/user_local.dart';
 import 'myapp.dart';
-import '../pages/login/login_page.dart';
+import 'ui/pages/login/login_page.dart';
 
 class PostHttpOverrides extends HttpOverrides {
   @override
@@ -23,5 +23,6 @@ Future<void> main() async {
   User? user = await UserLocal.getUser();
   String? email = user?.email;
 
-  runApp(MyApp(home: email == null ? LoginPage() : const HomePage()));
+  // runApp(MyApp(home: email == null ? LoginPage() : const HomePage()));
+  runApp(MyApp(home: HomePage()));
 }
