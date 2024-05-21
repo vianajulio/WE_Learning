@@ -22,6 +22,7 @@ dependencies:
   carousel_slider: ^4.2.1
   google_maps_flutter: ^2.2.8
   maps_launcher: ^2.2.0
+  logger: ^2.3.0
 
 dev_dependencies:
   flutter_test:

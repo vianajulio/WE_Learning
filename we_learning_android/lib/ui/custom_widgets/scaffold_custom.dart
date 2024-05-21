@@ -49,6 +49,7 @@ class ScaffoldCustom extends StatelessWidget {
                   Builder(
                     builder: (context) {
                       return IconButton(
+                        iconSize: 40,
                           onPressed: () {
                             Scaffold.of(context).openEndDrawer();
                           },

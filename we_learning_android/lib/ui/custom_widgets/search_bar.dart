@@ -8,8 +8,8 @@ class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar(
       {super.key,
       required this.hintText,
-      this.largura = 48,
-      this.altura = 200});
+      this.largura = 200,
+      this.altura = 48});
 
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
